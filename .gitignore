@@ -6,3 +6,4 @@ target
 .metadata
 .gradle
 build
+bin
