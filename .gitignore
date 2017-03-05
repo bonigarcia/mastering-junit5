@@ -4,3 +4,5 @@ target
 .project
 .settings
 .metadata
+.gradle
+build
