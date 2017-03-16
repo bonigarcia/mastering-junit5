@@ -5,5 +5,7 @@ target
 .settings
 .metadata
 .gradle
+.idea
+*.iml
 build
 bin
