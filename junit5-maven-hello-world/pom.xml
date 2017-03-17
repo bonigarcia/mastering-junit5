@@ -13,8 +13,8 @@
 
 		<!-- Java 8 -->
 		<java.version>1.8</java.version>
-		<maven.compiler.argument.target>${java.version}</maven.compiler.argument.target>
-		<maven.compiler.argument.source>${java.version}</maven.compiler.argument.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
 
 		<!-- Encoding -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
