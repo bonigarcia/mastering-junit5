@@ -2,13 +2,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.bonigarcia</groupId>
-	<artifactId>platform-launcher-example</artifactId>
+	<artifactId>junit5-platform-launcher</artifactId>
 	<version>1.0.0</version>
 
 	<properties>
 		<!-- Dependency versions -->
-		<junit.jupiter.version>5.0.0-M3</junit.jupiter.version>
-		<junit.platform.version>1.0.0-M3</junit.platform.version>
+		<junit.jupiter.version>5.0.0-M4</junit.jupiter.version>
+		<junit.platform.version>1.0.0-M4</junit.platform.version>
 		<maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
 
 		<!-- Java 8 -->
