@@ -26,7 +26,7 @@ class DisabledOnOsTest {
     @DisabledOnOs({ MAC, LINUX })
     @Test
     void conditionalTest() {
-        System.out.println("This test will be disable on MAC and LINUX");
+        System.out.println("This test will be disabled on MAC and LINUX");
     }
 
 }
