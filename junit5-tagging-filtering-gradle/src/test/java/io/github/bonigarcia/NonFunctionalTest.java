@@ -39,13 +39,13 @@ class NonFunctionalTest {
     @Test
     @Tag("security")
     void test3() {
-        System.out.println("Non-Functional Test 2 (Security)");
+        System.out.println("Non-Functional Test 3 (Security)");
     }
 
     @Test
     @Tag("usability")
     void test4() {
-        System.out.println("Non-Functional Test 2 (Usability)");
+        System.out.println("Non-Functional Test 4 (Usability)");
     }
 
 }
