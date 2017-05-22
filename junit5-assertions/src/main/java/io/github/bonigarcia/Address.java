@@ -1,5 +1,3 @@
-package io.github.bonigarcia;
-
 /*
  * (C) Copyright 2017 Boni Garcia (http://bonigarcia.github.io/)
  *
@@ -16,6 +14,8 @@ package io.github.bonigarcia;
  * limitations under the License.
  *
  */
+package io.github.bonigarcia;
+
 public class Address {
 
     public String firstName;
