@@ -26,6 +26,7 @@ class MyFirstJUnit5Test {
 	void myFirstTest() {
 		String message = "1+1 should be equal to 2";
 		System.out.println(message);
+
 		assertEquals(2, 1 + 1, message);
 	}
 
