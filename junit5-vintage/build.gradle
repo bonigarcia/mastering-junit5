@@ -11,8 +11,8 @@ repositories {
 	mavenCentral()
 }
 
-ext.junitPlatformVersion = '1.0.0-M4'
-ext.junitJupiterVersion  = '5.0.0-M4'
+ext.junitVintageVersion  = '4.12.0-M4'
+ext.junitLegacy  = '4.12'
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
@@ -20,7 +20,7 @@ apply plugin: 'idea'
 apply plugin: 'org.junit.platform.gradle.plugin'
 
 jar {
-	baseName = 'junit5-gradle-vintage'
+	baseName = 'junit5-vintage'
 	version = '1.0.0'
 }
 
@@ -31,7 +31,7 @@ compileTestJava {
 }
 
 dependencies {
-	// JUnit Jupiter API and TestEngine implementation
-	testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
-	testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+	// JUnit and Vintage TestEngine
+	testCompile("junit:junit:${junitLegacy}")
+	testRuntime("org.junit.vintage:junit-vintage-engine:${junitVintageVersion}")
 }
