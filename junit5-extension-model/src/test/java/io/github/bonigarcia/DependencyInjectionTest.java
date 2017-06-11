@@ -23,10 +23,10 @@ import org.junit.jupiter.api.extension.ExtendWith;
 @Disabled
 public class DependencyInjectionTest {
 
-	@ExtendWith(MyParameterResolver.class)
-	@Test
-	public void test(Object parameter) {
-		System.out.println("---> parameter " + parameter);
-	}
+    @ExtendWith(MyParameterResolver.class)
+    @Test
+    public void test(Object parameter) {
+        System.out.println("My parameter " + parameter);
+    }
 
 }
