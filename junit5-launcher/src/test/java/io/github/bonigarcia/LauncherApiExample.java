@@ -28,25 +28,25 @@ import org.junit.platform.launcher.core.LauncherDiscoveryRequestBuilder;
 import org.junit.platform.launcher.core.LauncherFactory;
 import org.junit.platform.launcher.listeners.SummaryGeneratingListener;
 
-public class JUnitPlatformExample {
+public class LauncherApiExample {
 
-	@SuppressWarnings("unused")
-	public static void main(String[] args) {
-		// Discover and filter tests
-		LauncherDiscoveryRequest request = LauncherDiscoveryRequestBuilder
-				.request()
-				.selectors(selectPackage("io.github.bonigarcia"),
-						selectClass(MyTest.class))
-				.filters(includeClassNamePatterns(".*Test")).build();
+    @SuppressWarnings("unused")
+    public static void main(String[] args) {
+        // Discover and filter tests
+        LauncherDiscoveryRequest request = LauncherDiscoveryRequestBuilder
+                .request()
+                .selectors(selectPackage("io.github.bonigarcia"),
+                        selectClass(DummyTest.class))
+                .filters(includeClassNamePatterns(".*Test")).build();
 
-		Launcher launcher = LauncherFactory.create();
-		TestPlan plan = launcher.discover(request);
+        Launcher launcher = LauncherFactory.create();
+        TestPlan plan = launcher.discover(request);
 
-		// Executing tests
-		TestExecutionListener listener = new SummaryGeneratingListener();
-		launcher.registerTestExecutionListeners(listener);
+        // Executing tests
+        TestExecutionListener listener = new SummaryGeneratingListener();
+        launcher.registerTestExecutionListeners(listener);
 
-		launcher.execute(request, listener);
-	}
+        launcher.execute(request, listener);
+    }
 
 }
