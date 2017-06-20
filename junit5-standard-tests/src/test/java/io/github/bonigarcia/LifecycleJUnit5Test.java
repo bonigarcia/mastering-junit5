@@ -16,8 +16,6 @@
  */
 package io.github.bonigarcia;
 
-import static org.junit.jupiter.api.Assertions.fail;
-
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -37,12 +35,13 @@ class LifecycleJUnit5Test {
     }
 
     @Test
-    void myTest() {
+    void test1() {
+        System.out.println("TEST 1");
     }
 
     @Test
-    void failingTest() {
-        fail("a failing test");
+    void test2() {
+        System.out.println("TEST 2");
     }
 
     @AfterEach
