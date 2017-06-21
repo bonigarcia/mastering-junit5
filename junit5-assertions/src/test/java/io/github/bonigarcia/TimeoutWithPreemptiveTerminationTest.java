@@ -25,10 +25,7 @@ class TimeoutWithPreemptiveTerminationTest {
 
     @Test
     void timeoutExceededWithPreemptiveTermination() {
-        // The following assertion fails with an error message similar to:
-        // execution timed out after 10 ms
         assertTimeoutPreemptively(ofMillis(10), () -> {
-            // Simulate task that takes more than 10 ms
             Thread.sleep(100);
         });
     }

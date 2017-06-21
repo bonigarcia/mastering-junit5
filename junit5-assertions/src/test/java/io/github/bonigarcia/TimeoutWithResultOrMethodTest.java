@@ -26,18 +26,15 @@ class TimeoutWithResultOrMethodTest {
 
     @Test
     void timeoutNotExceededWithResult() {
-        // The following assertion succeeds, and returns the supplied object
-        String actualResult = assertTimeout(ofMinutes(2), () -> {
-            return "a result";
+        String actualResult = assertTimeout(ofMinutes(1), () -> {
+            return "hi there";
         });
-        assertEquals("a result", actualResult);
+        assertEquals("hi there", actualResult);
     }
 
     @Test
     void timeoutNotExceededWithMethod() {
-        // The following assertion invokes a method reference and returns an
-        // object
-        String actualGreeting = assertTimeout(ofMinutes(2),
+        String actualGreeting = assertTimeout(ofMinutes(1),
                 TimeoutWithResultOrMethodTest::greeting);
         assertEquals("hello world!", actualGreeting);
     }

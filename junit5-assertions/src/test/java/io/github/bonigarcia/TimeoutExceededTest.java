@@ -34,7 +34,6 @@ class TimeoutExceededTest {
     @Test
     void timeoutExceeded() {
         assertTimeout(ofMillis(10), () -> {
-            // Simulate task that takes more than 10 ms
             Thread.sleep(100);
         });
     }
