@@ -12,6 +12,7 @@ repositories {
 }
 
 ext.junitJupiterVersion  = '5.0.0-M4'
+ext.hamcrest  = '1.3'
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
@@ -31,5 +32,6 @@ compileTestJava {
 
 dependencies {
 	testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
+	testCompile("org.hamcrest:hamcrest-core:${hamcrest}")
 	testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
 }
