@@ -43,15 +43,12 @@ public class OsCondition
 
     private ConditionEvaluationResult evaluateElement(
             Optional<AnnotatedElement> element) {
-        // Test enabled by default
         ConditionEvaluationResult out = ConditionEvaluationResult
                 .enabled("@DisabledOnOs is not present");
 
         Optional<DisabledOnOs> disabledOnOs = AnnotationUtils
                 .findAnnotation(element, DisabledOnOs.class);
 
-        // If @DisabledOnOs annotation is present, we compare the OS list with
-        // the current
         if (disabledOnOs.isPresent()) {
             Os myOs = Os.determine();
             if (Arrays.asList(disabledOnOs.get().value()).contains(myOs)) {
@@ -63,8 +60,7 @@ public class OsCondition
             }
         }
 
-        // Log trace to check the evaluation result
-        System.out.println("**** " + out + " ****");
+        System.out.println(out);
         return out;
     }
 

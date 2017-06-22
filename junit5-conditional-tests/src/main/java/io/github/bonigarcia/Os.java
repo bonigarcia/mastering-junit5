@@ -21,16 +21,14 @@ public enum Os {
     WINDOWS, MAC, LINUX, OTHER;
 
     public static Os determine() {
-        // Default option: other OS
         Os out = OTHER;
 
-        // Read my OS
         String myOs = System.getProperty("os.name").toLowerCase();
-        if (myOs.indexOf("win") >= 0) {
+        if (myOs.contains("win")) {
             out = WINDOWS;
-        } else if (myOs.indexOf("mac") >= 0) {
+        } else if (myOs.contains("mac")) {
             out = MAC;
-        } else if (myOs.indexOf("nux") >= 0) {
+        } else if (myOs.contains("nux")) {
             out = LINUX;
         }
         return out;
