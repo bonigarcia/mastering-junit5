@@ -28,7 +28,7 @@ class NestTest {
     }
 
     @Test
-    void test1() {
+    void topTest() {
         System.out.println("Test 1");
     }
 
@@ -40,14 +40,14 @@ class NestTest {
         }
 
         @Test
-        void test1() {
+        void innerTest1() {
             System.out.println("Test 2");
         }
 
         @Nested
         class InnerClass2 {
             @Test
-            void test1() {
+            void innerTest2() {
                 System.out.println("Test 3");
             }
         }

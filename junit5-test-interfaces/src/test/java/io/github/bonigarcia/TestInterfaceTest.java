@@ -24,7 +24,7 @@ class TestInterfaceTest implements TestLifecycleLogger, TimeExecutionLogger, Tes
 
     @Test
     void isEqualValue() {
-        assertEquals(1, 1, "is always equal");
+        assertEquals(1, 1);
     }
 
 }

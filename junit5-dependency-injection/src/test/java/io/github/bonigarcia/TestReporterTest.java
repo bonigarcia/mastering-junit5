@@ -25,16 +25,15 @@ class TestReporterTest {
 
     @Test
     void reportSingleValue(TestReporter testReporter) {
-        testReporter.publishEntry("a key", "a value");
+        testReporter.publishEntry("key", "value");
     }
 
     @Test
     void reportSeveralValues(TestReporter testReporter) {
         HashMap<String, String> values = new HashMap<>();
-        values.put("user name", "dk38");
-        values.put("award year", "1974");
+        values.put("name", "john");
+        values.put("surname", "doe");
 
         testReporter.publishEntry(values);
     }
-
 }

@@ -20,16 +20,16 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("A stack")
+@DisplayName("A stack test")
 class StackTest {
 
     @Test
-    @DisplayName("is instantiated with new Stack()")
-    void isInstantiatedWithNew() {
+    @DisplayName("is instantiated")
+    void isInstantiated() {
     }
 
     @Nested
-    @DisplayName("when new")
+    @DisplayName("when empty")
     class WhenNew {
 
         @Test
@@ -38,12 +38,12 @@ class StackTest {
         }
 
         @Test
-        @DisplayName("throws EmptyStackException when popped")
+        @DisplayName("throws Exception when popped")
         void throwsExceptionWhenPopped() {
         }
 
         @Test
-        @DisplayName("throws EmptyStackException when peeked")
+        @DisplayName("throws Exception when peeked")
         void throwsExceptionWhenPeeked() {
         }
 
@@ -53,16 +53,16 @@ class StackTest {
 
             @Test
             @DisplayName("it is no longer empty")
-            void isEmpty() {
+            void isNotEmpty() {
             }
 
             @Test
-            @DisplayName("returns the element when popped and is empty")
+            @DisplayName("returns the element when popped")
             void returnElementWhenPopped() {
             }
 
             @Test
-            @DisplayName("returns the element when peeked but remains not empty")
+            @DisplayName("returns the element when peeked")
             void returnElementWhenPeeked() {
             }
         }
