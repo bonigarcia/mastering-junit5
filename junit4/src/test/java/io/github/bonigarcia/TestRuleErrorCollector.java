@@ -28,7 +28,7 @@ public class TestRuleErrorCollector {
     public ErrorCollector collector = new ErrorCollector();
 
     @Test
-    public void fails_after_execution() {
+    public void test() {
         collector.checkThat("a", equalTo("b"));
         collector.checkThat(1, equalTo(2));
         collector.checkThat("c", equalTo("c"));
