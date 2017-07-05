@@ -7,7 +7,7 @@
 
     <properties>
         <!-- Dependency versions -->
-        <junit.engine.version>1.0.0-M4</junit.engine.version>
+        <junit.engine.version>1.0.0-M5</junit.engine.version>
 
         <!-- Java 8 -->
         <java.version>1.8</java.version>

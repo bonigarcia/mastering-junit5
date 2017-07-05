@@ -23,18 +23,18 @@ import org.junit.jupiter.api.extension.ParameterResolver;
 
 public class MyParameterResolver implements ParameterResolver {
 
-	@Override
-	public boolean supports(ParameterContext parameterContext,
-			ExtensionContext extensionContext)
-			throws ParameterResolutionException {
-		return true;
-	}
+    @Override
+    public boolean supportsParameter(ParameterContext parameterContext,
+            ExtensionContext extensionContext)
+            throws ParameterResolutionException {
+        return true;
+    }
 
-	@Override
-	public Object resolve(ParameterContext parameterContext,
-			ExtensionContext extensionContext)
-			throws ParameterResolutionException {
-		return "my parameter";
-	}
+    @Override
+    public Object resolveParameter(ParameterContext parameterContext,
+            ExtensionContext extensionContext)
+            throws ParameterResolutionException {
+        return "my parameter";
+    }
 
 }

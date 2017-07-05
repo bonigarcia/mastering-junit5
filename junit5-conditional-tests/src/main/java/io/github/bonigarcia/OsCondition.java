@@ -21,28 +21,17 @@ import java.util.Arrays;
 import java.util.Optional;
 
 import org.junit.jupiter.api.extension.ConditionEvaluationResult;
-import org.junit.jupiter.api.extension.ContainerExecutionCondition;
-import org.junit.jupiter.api.extension.ContainerExtensionContext;
-import org.junit.jupiter.api.extension.TestExecutionCondition;
-import org.junit.jupiter.api.extension.TestExtensionContext;
+import org.junit.jupiter.api.extension.ExecutionCondition;
+import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.platform.commons.util.AnnotationUtils;
 
-public class OsCondition
-        implements ContainerExecutionCondition, TestExecutionCondition {
+public class OsCondition implements ExecutionCondition {
 
     @Override
-    public ConditionEvaluationResult evaluate(TestExtensionContext context) {
-        return evaluateElement(context.getElement());
-    }
+    public ConditionEvaluationResult evaluateExecutionCondition(
+            ExtensionContext context) {
 
-    @Override
-    public ConditionEvaluationResult evaluate(
-            ContainerExtensionContext context) {
-        return evaluateElement(context.getElement());
-    }
-
-    private ConditionEvaluationResult evaluateElement(
-            Optional<AnnotatedElement> element) {
+        Optional<AnnotatedElement> element = context.getElement();
         ConditionEvaluationResult out = ConditionEvaluationResult
                 .enabled("@DisabledOnOs is not present");
 
@@ -61,6 +50,7 @@ public class OsCondition
         }
 
         System.out.println(out);
+
         return out;
     }
 
