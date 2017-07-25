@@ -26,15 +26,21 @@ import org.junit.jupiter.params.provider.CsvSource;
 class CsvSourceParameterizedTest {
 
     @ParameterizedTest
-    @CsvSource({ "foo, 1", "bar, 2", "'baz, qux', 3" })
+    @CsvSource({ "hello, 1", "world, 2", "'happy, testing', 3" })
     void testWithCsvSource(String first, int second) {
+        System.out.println("Parameterized test with (String) " + first
+                + " and (int) " + second);
+
         assertNotNull(first);
         assertNotEquals(0, second);
     }
 
     @ParameterizedTest
-    @CsvFileSource(resources = "/two-column.csv")
+    @CsvFileSource(resources = "/input.csv")
     void testWithCsvFileSource(String first, int second) {
+        System.out.println("Yet another parameterized test with (String) "
+                + first + " and (int) " + second);
+
         assertNotNull(first);
         assertNotEquals(0, second);
     }
