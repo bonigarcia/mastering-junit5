@@ -27,23 +27,23 @@ class ValueSourceParameterizedTest {
     @ValueSource(strings = { "Hello", "World" })
     void testWithStrings(String argument) {
         System.out.println(
-                "Parameterized test with String parameter: " + argument);
+                "Parameterized test with (String) parameter: " + argument);
         assertNotNull(argument);
     }
 
     @ParameterizedTest
     @ValueSource(ints = { 0, 1 })
     void testWithInts(int argument) {
-        System.out
-                .println("Parameterized test with int parameter: " + argument);
+        System.out.println(
+                "Parameterized test with (int) parameter: " + argument);
         assertNotNull(argument);
     }
 
     @ParameterizedTest
     @ValueSource(longs = { 2L, 3L })
     void testWithLongs(long argument) {
-        System.out
-                .println("Parameterized test with long parameter: " + argument);
+        System.out.println(
+                "Parameterized test with (long) parameter: " + argument);
         assertNotNull(argument);
     }
 
@@ -51,7 +51,7 @@ class ValueSourceParameterizedTest {
     @ValueSource(doubles = { 4d, 5d })
     void testWithDoubles(double argument) {
         System.out.println(
-                "Parameterized test with double parameter: " + argument);
+                "Parameterized test with (double) parameter: " + argument);
         assertNotNull(argument);
     }
 
