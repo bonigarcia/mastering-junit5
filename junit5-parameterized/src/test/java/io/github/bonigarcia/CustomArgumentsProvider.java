@@ -16,8 +16,6 @@
  */
 package io.github.bonigarcia;
 
-import java.lang.reflect.Method;
-import java.util.Optional;
 import java.util.stream.Stream;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
@@ -30,12 +28,8 @@ public class CustomArgumentsProvider implements ArgumentsProvider {
     public Stream<? extends Arguments> provideArguments(
             ExtensionContext context) {
 
-        // Logging test name
-        Optional<Method> testMethod = context.getTestMethod();
-        if (testMethod.isPresent()) {
-            System.out.println(
-                    "Arguments provider to test " + testMethod.get().getName());
-        }
+        System.out.println("Arguments provider to test "
+                + context.getTestMethod().get().getName());
 
         return Stream.of(Arguments.of("hello", 1), Arguments.of("world", 2));
     }
