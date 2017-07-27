@@ -16,17 +16,13 @@
  */
 package io.github.bonigarcia;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import java.time.LocalDate;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.converter.ConvertWith;
-import org.junit.jupiter.params.converter.JavaTimeConversionPattern;
 import org.junit.jupiter.params.provider.EnumSource;
-import org.junit.jupiter.params.provider.ValueSource;
 
 class ExplicitConversionParameterizedTest {
 
@@ -38,16 +34,6 @@ class ExplicitConversionParameterizedTest {
                 + argument.getClass());
 
         assertNotNull(argument);
-    }
-
-    @ParameterizedTest
-    @ValueSource(strings = { "01.01.2017", "31.12.2017" })
-    void testWithExplicitJavaTimeConverter(
-            @JavaTimeConversionPattern("dd.MM.yyyy") LocalDate argument) {
-        System.out.println("Argument " + argument + " is a type of "
-                + argument.getClass());
-
-        assertEquals(2017, argument.getYear());
     }
 
 }
