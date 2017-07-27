@@ -24,7 +24,7 @@ class CustomNamesParameterizedTest {
 
     @DisplayName("Display name of test container")
     @ParameterizedTest(name = "[{index}] first argument=\"{0}\", second argument={1}")
-    @CsvSource({ "hello, 1", "world, 2", "'hello, world', 3" })
+    @CsvSource({ "mastering, 1", "parameterized, 2", "tests, 3" })
     void testWithCustomDisplayNames(String first, int second) {
         System.out.println(
                 "Testing with parameters: " + first + " and " + second);
