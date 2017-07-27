@@ -21,37 +21,13 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-class ValueSourceParameterizedTest {
+class ValueSourceStringsParameterizedTest {
 
     @ParameterizedTest
     @ValueSource(strings = { "Hello", "World" })
     void testWithStrings(String argument) {
         System.out.println(
                 "Parameterized test with (String) parameter: " + argument);
-        assertNotNull(argument);
-    }
-
-    @ParameterizedTest
-    @ValueSource(ints = { 0, 1 })
-    void testWithInts(int argument) {
-        System.out.println(
-                "Parameterized test with (int) parameter: " + argument);
-        assertNotNull(argument);
-    }
-
-    @ParameterizedTest
-    @ValueSource(longs = { 2L, 3L })
-    void testWithLongs(long argument) {
-        System.out.println(
-                "Parameterized test with (long) parameter: " + argument);
-        assertNotNull(argument);
-    }
-
-    @ParameterizedTest
-    @ValueSource(doubles = { 4d, 5d })
-    void testWithDoubles(double argument) {
-        System.out.println(
-                "Parameterized test with (double) parameter: " + argument);
         assertNotNull(argument);
     }
 
