@@ -19,63 +19,13 @@ package io.github.bonigarcia;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import java.util.stream.DoubleStream;
-import java.util.stream.IntStream;
-import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-class MethodSourceParameterizedTest {
-
-    static Stream<String> stringProvider() {
-        return Stream.of("hello", "world");
-    }
-
-    @ParameterizedTest
-    @MethodSource("stringProvider")
-    void testWithStringProvider(String argument) {
-        System.out.println(
-                "Parameterized test with String provider: " + argument);
-        assertNotNull(argument);
-    }
-
-    static IntStream intProvider() {
-        return IntStream.of(0, 1);
-    }
-
-    @ParameterizedTest
-    @MethodSource("intProvider")
-    void testWithIntProvider(int argument) {
-        System.out.println("Parameterized test with int provider: " + argument);
-        assertNotNull(argument);
-    }
-
-    static DoubleStream doubleProvider() {
-        return DoubleStream.of(2d, 3d);
-    }
-
-    @ParameterizedTest
-    @MethodSource("doubleProvider")
-    void testWithDoubleProvider(double argument) {
-        System.out.println(
-                "Parameterized test with double provider: " + argument);
-        assertNotNull(argument);
-    }
-
-    static LongStream longProvider() {
-        return LongStream.of(4L, 5L);
-    }
-
-    @ParameterizedTest
-    @MethodSource("longProvider")
-    void testWithLongProvider(long argument) {
-        System.out
-                .println("Parameterized test with long provider: " + argument);
-        assertNotNull(argument);
-    }
+class MethodSourceMixedTypesParameterizedTest {
 
     static Stream<Arguments> stringAndIntProvider() {
         return Stream.of(Arguments.of("Mastering", 10),
