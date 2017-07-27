@@ -16,22 +16,22 @@
  */
 package io.github.bonigarcia;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import java.util.stream.Stream;
 
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ArgumentsSource;
+import org.junit.jupiter.api.extension.ExtensionContext;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.ArgumentsProvider;
 
-class ArgumentSourceParameterizedTest {
+public class CustomArgumentsProvider1 implements ArgumentsProvider {
 
-    @ParameterizedTest
-    @ArgumentsSource(CustomArgumentsProvider1.class)
-    void testWithArgumentsSource(String first, int second) {
-        System.out.println("Parameterized test with (String) " + first
-                + " and (int) " + second);
+    @Override
+    public Stream<? extends Arguments> provideArguments(
+            ExtensionContext context) {
 
-        assertNotNull(first);
-        assertTrue(second > 0);
+        System.out.println("Arguments provider [1] to test "
+                + context.getTestMethod().get().getName());
+
+        return Stream.of(Arguments.of("hello", 1), Arguments.of("world", 2));
     }
 
 }
