@@ -18,7 +18,9 @@ package io.github.bonigarcia;
 
 import static org.mockito.Mockito.inOrder;
 import static org.mockito.Mockito.when;
+import static org.mockito.MockitoAnnotations.initMocks;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InOrder;
 import org.mockito.InjectMocks;
@@ -36,6 +38,11 @@ public class LoginControllerOrderTest {
     private LoginRepository loginRepository;
 
     private UserForm userForm = new UserForm("foo", "bar");
+
+    @Before
+    public void setUp() {
+        initMocks(this);
+    }
 
     @Test
     public void testOrder() {

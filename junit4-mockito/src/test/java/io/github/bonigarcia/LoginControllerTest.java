@@ -20,9 +20,7 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
-import static org.mockito.MockitoAnnotations.initMocks;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -39,11 +37,6 @@ public class LoginControllerTest {
     private LoginService loginService;
 
     private UserForm userForm = new UserForm("foo", "bar");
-
-    @Before
-    public void setUp() {
-        initMocks(this);
-    }
 
     @Test
     public void testLogin() {
@@ -81,8 +74,6 @@ public class LoginControllerTest {
 
     @Test
     public void testLogout() {
-        verify(loginService).logout(userForm);
-
         loginController.logout(userForm);
 
         verify(loginService).logout(userForm);
