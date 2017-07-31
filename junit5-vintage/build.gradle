@@ -1,9 +1,12 @@
 buildscript {
+    ext {
+        junitPlatformVersion = '1.0.0-RC2'
+    }
 	repositories {
 		mavenCentral()
 	}
 	dependencies {
-		classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.0-RC2'
+		classpath("org.junit.platform:junit-platform-gradle-plugin:${junitPlatformVersion}")
 	}
 }
 
@@ -11,8 +14,10 @@ repositories {
 	mavenCentral()
 }
 
-ext.junitVintageVersion  = '4.12.0-RC2'
-ext.junitLegacy  = '4.12'
+ext {
+	junitVintageVersion  = '4.12.0-RC2'
+	junitLegacyVersion  = '4.12'
+}
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
@@ -32,6 +37,6 @@ compileTestJava {
 
 dependencies {
 	// JUnit and Vintage TestEngine
-	testCompile("junit:junit:${junitLegacy}")
+	testCompile("junit:junit:${junitLegacyVersion}")
 	testRuntime("org.junit.vintage:junit-vintage-engine:${junitVintageVersion}")
 }

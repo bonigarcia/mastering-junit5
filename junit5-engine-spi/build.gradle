@@ -2,7 +2,9 @@ repositories {
 	mavenCentral()
 }
 
-ext.junitEngineVersion  = '1.0.0-RC2'
+ext {
+	junitEngineVersion  = '1.0.0-RC2'
+}
 
 apply plugin: 'java'
 apply plugin: 'eclipse'

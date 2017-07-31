@@ -1,15 +1,12 @@
-@Mock, @InjectMocks, @Spy, @Captor
-Retrospective on software quality and Java testing
-
-in terms of scenarios and implemented as "Given (initial context), when (event occurs), then (ensure some outcomes)"
-
-
 buildscript {
+    ext {
+        junitPlatformVersion = '1.0.0-RC2'
+    }
 	repositories {
 		mavenCentral()
 	}
 	dependencies {
-		classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.0-RC2'
+		classpath("org.junit.platform:junit-platform-gradle-plugin:${junitPlatformVersion}")
 	}
 }
 
@@ -17,8 +14,10 @@ repositories {
 	mavenCentral()
 }
 
-ext.junitJupiterVersion  = '5.0.0-RC2'
-ext.mockitoVersion  = '2.8.47'
+ext {
+	junitJupiterVersion  = '5.0.0-RC2'
+	mockitoVersion  = '2.8.47'
+}
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
@@ -37,7 +36,7 @@ compileTestJava {
 }
 
 dependencies {
-	testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
-	testCompile(""org.mockito:mockito-core:${mockitoVersion}")
+	compile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
+	compile("org.mockito:mockito-core:${mockitoVersion}")
 	testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
 }
