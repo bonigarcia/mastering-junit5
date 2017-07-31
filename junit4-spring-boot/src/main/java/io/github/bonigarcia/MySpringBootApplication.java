@@ -30,11 +30,11 @@ public class MySpringBootApplication {
     final Logger log = LoggerFactory.getLogger(MySpringBootApplication.class);
 
     @Autowired
-    public MessagePrinter printer;
+    public MessageComponent messageComponent;
 
     @PostConstruct
     private void setup() {
-        log.info("*** {} ***", printer.getMessage());
+        log.info("*** {} ***", messageComponent.getMessage());
     }
 
     public static void main(String[] args) throws Exception {

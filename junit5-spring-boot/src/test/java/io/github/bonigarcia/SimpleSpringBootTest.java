@@ -29,7 +29,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 class SimpleSpringBootTest {
 
     @Autowired
-    public MessagePrinter messagePrinter;
+    public MessageComponent messagePrinter;
 
     @Test
     public void test() {

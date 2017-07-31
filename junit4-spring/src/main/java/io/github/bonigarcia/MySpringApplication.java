@@ -25,8 +25,9 @@ public class MySpringApplication {
     public static void main(String[] args) {
         try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
                 MySpringApplication.class)) {
-            MessagePrinter printer = context.getBean(MessagePrinter.class);
-            System.out.println(printer.getMessage());
+            MessageComponent messageComponent = context
+                    .getBean(MessageComponent.class);
+            System.out.println(messageComponent.getMessage());
         }
     }
 }

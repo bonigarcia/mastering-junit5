@@ -29,10 +29,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class SimpleSpringBootTest {
 
     @Autowired
-    public MessagePrinter messagePrinter;
+    public MessageComponent messageComponent;
 
     @Test
     public void test() {
-        assertEquals("Hello world!", messagePrinter.getMessage());
+        assertEquals("Hello world!", messageComponent.getMessage());
     }
 }
