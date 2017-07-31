@@ -8,8 +8,8 @@
 	<properties>
 		<!-- Dependency versions -->
 		<junit.legacy.version>4.12</junit.legacy.version>
-		<junit.vintage.version>4.12.0-M6</junit.vintage.version>
-		<junit.platform.version>1.0.0-M6</junit.platform.version>
+		<junit.vintage.version>4.12.0-RC2</junit.vintage.version>
+		<junit.platform.version>1.0.0-RC2</junit.platform.version>
 		<maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
 
 		<!-- Java 8 -->
