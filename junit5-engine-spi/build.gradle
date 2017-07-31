@@ -1,9 +1,9 @@
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 ext {
-	junitEngineVersion  = '1.0.0-RC2'
+    junitEngineVersion  = '1.0.0-RC2'
 }
 
 apply plugin: 'java'
@@ -11,16 +11,16 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 
 jar {
-	baseName = 'junit5-engine-spi'
-	version = '1.0.0'
+    baseName = 'junit5-engine-spi'
+    version = '1.0.0'
 }
 
 compileTestJava {
-	sourceCompatibility = 1.8
-	targetCompatibility = 1.8
-	options.compilerArgs += '-parameters'
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+    options.compilerArgs += '-parameters'
 }
 
 dependencies {
-	testCompile("org.junit.platform:junit-platform-engine:${junitJupiterVersion}")
+    testCompile("org.junit.platform:junit-platform-engine:${junitJupiterVersion}")
 }
