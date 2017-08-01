@@ -40,7 +40,7 @@ class RedirectTest {
     WebApplicationContext webContext;
 
     @MockBean
-    private PageService redirectService;
+    PageService pageService;
 
     MockMvc mockMvc;
 
@@ -51,7 +51,7 @@ class RedirectTest {
 
     @Test
     void test() throws Exception {
-        doReturn("redirect:/page.html").when(redirectService).getPage();
+        doReturn("redirect:/page.html").when(pageService).getPage();
 
         mockMvc.perform(get("/")).andExpect(status().isFound())
                 .andExpect(redirectedUrl("/page.html"));
