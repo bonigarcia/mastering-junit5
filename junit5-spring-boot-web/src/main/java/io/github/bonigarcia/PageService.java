@@ -16,13 +16,12 @@
  */
 package io.github.bonigarcia;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Service;
 
-@SpringBootApplication
-public class SpringMvcHelloWorldApp {
+@Service
+public class PageService {
 
-    public static void main(String[] args) {
-        SpringApplication.run(SpringMvcHelloWorldApp.class, args);
+    public String getPage() {
+        return "/index.html";
     }
 }

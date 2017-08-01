@@ -33,7 +33,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
-class SpringBootWebTest {
+class IndexTest {
 
     @Autowired
     WebApplicationContext webContext;
@@ -46,10 +46,10 @@ class SpringBootWebTest {
     }
 
     @Test
-    void test() throws Exception {
+    void testIndex() throws Exception {
         mockMvc.perform(get("/index.html")).andExpect(status().isOk())
-                .andExpect(content().contentType("text/html"))
-                .andExpect(content().string(containsString("Hello world!")));
+                .andExpect(content().contentType("text/html")).andExpect(
+                        content().string(containsString("This is index page")));
     }
 
 }
