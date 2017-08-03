@@ -1,0 +1,52 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.0.M3'
+        junitPlatformVersion = '1.0.0-RC2'
+    }
+    repositories {
+        mavenCentral()
+        maven {
+            url 'https://repo.spring.io/milestone'
+        }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.junit.platform:junit-platform-gradle-plugin:${junitPlatformVersion}")
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://repo.spring.io/libs-milestone'
+    }
+}
+
+ext {
+    junitJupiterVersion  = '5.0.0-RC2'
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'org.junit.platform.gradle.plugin'
+
+jar {
+    baseName = 'junit5-spring-boot-rest'
+    version = '1.0.0'
+}
+
+compileTestJava {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+    options.compilerArgs += '-parameters'
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+}
