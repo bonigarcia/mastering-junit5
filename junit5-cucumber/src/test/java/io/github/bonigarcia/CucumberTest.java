@@ -32,7 +32,7 @@ import cucumber.api.junit.jupiter.CucumberExtension;
 public class CucumberTest {
 
     @TestFactory
-    public Stream<DynamicTest> runCukes(Stream<DynamicTest> scenarios) {
+    public Stream<DynamicTest> runTests(Stream<DynamicTest> scenarios) {
         List<DynamicTest> tests = scenarios.collect(Collectors.toList());
         return tests.stream();
     }
