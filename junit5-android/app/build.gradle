@@ -2,12 +2,12 @@ apply plugin: "com.android.application"
 apply plugin: "de.mannodermaus.android-junit5"
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion 26
     buildToolsVersion "26.0.0"
     defaultConfig {
         applicationId "io.github.bonigarcia"
         minSdkVersion 15
-        targetSdkVersion 25
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
