@@ -36,7 +36,7 @@ compileTestJava {
 }
 
 dependencies {
-    compile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
-    compile("org.mockito:mockito-core:${mockitoVersion}")
+    testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
+    testCompile("org.mockito:mockito-core:${mockitoVersion}")
     testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
 }
