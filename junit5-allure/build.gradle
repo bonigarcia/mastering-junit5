@@ -40,13 +40,7 @@ compileTestJava {
     options.compilerArgs += '-parameters'
 }
 
-configurations {
-    agent
-}
-
 dependencies {
-    agent 'org.aspectj:aspectjweaver:${aspectjVersion}'
-
     testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
     testCompile("io.qameta.allure:allure-junit5:${allureJUnit5Version}")
     testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
