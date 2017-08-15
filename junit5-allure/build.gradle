@@ -20,7 +20,6 @@ repositories {
 ext {
     junitJupiterVersion = '5.0.0-M4'
     allureJUnit5Version = '2.0-BETA16'
-    aspectjVersion = '1.8.10'
 }
 
 apply plugin: 'java'
@@ -44,4 +43,8 @@ dependencies {
     testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
     testCompile("io.qameta.allure:allure-junit5:${allureJUnit5Version}")
     testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+}
+
+allure {
+    reportDir = file('build/allure-results')
 }
