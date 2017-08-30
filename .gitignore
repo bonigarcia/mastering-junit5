@@ -6,6 +6,7 @@ target
 .metadata
 .gradle
 .idea
+.allure
 *.iml
 build
 bin
