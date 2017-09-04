@@ -9,4 +9,6 @@ target
 .allure
 *.iml
 build
+gradle
+allure-results
 bin
