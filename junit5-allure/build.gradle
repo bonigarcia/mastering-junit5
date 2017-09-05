@@ -1,7 +1,6 @@
 buildscript {
     ext {
         junitPlatformVersion = '1.0.0-M4'
-        allureGradleVersion = '2.3'
     }
     repositories {
         jcenter()
@@ -9,7 +8,6 @@ buildscript {
     }
     dependencies {
         classpath("org.junit.platform:junit-platform-gradle-plugin:${junitPlatformVersion}")
-        classpath("io.qameta.allure:allure-gradle:${allureGradleVersion}")
     }
 }
 
@@ -20,13 +18,21 @@ repositories {
 ext {
     junitJupiterVersion = '5.0.0-M4'
     allureJUnit5Version = '2.0-BETA17'
+    aspectjVersion = '1.8.10'
 }
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
-apply plugin: 'io.qameta.allure'
 apply plugin: 'org.junit.platform.gradle.plugin'
+
+configurations {
+    agent
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion '4.1'
+}
 
 jar {
     baseName = 'junit5-allure'
@@ -40,12 +46,32 @@ compileTestJava {
 }
 
 dependencies {
-    testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
+    agent "org.aspectj:aspectjweaver:${aspectjVersion}"
+
     testCompile("io.qameta.allure:allure-junit5:${allureJUnit5Version}")
+    testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
     testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
 }
 
-allure {
-    autoconfigure = true
-    reportDir = file('build/allure-results')
+junitPlatform {
+    filters {
+        engines {
+            include 'junit-jupiter'
+        }
+        includeClassNamePattern '.*Test'
+    }
+    enableStandardTestTask true
+}
+
+tasks.withType(JavaExec) {
+    if (it.name == 'junitPlatformTest') {
+        doFirst {
+            jvmArgs "-javaagent:${configurations.agent.singleFile}"
+        }
+    }
+}
+
+afterEvaluate {
+    def junitPlatformTestTask = tasks.getByName('junitPlatformTest')
+    junitPlatformTestTask.systemProperty 'allure.results.directory', 'build/allure-results'
 }
