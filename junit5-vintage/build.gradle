@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        junitPlatformVersion = '1.0.0-RC3'
+        junitPlatformVersion = '1.0.0'
     }
     repositories {
         mavenCentral()
@@ -15,7 +15,7 @@ repositories {
 }
 
 ext {
-    junitVintageVersion  = '4.12.0-RC3'
+    junitVintageVersion  = '4.12.0'
     junitLegacyVersion  = '4.12'
 }
 

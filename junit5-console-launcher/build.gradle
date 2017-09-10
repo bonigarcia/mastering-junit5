@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        junitPlatformVersion = '1.0.0-RC3'
+        junitPlatformVersion = '1.0.0'
     }
     repositories {
         mavenCentral()
@@ -15,8 +15,8 @@ repositories {
 }
 
 ext {
-    junitJupiterVersion  = '5.0.0-RC3'
-    junitPlatformVersion = '1.0.0-RC3'
+    junitJupiterVersion  = '5.0.0'
+    junitPlatformVersion = '1.0.0'
 }
 
 apply plugin: 'java'
