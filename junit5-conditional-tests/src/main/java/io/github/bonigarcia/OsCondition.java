@@ -49,8 +49,7 @@ public class OsCondition implements ExecutionCondition {
             }
         }
 
-        System.out.println(out);
-
+        System.out.println("--> " + out.getReason().get());
         return out;
     }
 
