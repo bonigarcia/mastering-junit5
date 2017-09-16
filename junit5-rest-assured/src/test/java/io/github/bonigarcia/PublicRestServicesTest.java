@@ -25,14 +25,10 @@ public class PublicRestServicesTest {
 
     @Test
     void testEchoService() {
-        String title = "foo";
-        String content = "bar";
-        given().when()
-                .get("http://echo.jsontest.com/title/" + title + "/content/"
-                        + content)
-                .then().assertThat().statusCode(200)
-                .body("title", equalTo(title))
-                .body("content", equalTo(content));
+        String key = "foo";
+        String value = "bar";
+        given().when().get("http://echo.jsontest.com/" + key + "/" + value)
+                .then().assertThat().statusCode(200).body(key, equalTo(value));
     }
 
     @Test
