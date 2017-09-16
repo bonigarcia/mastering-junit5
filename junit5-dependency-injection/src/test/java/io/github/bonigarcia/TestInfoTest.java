@@ -31,8 +31,8 @@ class TestInfoTest {
     }
 
     @Test
-    @DisplayName("my test")
-    @Tag("my tag")
+    @DisplayName("My test")
+    @Tag("my-tag")
     void test1(TestInfo testInfo) {
         System.out.println(testInfo.getDisplayName());
         System.out.println(testInfo.getTags());

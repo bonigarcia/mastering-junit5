@@ -38,8 +38,7 @@
 				<version>${maven-surefire-plugin.version}</version>
 				<configuration>
 					<properties>
-						<includeTags>${includeTags}</includeTags>
-						<excludeTags>${excludeTags}</excludeTags>
+						<includeTags>functional</includeTags>
 					</properties>
 				</configuration>
 				<dependencies>

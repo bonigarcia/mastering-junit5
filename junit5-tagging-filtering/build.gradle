@@ -35,7 +35,6 @@ compileTestJava {
 }
 
 dependencies {
-    // JUnit Jupiter API and TestEngine implementation
     testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
     testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
 }
@@ -47,8 +46,8 @@ junitPlatform {
             exclude 'junit-vintage'
         }
         tags {
-            include 'functional', 'non-functional'
-            exclude ''
+            include 'non-functional'
+            exclude 'functional'
         }
         packages {
             include 'io.github.bonigarcia'

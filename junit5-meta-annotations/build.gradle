@@ -35,6 +35,14 @@ compileTestJava {
 }
 
 dependencies {
-    testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
+    compile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
     testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+}
+
+junitPlatform {
+    filters {
+        tags {
+            include 'non-functional'
+        }
+    }
 }
