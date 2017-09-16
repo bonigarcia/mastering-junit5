@@ -20,7 +20,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-class TestInterfaceTest implements TestLifecycleLogger, TimeExecutionLogger, TestInterfaceDynamicTestsDemo {
+class TestInterfaceTest implements TestLifecycleLogger, TimeExecutionLogger,
+        TestInterfaceDynamicTestsDemo {
 
     @Test
     void isEqualValue() {

@@ -23,15 +23,15 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 public class ExceptionTest {
 
-	@ExtendWith(IgnoreIOExceptionExtension.class)
-	@Test
-	public void test1() throws IOException {
-		throw new IOException("My IO Exception");
-	}
+    @ExtendWith(IgnoreIOExceptionExtension.class)
+    @Test
+    public void test1() throws IOException {
+        throw new IOException("IO Exception");
+    }
 
-	@Test
-	public void test2() throws IOException {
-		throw new IOException("My IO Exception");
-	}
+    @Test
+    public void test2() throws IOException {
+        throw new IOException("My IO Exception");
+    }
 
 }
