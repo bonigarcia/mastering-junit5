@@ -17,6 +17,7 @@
 package io.github.bonigarcia;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
+import static com.github.tomakehurst.wiremock.client.WireMock.configureFor;
 import static com.github.tomakehurst.wiremock.client.WireMock.post;
 import static com.github.tomakehurst.wiremock.client.WireMock.stubFor;
 import static com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo;
@@ -29,24 +30,13 @@ import java.net.ServerSocket;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mockito;
-import org.mockito.Spy;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
-import com.github.tomakehurst.wiremock.client.WireMock;
 
-import io.github.bonigarcia.mockito.MockitoExtension;
-
-@ExtendWith(MockitoExtension.class)
 public class RemoteFileTest {
 
-    @Spy
     RemoteFileService remoteFileService;
-
     WireMockServer wireMockServer;
-
-    String baseUrl;
 
     // Test data
     String filename = "foo";
@@ -55,17 +45,17 @@ public class RemoteFileTest {
 
     @BeforeEach
     void setup() throws Exception {
-        // Look for free port
+        // Look for free port for SUT instantiation
         int port;
         try (ServerSocket socket = new ServerSocket(0)) {
             port = socket.getLocalPort();
         }
-        baseUrl = "http://localhost:" + port;
+        remoteFileService = new RemoteFileService("http://localhost:" + port);
 
         // Mock server
         wireMockServer = new WireMockServer(options().port(port));
         wireMockServer.start();
-        WireMock.configureFor("localhost", wireMockServer.port());
+        configureFor("localhost", wireMockServer.port());
 
         // Stubbing service
         stubFor(post(urlEqualTo("/api/v1/paths/" + filename + "/open-file"))
@@ -78,11 +68,7 @@ public class RemoteFileTest {
 
     @Test
     void testGetFile() throws IOException {
-        Mockito.when(remoteFileService.getBaseUrl()).thenReturn(baseUrl);
-
-        remoteFileService.initService();
         byte[] fileContent = remoteFileService.getFile(filename);
-
         assertEquals(contentFile.length(), fileContent.length);
     }
 

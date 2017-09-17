@@ -28,13 +28,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RemoteFileService {
 
     private RemoteFileApi remoteFileApi;
-    private String baseUrl;
 
-    public void initService() {
+    public RemoteFileService(String baseUrl) {
         Retrofit retrofit = new Retrofit.Builder()
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl(this.getBaseUrl()).build();
+                .baseUrl(baseUrl).build();
         remoteFileApi = retrofit.create(RemoteFileApi.class);
     }
 
@@ -52,14 +51,6 @@ public class RemoteFileService {
         System.out.println("Stream " + streamId + " closed");
 
         return content;
-    }
-
-    public String getBaseUrl() {
-        return baseUrl;
-    }
-
-    public void setBaseUrl(String baseUrl) {
-        this.baseUrl = baseUrl;
     }
 
 }
