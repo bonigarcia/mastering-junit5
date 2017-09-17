@@ -18,6 +18,7 @@ ext {
     junitJupiterVersion  = '5.0.0-M4'
     junitDockerVersion = '1.0.0-RC4'
     mysqlConnectorVersion = '5.1.43'
+    slf4jVersion  = '1.7.12'
 }
 
 apply plugin: 'java'
@@ -40,5 +41,7 @@ dependencies {
     testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
     testCompile("com.github.faustxvi:junit5-docker:${junitDockerVersion}")
     testCompile("mysql:mysql-connector-java:${mysqlConnectorVersion}")
+    testCompile("org.slf4j:slf4j-api:${slf4jVersion}")
+    testCompile("org.slf4j:slf4j-simple:${slf4jVersion}")
     testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
 }
