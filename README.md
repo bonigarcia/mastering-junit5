@@ -1,10 +1,10 @@
-# Mastering JUnit 5 [![][Logo]][GitHub Repository]
+# [![][Logo]][GitHub Repository]
 
 [![License badge](https://img.shields.io/badge/license-Apache2-green.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 [![Support badge](https://img.shields.io/badge/support-sof-green.svg)](http://stackoverflow.com/questions/tagged/junit5)
 [![Twitter Follow](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/boni_gg)
 
-This project contains code examples of [JUnit 5] for the book [Mastering JUnit 5], authored by [Boni Garcia] and published by [Packt]. These examples covers the main features of JUnit 5, containing:
+This repository contains code examples of [JUnit 5] for the book [Mastering JUnit 5], authored by [Boni Garcia] and published by [Packt]. These examples covers the main features of JUnit 5, containing:
 
 * JUnit 5 tests lifecycle
 * Assertions
