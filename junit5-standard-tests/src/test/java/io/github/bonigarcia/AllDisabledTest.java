@@ -23,11 +23,11 @@ import org.junit.jupiter.api.Test;
 class AllDisabledTest {
 
     @Test
-    void skippedTest1() {
+    void skippedTestOne() {
     }
 
     @Test
-    void skippedTest2() {
+    void skippedTestTwo() {
     }
 
 }

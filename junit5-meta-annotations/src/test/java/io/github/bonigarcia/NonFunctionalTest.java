@@ -22,25 +22,25 @@ class NonFunctionalTest {
 
     @Test
     @Load
-    void test1() {
+    void testOne() {
         System.out.println("Non-Functional Test 1 (Performance/Load)");
     }
 
     @Test
     @Stress
-    void test2() {
+    void testTwo() {
         System.out.println("Non-Functional Test 2 (Performance/Stress)");
     }
 
     @Test
     @Security
-    void test3() {
+    void testThree() {
         System.out.println("Non-Functional Test 2 (Security)");
     }
 
     @Test
     @Usability
-    void test4() {
+    void testFour() {
         System.out.println("Non-Functional Test 2 (Usability)");
     }
 

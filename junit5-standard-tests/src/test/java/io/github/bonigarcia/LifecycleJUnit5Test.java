@@ -35,12 +35,12 @@ class LifecycleJUnit5Test {
     }
 
     @Test
-    void test1() {
+    void testOne() {
         System.out.println("TEST 1");
     }
 
     @Test
-    void test2() {
+    void testTwo() {
         System.out.println("TEST 2");
     }
 

@@ -32,7 +32,7 @@ public class MyTheoryTest {
     }
 
     @Theory
-    public void test(int a, int b) {
+    public void testSum(int a, int b) {
         System.out.println("Checking " + a + "+" + b);
         assertTrue(a + b > a);
         assertTrue(a + b > b);

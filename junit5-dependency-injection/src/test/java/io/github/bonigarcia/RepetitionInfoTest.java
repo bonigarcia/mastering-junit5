@@ -22,7 +22,7 @@ import org.junit.jupiter.api.RepetitionInfo;
 class RepetitionInfoTest {
 
     @RepeatedTest(2)
-    void test1(RepetitionInfo repetitionInfo) {
+    void test(RepetitionInfo repetitionInfo) {
         System.out.println("** Test " + repetitionInfo.getCurrentRepetition()
                 + "/" + repetitionInfo.getTotalRepetitions());
     }

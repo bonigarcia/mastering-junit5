@@ -33,7 +33,7 @@ class TestInfoTest {
     @Test
     @DisplayName("My test")
     @Tag("my-tag")
-    void test1(TestInfo testInfo) {
+    void testOne(TestInfo testInfo) {
         System.out.println(testInfo.getDisplayName());
         System.out.println(testInfo.getTags());
         System.out.println(testInfo.getTestClass());
@@ -41,7 +41,7 @@ class TestInfoTest {
     }
 
     @Test
-    void test2() {
+    void testTwo() {
     }
 
 }

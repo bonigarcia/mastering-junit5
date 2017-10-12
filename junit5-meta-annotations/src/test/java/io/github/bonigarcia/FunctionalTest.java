@@ -22,12 +22,12 @@ import org.junit.jupiter.api.Test;
 class FunctionalTest {
 
     @Test
-    void test1() {
+    void testOne() {
         System.out.println("Functional Test 1");
     }
 
     @Test
-    void test2() {
+    void testTwo() {
         System.out.println("Functional Test 2");
     }
 

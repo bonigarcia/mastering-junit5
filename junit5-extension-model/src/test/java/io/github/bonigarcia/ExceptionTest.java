@@ -25,12 +25,12 @@ public class ExceptionTest {
 
     @ExtendWith(IgnoreIOExceptionExtension.class)
     @Test
-    public void test1() throws IOException {
+    public void firstTest() throws IOException {
         throw new IOException("IO Exception");
     }
 
     @Test
-    public void test2() throws IOException {
+    public void secondTest() throws IOException {
         throw new IOException("My IO Exception");
     }
 

@@ -24,20 +24,20 @@ import java.util.Collection;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 
 @RunWith(Parameterized.class)
-public class TestParameterized1 {
+public class TestParameterized {
 
+    @Parameter(0)
     public int input1;
-    public int input2;
-    public int sum;
 
-    public TestParameterized1(int input1, int input2, int sum) {
-        this.input1 = input1;
-        this.input2 = input2;
-        this.sum = sum;
-    }
+    @Parameter(1)
+    public int input2;
+
+    @Parameter(2)
+    public int sum;
 
     @Parameters(name = "{index}: input1={0} input2={1} sum={2}?")
     public static Collection<Object[]> data() {
@@ -46,7 +46,7 @@ public class TestParameterized1 {
     }
 
     @Test
-    public void test1() {
+    public void testSum() {
         assertTrue(input1 + "+" + input2 + " is not " + sum,
                 input1 + input2 == sum);
     }

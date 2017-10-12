@@ -25,26 +25,26 @@ class NonFunctionalTest {
     @Test
     @Tag("performance")
     @Tag("load")
-    void test1() {
+    void testOne() {
         System.out.println("Non-Functional Test 1 (Performance/Load)");
     }
 
     @Test
     @Tag("performance")
     @Tag("stress")
-    void test2() {
+    void testTwo() {
         System.out.println("Non-Functional Test 2 (Performance/Stress)");
     }
 
     @Test
     @Tag("security")
-    void test3() {
+    void testThree() {
         System.out.println("Non-Functional Test 3 (Security)");
     }
 
     @Test
     @Tag("usability")
-    void test4() {
+    void testFour() {
         System.out.println("Non-Functional Test 4 (Usability)");
     }
 
