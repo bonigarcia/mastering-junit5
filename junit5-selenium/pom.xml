@@ -9,7 +9,7 @@
         <!-- Dependency versions -->
         <junit.jupiter.version>5.0.0</junit.jupiter.version>
         <junit.platform.version>1.0.0</junit.platform.version>
-        <selenium-jupiter.version>1.1.0</selenium-jupiter.version>
+        <selenium-jupiter.version>1.1.2</selenium-jupiter.version>
         <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
 
         <!-- Java 8 -->
