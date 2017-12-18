@@ -1,8 +1,8 @@
-# [![][Logo]][GitHub Repository]
-
 [![License badge](https://img.shields.io/badge/license-Apache2-green.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 [![Support badge](https://img.shields.io/badge/support-sof-green.svg)](http://stackoverflow.com/questions/tagged/junit5)
-[![Twitter Follow](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/boni_gg)
+[![Twitter](https://img.shields.io/badge/follow-@boni_gg-green.svg)](https://twitter.com/boni_gg)
+
+# [![][Logo]][GitHub Repository]
 
 This repository contains code examples of [JUnit 5] for the book [Mastering JUnit 5], authored by [Boni Garcia] and published by [Packt]. These examples covers the main features of JUnit 5, containing:
 
