@@ -22,13 +22,10 @@ import java.util.stream.Stream;
 
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.TestFactory;
-import org.junit.jupiter.api.extension.ExtendWith;
 
 import cucumber.api.CucumberOptions;
-import cucumber.api.junit.jupiter.CucumberExtension;
 
 @CucumberOptions(plugin = { "pretty" })
-@ExtendWith(CucumberExtension.class)
 public class CucumberTest {
 
     @TestFactory

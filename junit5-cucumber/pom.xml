@@ -9,7 +9,7 @@
         <!-- Dependency versions -->
         <junit.jupiter.version>5.0.0-M4</junit.jupiter.version>
         <junit.platform.version>1.0.0-M4</junit.platform.version>
-        <cucumber.version>1.2.6-SNAPSHOT</cucumber.version>
+        <cucumber.version>2.3.1</cucumber.version>
         <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
 
         <!-- Java 8 -->
@@ -30,14 +30,8 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>info.cukes</groupId>
+            <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>${cucumber.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-jupiter</artifactId>
             <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
