@@ -16,7 +16,8 @@ repositories {
 
 ext {
     junitJupiterVersion  = '5.0.0'
-    seleniumJupiterVersion  = '1.1.2'
+    seleniumJupiterVersion  = '2.0.0'
+    htmlUnitDriver = '2.28.2'
 }
 
 apply plugin: 'java'
@@ -38,5 +39,6 @@ compileTestJava {
 dependencies {
     testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
     testCompile("io.github.bonigarcia:selenium-jupiter:${seleniumJupiterVersion}")
+    testCompile("org.seleniumhq.selenium:htmlunit-driver:${htmlUnitDriver}")
     testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
 }

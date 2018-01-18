@@ -24,7 +24,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 
 @ExtendWith(SeleniumExtension.class)
@@ -38,13 +37,10 @@ public class LocalWebDriverTest {
     }
 
     @Test
-    public void testWithFirefoxAndOpera(FirefoxDriver firefox,
-            OperaDriver opera) {
+    public void testWithFirefox(FirefoxDriver firefox) {
         firefox.get("http://www.seleniumhq.org/");
-        opera.get("http://junit.org/junit5/");
 
         assertTrue(firefox.getTitle().startsWith("Selenium"));
-        assertTrue(opera.getTitle().equals("JUnit 5"));
     }
 
     @Test

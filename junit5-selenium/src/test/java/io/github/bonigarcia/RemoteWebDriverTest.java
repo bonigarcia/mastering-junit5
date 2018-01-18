@@ -27,10 +27,9 @@ public class RemoteWebDriverTest {
 
     @Test
     void testWithRemoteChrome(
-            @DriverUrl("http://localhost:4444/wd/hub") @DriverCapabilities(capability = {
-                    @Capability(name = "browserName", value = "chrome"),
-                    @Capability(name = "version", value = "59") }) RemoteWebDriver remoteChrome)
-            throws InterruptedException {
+            @DriverUrl("http://localhost:4444/wd/hub") @DriverCapabilities({
+                    "browserName=chrome",
+                    "version=59" }) RemoteWebDriver remoteChrome) {
 
         remoteChrome.get("https://bonigarcia.github.io/selenium-jupiter/");
 
