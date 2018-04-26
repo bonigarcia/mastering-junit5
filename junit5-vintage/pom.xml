@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.bonigarcia</groupId>
@@ -6,23 +7,20 @@
     <version>1.0.0</version>
 
     <properties>
-        <!-- Dependency versions -->
         <junit.legacy.version>4.12</junit.legacy.version>
         <junit.vintage.version>4.12.0</junit.vintage.version>
         <junit.platform.version>1.0.0</junit.platform.version>
         <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
 
-        <!-- Java 8 -->
         <java.version>1.8</java.version>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven.compiler.source>${java.version}</maven.compiler.source>
 
-        <!-- Encoding -->
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <project.encondig>UTF-8</project.encondig>
+        <project.build.sourceEncoding>${project.encondig}</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${project.encondig}</project.reporting.outputEncoding>
     </properties>
 
-    <!-- Legacy JUnit 4.12 -->
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -32,7 +30,6 @@
         </dependency>
     </dependencies>
 
-    <!-- Maven Surefire plugin to run tests -->
     <build>
         <plugins>
             <plugin>
