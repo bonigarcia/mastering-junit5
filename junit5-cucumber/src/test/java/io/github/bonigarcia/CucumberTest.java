@@ -16,22 +16,8 @@
  */
 package io.github.bonigarcia;
 
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-import org.junit.jupiter.api.DynamicTest;
-import org.junit.jupiter.api.TestFactory;
-
-import cucumber.api.CucumberOptions;
-
-@CucumberOptions(plugin = { "pretty" })
 public class CucumberTest {
 
-    @TestFactory
-    public Stream<DynamicTest> runTests(Stream<DynamicTest> scenarios) {
-        List<DynamicTest> tests = scenarios.collect(Collectors.toList());
-        return tests.stream();
-    }
+    // TODO: see https://github.com/cucumber/cucumber-jvm/issues/1149
 
 }
