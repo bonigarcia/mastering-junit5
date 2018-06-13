@@ -30,7 +30,7 @@ Moreover, the integration with third-party frameworks and technologies is also i
 
 # About
 
-This is a project made by [Boni Garcia], Assistant Professor at [U-tad] and Researcher at [Universidad Rey Juan Carlos], Spain. Copyright &copy; 2017.
+This is a project made by [Boni Garcia], Assistant Professor at [U-tad] and Researcher at [Universidad Rey Juan Carlos], Spain. Copyright &copy; 2017-2018.
 
 [JUnit 5]: http://junit.org/junit5/
 [Boni Garcia]: http://bonigarcia.github.io/
