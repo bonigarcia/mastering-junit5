@@ -6,18 +6,16 @@
     <version>1.0.0</version>
 
     <properties>
-        <!-- Dependency versions -->
         <spring.version>4.3.10.RELEASE</spring.version>
         <junit.version>4.12</junit.version>
 
-        <!-- Java 8 -->
         <java.version>1.8</java.version>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven.compiler.source>${java.version}</maven.compiler.source>
 
-        <!-- Encoding -->
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <project.encondig>UTF-8</project.encondig>
+        <project.build.sourceEncoding>${project.encondig}</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${project.encondig}</project.reporting.outputEncoding>
     </properties>
 
     <dependencies>
