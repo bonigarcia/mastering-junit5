@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        junitPlatformVersion = '1.0.0-M4'
+        junitPlatformVersion = '1.1.1'
     }
     repositories {
         jcenter()
@@ -16,8 +16,8 @@ repositories {
 }
 
 ext {
-    junitJupiterVersion = '5.0.0-M4'
-    allureJUnit5Version = '2.0-BETA17'
+    junitJupiterVersion = '5.1.1'
+    allureJUnit5Version = '2.6.0'
     aspectjVersion = '1.8.10'
 }
 

@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        junitPlatformVersion = '1.0.0'
+        junitPlatformVersion = '1.1.1'
     }
     repositories {
         mavenCentral()
@@ -15,7 +15,7 @@ repositories {
 }
 
 ext {
-    junitJupiterVersion  = '5.0.0'
+    junitJupiterVersion  = '5.1.1'
 }
 
 apply plugin: 'java'
@@ -35,6 +35,5 @@ compileTestJava {
 }
 
 dependencies {
-    compile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
-    runtime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    compile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
 }
