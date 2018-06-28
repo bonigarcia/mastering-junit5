@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>mastering-junit5-parent</artifactId>
+    <version>1.0.0</version>
+
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>junit3</module>
+        <module>junit4</module>
+        <module>junit4-cucumber</module>
+        <module>junit4-mockito</module>
+        <module>junit4-spring</module>
+        <module>junit4-spring-boot</module>
+        <module>junit5-allure</module>
+        <module>junit5-assertions</module>
+        <module>junit5-conditional-tests</module>
+        <module>junit5-console-launcher</module>
+        <module>junit5-cucumber</module>
+        <module>junit5-dependency-injection</module>
+        <module>junit5-docker</module>
+        <module>junit5-dynamic-tests</module>
+        <module>junit5-engine-spi</module>
+        <module>junit5-extension-model</module>
+        <module>junit5-hello-world</module>
+        <module>junit5-junit4-runner</module>
+        <module>junit5-launcher-api</module>
+        <module>junit5-meta-annotations</module>
+        <module>junit5-migration-support</module>
+        <module>junit5-mockito</module>
+        <module>junit5-nested-tests</module>
+        <module>junit5-parameterized</module>
+        <module>junit5-repeated-tests</module>
+        <module>junit5-reporting</module>
+        <module>junit5-rest-assured</module>
+        <module>junit5-selenium</module>
+        <module>junit5-spring</module>
+        <module>junit5-spring-boot</module>
+        <module>junit5-spring-boot-rest</module>
+        <module>junit5-spring-boot-web</module>
+        <module>junit5-standard-tests</module>
+        <module>junit5-tagging-filtering</module>
+        <module>junit5-test-interfaces</module>
+        <module>junit5-test-templates</module>
+        <module>junit5-vintage</module>
+        <module>junit5-wiremock</module>
+    </modules>
+
+</project>
