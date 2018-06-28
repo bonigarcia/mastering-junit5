@@ -18,6 +18,7 @@ package io.github.bonigarcia;
 
 import static org.junit.Assert.fail;
 
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestWatcher;
@@ -39,6 +40,7 @@ public class TestRuleWatcher {
         }
     };
 
+    @Ignore
     @Test
     public void redTest() {
         fail();

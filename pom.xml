@@ -3,7 +3,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.bonigarcia</groupId>
-    <artifactId>mastering-junit5-parent</artifactId>
+    <artifactId>mastering-junit5</artifactId>
     <version>1.0.0</version>
 
     <packaging>pom</packaging>
@@ -23,7 +23,6 @@
         <module>junit5-dependency-injection</module>
         <module>junit5-docker</module>
         <module>junit5-dynamic-tests</module>
-        <module>junit5-engine-spi</module>
         <module>junit5-extension-model</module>
         <module>junit5-hello-world</module>
         <module>junit5-junit4-runner</module>

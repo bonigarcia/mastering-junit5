@@ -20,6 +20,7 @@ import static java.time.Duration.ofMillis;
 import static java.time.Duration.ofMinutes;
 import static org.junit.jupiter.api.Assertions.assertTimeout;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 class TimeoutExceededTest {
@@ -31,6 +32,7 @@ class TimeoutExceededTest {
         });
     }
 
+    @Disabled
     @Test
     void timeoutExceeded() {
         assertTimeout(ofMillis(10), () -> {

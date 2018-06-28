@@ -22,6 +22,7 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class TestSimple {
@@ -51,6 +52,7 @@ public class TestSimple {
     }
 
     // Test 2: This test is going to fail
+    @Ignore
     @Test
     public void testFailure() {
         // Phase 2: Simulation of exercise

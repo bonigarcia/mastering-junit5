@@ -21,6 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import com.github.junit5docker.Docker;
@@ -33,8 +34,9 @@ import com.github.junit5docker.WaitFor;
         @Environment(key = "MYSQL_DATABASE", value = "testdb"),
         @Environment(key = "MYSQL_USER", value = "testuser"),
         @Environment(key = "MYSQL_PASSWORD", value = "secret"), }, waitFor = @WaitFor("mysqld: ready for connections"))
-public class DockerTest {
+class DockerTest {
 
+    @Disabled
     @Test
     void test() throws Exception {
         Class.forName("com.mysql.jdbc.Driver");

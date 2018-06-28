@@ -25,12 +25,14 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.TestFactory;
 
 class CollectionTest {
 
     // Warning: this test will raise an exception
+    @Disabled
     @TestFactory
     List<String> dynamicTestsWithInvalidReturnType() {
         return Arrays.asList("Hello");

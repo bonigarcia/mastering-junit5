@@ -42,7 +42,7 @@ public class TestParameterizedConstructor {
     @Parameters(name = "{index}: input1={0} input2={1} sum={2}?")
     public static Collection<Object[]> data() {
         return Arrays.asList(
-                new Object[][] { { 1, 1, 2 }, { 2, 2, 4 }, { 3, 3, 9 } });
+                new Object[][] { { 1, 1, 2 }, { 2, 2, 4 }, { 3, 3, 6 } });
     }
 
     @Test

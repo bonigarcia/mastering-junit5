@@ -24,12 +24,14 @@ import java.util.Iterator;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.TestFactory;
 import org.junit.jupiter.api.function.ThrowingConsumer;
 
 class StreamExampleTest {
 
+    @Disabled
     @TestFactory
     Stream<DynamicTest> streamTest() {
         // Input data

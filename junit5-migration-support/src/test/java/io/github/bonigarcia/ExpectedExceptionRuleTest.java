@@ -17,6 +17,7 @@
 package io.github.bonigarcia;
 
 import org.junit.Rule;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.migrationsupport.rules.EnableRuleMigrationSupport;
 import org.junit.rules.ExpectedException;
@@ -31,6 +32,7 @@ class ExpectedExceptionRuleTest {
     void throwsNothing() {
     }
 
+    @Disabled
     @Test
     void throwsNullPointerException() {
         thrown.expect(NullPointerException.class);

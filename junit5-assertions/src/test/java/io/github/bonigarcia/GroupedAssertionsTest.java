@@ -30,7 +30,7 @@ class GroupedAssertionsTest {
         // In a grouped assertion all assertions are executed, and any
         // failures will be reported together.
         assertAll("address", () -> assertEquals("John", address.getFirstName()),
-                () -> assertEquals("User", address.getLastName()));
+                () -> assertEquals("Smith", address.getLastName()));
     }
 
 }

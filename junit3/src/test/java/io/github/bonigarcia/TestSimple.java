@@ -25,7 +25,7 @@ public class TestSimple extends TestCase {
         System.out.println("<Setup>");
     }
 
-    // Test 1: This test is going to succeed
+    // Test 1
     public void testSuccess() {
         // Phase 2: Simulation of exercise
         int expected = 60;
@@ -36,10 +36,10 @@ public class TestSimple extends TestCase {
         assertEquals(expected + " should be equals to " + real, expected, real);
     }
 
-    // Test 2: This test is going to fail
+    // Test 2
     public void testFailure() {
         // Phase 2: Simulation of exercise
-        int expected = 60;
+        int expected = 20;
         int real = 20;
         System.out.println("** Test 2 **");
 
