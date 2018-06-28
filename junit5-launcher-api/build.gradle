@@ -15,6 +15,7 @@ repositories {
 }
 
 ext {
+    junitPlatformVersion = '1.0.0'
     junitJupiterVersion  = '5.0.0'
 }
 
@@ -35,6 +36,6 @@ compileTestJava {
 }
 
 dependencies {
-    testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
-    testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    testCompile("org.junit.platform:junit-platform-launcher:${junitPlatformVersion}")
+    testCompile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
 }

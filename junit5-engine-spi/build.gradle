@@ -3,7 +3,7 @@ repositories {
 }
 
 ext {
-    junitEngineVersion  = '1.0.0'
+	junitPlatformVersion = '1.0.0'
 }
 
 apply plugin: 'java'
@@ -22,5 +22,5 @@ compileTestJava {
 }
 
 dependencies {
-    testCompile("org.junit.platform:junit-platform-engine:${junitJupiterVersion}")
+	compile("org.junit.platform:junit-platform-engine:${junitPlatformVersion}")
 }
