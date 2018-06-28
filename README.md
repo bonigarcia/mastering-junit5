@@ -4,7 +4,7 @@
 [![License badge](https://img.shields.io/badge/license-Apache2-green.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 [![Twitter](https://img.shields.io/badge/follow-@boni_gg-green.svg)](https://twitter.com/boni_gg)
 
-This repository contains code examples of [JUnit 5] for the book [Mastering JUnit 5], authored by [Boni Garcia] and published by [Packt]. These examples covers the main features of JUnit 5, containing:
+This repository contains code examples of [JUnit 5] for the book [Mastering Software Testing with JUnit 5], authored by [Boni Garcia] and published by [Packt]. These examples covers the main features of JUnit 5, such as:
 
 * JUnit 5 tests lifecycle
 * Assertions
@@ -38,5 +38,5 @@ This is a project made by [Boni Garcia], Assistant Professor at [U-tad] and Rese
 [Universidad Rey Juan Carlos]: https://www.urjc.es/
 [Logo]: http://bonigarcia.github.io/img/mastering_junit5_logo.png
 [GitHub Repository]: https://github.com/bonigarcia/mastering-junit5
-[Mastering JUnit 5]: https://www.packtpub.com/books/info/authors/boni-garc%C3%AD
-[Packt]: https://www.packtpub.com/
+[Mastering Software Testing with JUnit 5]: https://www.amazon.com/gp/product/1787285731/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1787285731&linkCode=as2&tag=boni0a-20&linkId=a0b9a99160003dfd49a797906e8c191b
+[Packt]: https://www.packtpub.com/books/info/authors/boni-garc%C3%AD
