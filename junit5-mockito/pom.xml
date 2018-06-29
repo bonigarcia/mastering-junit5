@@ -7,7 +7,7 @@
     <version>1.0.0</version>
 
     <properties>
-        <junit-jupiter.version>5.2.0</junit-jupiter.version>
+        <junit-jupiter.version>5.3.0-M1</junit-jupiter.version>
         <mockito-junit-jupiter.version>2.19.0</mockito-junit-jupiter.version>
         <maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
 

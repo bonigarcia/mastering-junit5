@@ -3,7 +3,7 @@ repositories {
 }
 
 ext {
-    junitJupiterVersion  = '5.2.0'
+    junitJupiterVersion  = '5.3.0-M1'
 }
 
 apply plugin: 'java'
