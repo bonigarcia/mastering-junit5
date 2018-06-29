@@ -16,6 +16,7 @@ repositories {
 
 ext {
     junitJupiterVersion = '5.2.0'
+    allureJunit5Version = '2.6.0'
 }
 
 apply plugin: 'java'
@@ -48,5 +49,6 @@ compileTestJava {
 }
 
 dependencies {
+    testCompile("io.qameta.allure:allure-junit5:${allureJunit5Version}")
     testCompile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
 }
