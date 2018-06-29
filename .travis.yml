@@ -19,4 +19,4 @@ before_script:
     - sleep 3
 
 script:
-    - mvn test && gradle test
+    - gradle -v && gradle test
