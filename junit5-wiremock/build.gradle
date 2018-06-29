@@ -34,6 +34,7 @@ dependencies {
     compile("com.squareup.retrofit2:converter-gson:${retrofitVersion}")
     compile("org.slf4j:slf4j-api:${slf4jVersion}")
     compile("org.slf4j:slf4j-simple:${slf4jVersion}")
+
     testCompile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
     testCompile("com.github.tomakehurst:wiremock:${wireMockVersion}")
 }

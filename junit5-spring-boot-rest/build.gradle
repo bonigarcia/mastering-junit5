@@ -41,6 +41,7 @@ compileTestJava {
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
+
     testCompile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
