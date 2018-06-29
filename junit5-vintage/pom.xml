@@ -7,10 +7,8 @@
     <version>1.0.0</version>
 
     <properties>
-        <junit.legacy.version>4.12</junit.legacy.version>
-        <junit.vintage.version>4.12.0</junit.vintage.version>
-        <junit.platform.version>1.0.0</junit.platform.version>
-        <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
+        <junit-legacy.version>4.12</junit-legacy.version>
+        <maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
 
         <java.version>1.8</java.version>
         <maven.compiler.target>${java.version}</maven.compiler.target>
@@ -25,7 +23,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>${junit.legacy.version}</version>
+            <version>${junit-legacy.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -33,20 +31,9 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.junit.platform</groupId>
-                        <artifactId>junit-platform-surefire-provider</artifactId>
-                        <version>${junit.platform.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.junit.vintage</groupId>
-                        <artifactId>junit-vintage-engine</artifactId>
-                        <version>${junit.vintage.version}</version>
-                    </dependency>
-                </dependencies>
             </plugin>
         </plugins>
     </build>
