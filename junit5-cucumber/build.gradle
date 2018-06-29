@@ -1,34 +1,23 @@
-buildscript {
-    ext {
-        junitPlatformVersion = '1.0.0-M4'
-    }
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.junit.platform:junit-platform-gradle-plugin:${junitPlatformVersion}")
-    }
-}
-
 repositories {
     mavenCentral()
-    mavenLocal()
 }
 
 ext {
-    junitJupiterVersion  = '5.0.0-M4'
-    seleniumJupiterVersion  = '1.1.0'
+    junitJupiterVersion  = '5.2.0'
     cucumberVersion = '2.3.1'
 }
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
-apply plugin: 'org.junit.platform.gradle.plugin'
 
 jar {
     baseName = 'junit5-cucumber'
     version = '1.0.0'
+}
+
+test {
+    useJUnitPlatform()
 }
 
 compileTestJava {
@@ -38,7 +27,6 @@ compileTestJava {
 }
 
 dependencies {
-    testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
+    testCompile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
     testCompile("io.cucumber:cucumber-java:${cucumberVersion}")
-    testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
 }

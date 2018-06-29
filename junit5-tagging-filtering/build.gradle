@@ -1,31 +1,34 @@
-buildscript {
-    ext {
-        junitPlatformVersion = '1.1.1'
-    }
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.junit.platform:junit-platform-gradle-plugin:${junitPlatformVersion}")
-    }
-}
-
 repositories {
     mavenCentral()
 }
 
 ext {
-    junitJupiterVersion  = '5.1.1'
+    junitJupiterVersion  = '5.2.0'
 }
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
-apply plugin: 'org.junit.platform.gradle.plugin'
 
 jar {
     baseName = 'junit5-tagging-filtering'
     version = '1.0.0'
+}
+
+test {
+    useJUnitPlatform {
+        includeTags 'non-functional'
+        excludeTags 'functional'
+        includeEngines 'junit-jupiter'
+        excludeEngines 'junit-vintage'
+    }
+    
+    filter {
+        includeTestsMatching '.*Spec'
+        includeTestsMatching '.*Test'
+        includeTestsMatching '.*Tests'
+        includeTestsMatching 'io.github.bonigarcia.*'
+    }
 }
 
 compileTestJava {
@@ -35,25 +38,5 @@ compileTestJava {
 }
 
 dependencies {
-    testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
-    testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
-}
-
-junitPlatform {
-    filters {
-        engines {
-            include 'junit-jupiter'
-            exclude 'junit-vintage'
-        }
-        tags {
-            include 'non-functional'
-            exclude 'functional'
-        }
-        packages {
-            include 'io.github.bonigarcia'
-            exclude 'com.others', 'org.others'
-        }
-        includeClassNamePattern '.*Spec'
-        includeClassNamePatterns '.*Test', '.*Tests'
-    }
+    testCompile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
 }

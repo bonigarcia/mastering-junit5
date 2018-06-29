@@ -1,35 +1,23 @@
-buildscript {
-    ext {
-        junitPlatformVersion = '1.1.1'
-    }
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.junit.platform:junit-platform-gradle-plugin:${junitPlatformVersion}")
-    }
-}
-
 repositories {
     mavenCentral()
-    maven {
-        url "https://repo.spring.io/libs-milestone"
-    }
 }
 
 ext {
-    junitJupiterVersion  = '5.1.1'
-    springVersion = '5.0.0.RC3'
+    junitJupiterVersion  = '5.2.0'
+    springVersion = '5.0.5.RELEASE'
 }
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
-apply plugin: 'org.junit.platform.gradle.plugin'
 
 jar {
     baseName = 'junit5-spring'
     version = '1.0.0'
+}
+
+test {
+    useJUnitPlatform()
 }
 
 compileTestJava {
@@ -41,6 +29,5 @@ compileTestJava {
 dependencies {
     compile("org.springframework:spring-context:${springVersion}")
     testCompile("org.springframework:spring-test:${springVersion}")
-    testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
-    testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    testCompile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
 }
