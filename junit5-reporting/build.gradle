@@ -17,7 +17,11 @@ jar {
 
 test {
     useJUnitPlatform()
-    
+
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+
     reports.junitXml.enabled = true
     reports.html.enabled = true
 }

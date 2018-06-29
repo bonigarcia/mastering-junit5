@@ -29,6 +29,10 @@ test {
         includeTestsMatching '.*Tests'
         includeTestsMatching 'io.github.bonigarcia.*'
     }
+
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
 
 compileTestJava {
