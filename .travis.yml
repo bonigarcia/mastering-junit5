@@ -8,7 +8,7 @@ addons:
 
 install:
     - sudo apt-add-repository "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
-    - sudo apt-add-repository "ppa:cwchien/gradle"
+    - sudo apt-add-repository ppa:cwchien/gradle -y
     - sudo sed -i s/deb-src.*google.*//g /etc/apt/sources.list
     - wget -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
     - sudo apt-get update -qq
