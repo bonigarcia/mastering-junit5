@@ -1,6 +1,6 @@
 language: java
+jdk: oraclejdk8
 sudo: false
-dist: trusty
 install: true
 
 addons:
@@ -8,16 +8,19 @@ addons:
 
 install:
     - sudo apt-add-repository "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
-    - sudo apt-add-repository ppa:cwchien/gradle -y
     - sudo sed -i s/deb-src.*google.*//g /etc/apt/sources.list
     - wget -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
     - sudo apt-get update -qq
-    - sudo apt-get install -y google-chrome-stable gradle
+    - sudo apt-get install -y google-chrome-stable
 
 before_script:
     - export DISPLAY=:99.0
     - sh -e /etc/init.d/xvfb start &
     - sleep 3
 
-script:
-    - gradle -v && gradle test
+jobs:
+    include:
+        - stage: Maven
+          script: mvn test
+        - stage: Gradle
+          script: gradle -v
