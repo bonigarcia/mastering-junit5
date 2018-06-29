@@ -1,9 +1,6 @@
-# [![][Logo]][GitHub Repository]
+# JUnit5 with Allure reports example
 
-
-## junit5-allure
-
-Execute the JUnit 5 tests and get the Allure report as follows. With Maven:
+With this example, you can execute the JUnit 5 tests defined in the project and get the Allure report in a easy way. With Maven:
 
 ```
 mvn test allure:serve
@@ -14,6 +11,3 @@ mvn test allure:serve
 ```
 gradle test allureServe
 ```
-
-[Logo]: http://bonigarcia.github.io/img/mastering_junit5_logo.png
-[GitHub Repository]: https://github.com/bonigarcia/mastering-junit5
