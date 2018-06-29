@@ -16,6 +16,7 @@ repositories {
 
 ext {
     junitJupiterVersion  = '5.2.0'
+    mockitoJupiterVersion = '2.19.0'
 }
 
 apply plugin: 'java'
@@ -42,6 +43,7 @@ compileTestJava {
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
 
-    testCompile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
     testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    testCompile("org.mockito:mockito-junit-jupiter:${mockitoJupiterVersion}")
 }

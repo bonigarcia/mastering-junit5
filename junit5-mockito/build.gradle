@@ -4,7 +4,7 @@ repositories {
 
 ext {
     junitJupiterVersion  = '5.2.0'
-    mockitoVersion  = '2.8.47'
+    mockitoJupiterVersion = '2.19.0'
 }
 
 apply plugin: 'java'
@@ -28,5 +28,5 @@ compileTestJava {
 
 dependencies {
     testCompile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
-    testCompile("org.mockito:mockito-core:${mockitoVersion}")
+    testCompile("org.mockito:mockito-junit-jupiter:${mockitoJupiterVersion}")
 }
