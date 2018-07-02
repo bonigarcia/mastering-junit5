@@ -22,6 +22,6 @@ before_script:
 jobs:
     include:
         - stage: Maven
-          script: mvn test
+          script: mvn verify
         - stage: Gradle
           script: ./gradlew test
