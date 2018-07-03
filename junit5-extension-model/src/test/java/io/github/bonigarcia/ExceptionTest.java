@@ -24,7 +24,7 @@ import org.junit.jupiter.api.extension.RegisterExtension;
 public class ExceptionTest {
 
     @RegisterExtension
-    IgnoreIOExceptionExtension ignoreIOExceptionExtension = new IgnoreIOExceptionExtension();
+    static IgnoreIOExceptionExtension ignoreIOExceptionExtension = new IgnoreIOExceptionExtension();
 
     @Test
     public void firstTest() throws IOException {
