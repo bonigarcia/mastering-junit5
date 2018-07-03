@@ -18,19 +18,19 @@ package io.github.bonigarcia;
 
 import java.io.IOException;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.api.extension.RegisterExtension;
 
 public class ExceptionTest {
 
-    @ExtendWith(IgnoreIOExceptionExtension.class)
+    @RegisterExtension
+    static IgnoreIOExceptionExtension ignoreIOExceptionExtension = new IgnoreIOExceptionExtension();
+
     @Test
     public void firstTest() throws IOException {
         throw new IOException("IO Exception");
     }
 
-    @Disabled
     @Test
     public void secondTest() throws IOException {
         throw new IOException("My IO Exception");
