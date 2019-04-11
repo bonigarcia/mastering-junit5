@@ -3,10 +3,10 @@ package io.github.bonigarcia;
 
 import org.junit.jupiter.api.Test;
 
-public class DummyTest {
+class DummyTest {
 
     @Test
-    public void test() {
+    void test() {
     }
 
 }

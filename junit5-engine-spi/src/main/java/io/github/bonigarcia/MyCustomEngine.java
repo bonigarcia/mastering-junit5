@@ -8,9 +8,9 @@ import org.junit.platform.engine.TestEngine;
 import org.junit.platform.engine.UniqueId;
 import org.junit.platform.engine.support.descriptor.EngineDescriptor;
 
-public class MyCustomEngine implements TestEngine {
+class MyCustomEngine implements TestEngine {
 
-    public static final String ENGINE_ID = "my-custom-engine";
+    private static final String ENGINE_ID = "my-custom-engine";
 
     @Override
     public String getId() {
@@ -21,9 +21,8 @@ public class MyCustomEngine implements TestEngine {
     public TestDescriptor discover(EngineDiscoveryRequest discoveryRequest,
             UniqueId uniqueId) {
         // Discover test(s) and return a TestDescriptor object
-        TestDescriptor testDescriptor = new EngineDescriptor(uniqueId,
+        return new EngineDescriptor(uniqueId,
                 "My test");
-        return testDescriptor;
     }
 
     @Override

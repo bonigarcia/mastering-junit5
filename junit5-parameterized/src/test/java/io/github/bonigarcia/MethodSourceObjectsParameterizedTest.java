@@ -1,12 +1,12 @@
 
 package io.github.bonigarcia;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.MethodSource;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class MethodSourceObjectsParameterizedTest {
 
@@ -29,7 +29,7 @@ class MethodSourceObjectsParameterizedTest {
         String name;
         String surname;
 
-        public Person(String name, String surname) {
+        Person(String name, String surname) {
             this.name = name;
             this.surname = surname;
         }

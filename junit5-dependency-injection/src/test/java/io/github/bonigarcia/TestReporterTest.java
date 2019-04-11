@@ -1,10 +1,10 @@
 
 package io.github.bonigarcia;
 
-import java.util.HashMap;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestReporter;
+
+import java.util.HashMap;
 
 class TestReporterTest {
 

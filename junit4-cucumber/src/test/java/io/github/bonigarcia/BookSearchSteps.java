@@ -1,20 +1,20 @@
 
 package io.github.bonigarcia;
 
-import static org.junit.Assert.assertEquals;
-
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 import cucumber.api.Format;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+
 public class BookSearchSteps {
-    Library library = new Library();
-    List<Book> result = new ArrayList<>();
+    private Library library = new Library();
+    private List<Book> result = new ArrayList<>();
 
     @Given(".+book with the title '(.+)', written by '(.+)', published in (.+)")
     public void addNewBook(final String title, final String author,

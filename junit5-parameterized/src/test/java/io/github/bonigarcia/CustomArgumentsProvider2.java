@@ -1,13 +1,13 @@
 
 package io.github.bonigarcia;
 
-import java.util.stream.Stream;
-
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.ArgumentsProvider;
 
-public class CustomArgumentsProvider2 implements ArgumentsProvider {
+import java.util.stream.Stream;
+
+class CustomArgumentsProvider2 implements ArgumentsProvider {
 
     @Override
     public Stream<? extends Arguments> provideArguments(

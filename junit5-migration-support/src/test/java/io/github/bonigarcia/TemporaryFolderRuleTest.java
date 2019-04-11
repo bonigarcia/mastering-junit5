@@ -1,14 +1,14 @@
 
 package io.github.bonigarcia;
 
-import java.io.IOException;
-
 import org.junit.Rule;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.migrationsupport.rules.EnableRuleMigrationSupport;
 import org.junit.rules.TemporaryFolder;
+
+import java.io.IOException;
 
 @EnableRuleMigrationSupport
 class TemporaryFolderRuleTest {

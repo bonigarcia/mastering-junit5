@@ -1,10 +1,10 @@
 
 package io.github.bonigarcia;
 
-public class UserForm {
+class UserForm {
 
-    public String username;
-    public String password;
+    private String username;
+    private String password;
 
     public UserForm(String username, String password) {
         this.username = username;

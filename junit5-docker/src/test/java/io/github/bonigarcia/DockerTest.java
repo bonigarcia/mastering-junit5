@@ -1,18 +1,17 @@
 
 package io.github.bonigarcia;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
-
 import com.github.junit5docker.Docker;
 import com.github.junit5docker.Environment;
 import com.github.junit5docker.Port;
 import com.github.junit5docker.WaitFor;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 @Docker(image = "mysql", ports = @Port(exposed = 8801, inner = 3306), environments = {
         @Environment(key = "MYSQL_ROOT_PASSWORD", value = "root"),

@@ -2,7 +2,7 @@ package io.github.bonigarcia;
 
 import java.util.Date;
 
-public class Book {
+class Book {
 
     private String title;
     private String author;

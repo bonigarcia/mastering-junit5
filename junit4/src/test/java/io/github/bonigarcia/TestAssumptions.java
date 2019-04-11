@@ -1,9 +1,9 @@
 
 package io.github.bonigarcia;
 
-import static org.junit.Assume.assumeFalse;
-
 import org.junit.Test;
+
+import static org.junit.Assume.assumeFalse;
 
 public class TestAssumptions {
 

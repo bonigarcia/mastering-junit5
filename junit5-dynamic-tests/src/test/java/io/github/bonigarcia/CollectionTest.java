@@ -1,18 +1,19 @@
 
 package io.github.bonigarcia;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.DynamicTest.dynamicTest;
-
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.TestFactory;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 
 class CollectionTest {
 
@@ -20,7 +21,7 @@ class CollectionTest {
     @Disabled
     @TestFactory
     List<String> dynamicTestsWithInvalidReturnType() {
-        return Arrays.asList("Hello");
+        return Collections.singletonList("Hello");
     }
 
     @TestFactory

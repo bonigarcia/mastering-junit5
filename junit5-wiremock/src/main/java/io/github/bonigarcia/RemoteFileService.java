@@ -1,8 +1,6 @@
 
 package io.github.bonigarcia;
 
-import java.io.IOException;
-
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Response;
@@ -10,7 +8,9 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RemoteFileService {
+import java.io.IOException;
+
+class RemoteFileService {
 
     private RemoteFileApi remoteFileApi;
 

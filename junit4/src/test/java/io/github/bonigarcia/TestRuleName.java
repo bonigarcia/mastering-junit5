@@ -1,11 +1,11 @@
 
 package io.github.bonigarcia;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
+
+import static org.junit.Assert.assertEquals;
 
 public class TestRuleName {
 

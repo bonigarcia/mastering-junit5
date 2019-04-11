@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 
 public interface TestLifecycleLogger {
 
-    static final Logger log = LoggerFactory
+    Logger log = LoggerFactory
             .getLogger(TestLifecycleLogger.class.getName());
 
     @BeforeAll

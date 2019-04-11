@@ -1,8 +1,8 @@
 
 package io.github.bonigarcia;
 
-public class LoginController {
-    public LoginService loginService;
+class LoginController {
+    private LoginService loginService;
 
     public String login(UserForm userForm) {
         System.out.println("LoginController.login " + userForm);

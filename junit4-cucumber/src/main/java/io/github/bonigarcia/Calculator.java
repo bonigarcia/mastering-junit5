@@ -1,13 +1,13 @@
 package io.github.bonigarcia;
 
-import static java.util.Arrays.asList;
-
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Calculator {
-    private final Deque<Number> stack = new LinkedList<Number>();
+import static java.util.Arrays.asList;
+
+class Calculator {
+    private final Deque<Number> stack = new LinkedList<>();
     private static final List<String> OPS = asList("-", "+", "*", "/");
 
     public void push(Object arg) {

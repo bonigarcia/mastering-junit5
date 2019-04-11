@@ -18,7 +18,7 @@ package io.github.bonigarcia;
 
 import org.junit.jupiter.api.Test;
 
-public class MyTest {
+class MyTest {
 
     @Test
     void myTest() {

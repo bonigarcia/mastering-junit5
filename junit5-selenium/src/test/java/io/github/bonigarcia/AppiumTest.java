@@ -1,8 +1,7 @@
 
 package io.github.bonigarcia;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
+import io.appium.java_client.AppiumDriver;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -10,13 +9,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import io.appium.java_client.AppiumDriver;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Disabled
 @ExtendWith(SeleniumExtension.class)
-public class AppiumTest {
+class AppiumTest {
 
     @DriverCapabilities
+    private
     DesiredCapabilities capabilities = new DesiredCapabilities();
     {
         capabilities.setCapability("browserName", "chrome");

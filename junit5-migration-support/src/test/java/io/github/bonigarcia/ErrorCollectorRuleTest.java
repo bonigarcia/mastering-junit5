@@ -1,13 +1,13 @@
 
 package io.github.bonigarcia;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-
 import org.junit.Rule;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.migrationsupport.rules.EnableRuleMigrationSupport;
 import org.junit.rules.ErrorCollector;
+
+import static org.hamcrest.CoreMatchers.equalTo;
 
 @EnableRuleMigrationSupport
 class ErrorCollectorRuleTest {

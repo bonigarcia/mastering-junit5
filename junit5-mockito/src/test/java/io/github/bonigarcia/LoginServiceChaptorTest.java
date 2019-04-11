@@ -1,9 +1,6 @@
 
 package io.github.bonigarcia;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.verify;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
@@ -11,6 +8,9 @@ import org.mockito.Captor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
 class LoginServiceChaptorTest {
@@ -24,7 +24,7 @@ class LoginServiceChaptorTest {
     @Captor
     ArgumentCaptor<UserForm> argCaptor;
 
-    UserForm userForm = new UserForm("foo", "bar");
+    private UserForm userForm = new UserForm("foo", "bar");
 
     @Test
     void testArgumentCaptor() {

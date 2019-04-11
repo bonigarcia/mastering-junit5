@@ -4,9 +4,9 @@ package io.github.bonigarcia;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LoginRepository {
+class LoginRepository {
 
-    Map<String, String> users;
+    private Map<String, String> users;
 
     public LoginRepository() {
         // Users of the system are stored in this map (key=username,

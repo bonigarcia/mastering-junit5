@@ -1,16 +1,16 @@
 
 package io.github.bonigarcia;
 
-import java.lang.reflect.AnnotatedElement;
-import java.util.Arrays;
-import java.util.Optional;
-
 import org.junit.jupiter.api.extension.ConditionEvaluationResult;
 import org.junit.jupiter.api.extension.ExecutionCondition;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.platform.commons.util.AnnotationUtils;
 
-public class OsCondition implements ExecutionCondition {
+import java.lang.reflect.AnnotatedElement;
+import java.util.Arrays;
+import java.util.Optional;
+
+class OsCondition implements ExecutionCondition {
 
     @Override
     public ConditionEvaluationResult evaluateExecutionCondition(

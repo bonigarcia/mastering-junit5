@@ -1,12 +1,12 @@
 
 package io.github.bonigarcia;
 
-import static java.util.concurrent.TimeUnit.MILLISECONDS;
-
 import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
+
+import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
 public class TestRuleTimeout {
 

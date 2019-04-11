@@ -1,9 +1,9 @@
 
 package io.github.bonigarcia;
 
-import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 public class TestMinimal1 {
 

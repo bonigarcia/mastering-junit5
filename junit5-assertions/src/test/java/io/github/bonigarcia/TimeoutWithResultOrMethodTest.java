@@ -1,19 +1,17 @@
 
 package io.github.bonigarcia;
 
+import org.junit.jupiter.api.Test;
+
 import static java.time.Duration.ofMinutes;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTimeout;
-
-import org.junit.jupiter.api.Test;
 
 class TimeoutWithResultOrMethodTest {
 
     @Test
     void timeoutNotExceededWithResult() {
-        String actualResult = assertTimeout(ofMinutes(1), () -> {
-            return "hi there";
-        });
+        String actualResult = assertTimeout(ofMinutes(1), () -> "hi there");
         assertEquals("hi there", actualResult);
     }
 

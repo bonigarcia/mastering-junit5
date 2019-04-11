@@ -1,13 +1,13 @@
 
 package io.github.bonigarcia;
 
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
-
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-public class PublicRestServicesTest {
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
+
+class PublicRestServicesTest {
 
     @Disabled("http://echo.jsontest.com/ is over its serving quota from time to time")
     @Test

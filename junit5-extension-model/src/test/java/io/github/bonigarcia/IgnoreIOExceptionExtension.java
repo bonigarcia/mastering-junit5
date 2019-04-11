@@ -1,12 +1,12 @@
 
 package io.github.bonigarcia;
 
-import java.io.IOException;
-
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.TestExecutionExceptionHandler;
 
-public class IgnoreIOExceptionExtension
+import java.io.IOException;
+
+class IgnoreIOExceptionExtension
         implements TestExecutionExceptionHandler {
 
     @Override

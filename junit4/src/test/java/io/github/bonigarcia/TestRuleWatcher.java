@@ -1,13 +1,13 @@
 
 package io.github.bonigarcia;
 
-import static org.junit.Assert.fail;
-
 import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
+
+import static org.junit.Assert.fail;
 
 public class TestRuleWatcher {
 

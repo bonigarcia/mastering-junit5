@@ -1,7 +1,7 @@
 
 package io.github.bonigarcia;
 
-public class Address {
+class Address {
 
     public String firstName;
     public String lastName;

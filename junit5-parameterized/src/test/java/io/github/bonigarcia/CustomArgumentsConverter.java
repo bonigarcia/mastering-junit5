@@ -3,7 +3,7 @@ package io.github.bonigarcia;
 
 import org.junit.jupiter.params.converter.SimpleArgumentConverter;
 
-public class CustomArgumentsConverter extends SimpleArgumentConverter {
+class CustomArgumentsConverter extends SimpleArgumentConverter {
 
     @Override
     protected Object convert(Object source, Class<?> targetType) {

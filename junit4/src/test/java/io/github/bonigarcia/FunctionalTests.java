@@ -1,6 +1,6 @@
 
 package io.github.bonigarcia;
 
-public interface FunctionalTests {
+interface FunctionalTests {
 
 }

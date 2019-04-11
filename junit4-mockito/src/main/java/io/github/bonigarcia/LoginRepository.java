@@ -6,7 +6,7 @@ import java.util.Map;
 
 class LoginRepository {
 
-    Map<String, String> users;
+    private Map<String, String> users;
 
     public LoginRepository() {
         // Users of the system are stored in this map (key=username,

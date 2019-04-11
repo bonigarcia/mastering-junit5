@@ -1,22 +1,22 @@
 
 package io.github.bonigarcia;
 
-import static org.junit.Assert.assertTrue;
-
-import java.util.Arrays;
-import java.util.Collection;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
+import java.util.Arrays;
+import java.util.Collection;
+
+import static org.junit.Assert.assertTrue;
+
 @RunWith(Parameterized.class)
 public class TestParameterizedConstructor {
 
-    public int input1;
-    public int input2;
-    public int sum;
+    private int input1;
+    private int input2;
+    private int sum;
 
     public TestParameterizedConstructor(int input1, int input2, int sum) {
         this.input1 = input1;

@@ -1,12 +1,12 @@
 
 package io.github.bonigarcia;
 
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.junit.jupiter.api.Assumptions.assumeFalse;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 import static org.junit.jupiter.api.Assumptions.assumingThat;
-
-import org.junit.jupiter.api.Test;
 
 class AssumptionsTest {
 

@@ -1,15 +1,15 @@
 
 package io.github.bonigarcia;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class LoginControllerErrorTest {
@@ -20,7 +20,7 @@ class LoginControllerErrorTest {
     @Mock
     LoginService loginService;
 
-    UserForm userForm = new UserForm("foo", "bar");
+    private UserForm userForm = new UserForm("foo", "bar");
 
     @Test
     void testLoginError() {

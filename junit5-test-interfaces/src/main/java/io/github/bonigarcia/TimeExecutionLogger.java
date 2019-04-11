@@ -6,5 +6,5 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 @Tag("timed")
 @ExtendWith(TimingExtension.class)
-public interface TimeExecutionLogger {
+interface TimeExecutionLogger {
 }

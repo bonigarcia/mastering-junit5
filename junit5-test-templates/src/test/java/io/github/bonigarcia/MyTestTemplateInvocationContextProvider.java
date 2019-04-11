@@ -1,10 +1,6 @@
 
 package io.github.bonigarcia;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.Stream;
-
 import org.junit.jupiter.api.extension.Extension;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ParameterContext;
@@ -12,7 +8,11 @@ import org.junit.jupiter.api.extension.ParameterResolver;
 import org.junit.jupiter.api.extension.TestTemplateInvocationContext;
 import org.junit.jupiter.api.extension.TestTemplateInvocationContextProvider;
 
-public class MyTestTemplateInvocationContextProvider
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Stream;
+
+class MyTestTemplateInvocationContextProvider
         implements TestTemplateInvocationContextProvider {
     @Override
     public boolean supportsTestTemplate(ExtensionContext context) {

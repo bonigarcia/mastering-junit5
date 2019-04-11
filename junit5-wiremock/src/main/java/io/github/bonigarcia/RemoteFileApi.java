@@ -6,7 +6,7 @@ import retrofit2.Call;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 
-public interface RemoteFileApi {
+interface RemoteFileApi {
 
     @POST("/api/v1/paths/{file}/open-file")
     Call<ResponseBody> openFile(@Path("file") String file);

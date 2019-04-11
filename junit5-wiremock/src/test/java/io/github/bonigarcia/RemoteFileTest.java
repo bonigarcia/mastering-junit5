@@ -1,6 +1,14 @@
 
 package io.github.bonigarcia;
 
+import com.github.tomakehurst.wiremock.WireMockServer;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+
 import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
 import static com.github.tomakehurst.wiremock.client.WireMock.configureFor;
 import static com.github.tomakehurst.wiremock.client.WireMock.post;
@@ -9,24 +17,15 @@ import static com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo;
 import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.options;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.io.IOException;
-import java.net.ServerSocket;
+class RemoteFileTest {
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
-import com.github.tomakehurst.wiremock.WireMockServer;
-
-public class RemoteFileTest {
-
-    RemoteFileService remoteFileService;
-    WireMockServer wireMockServer;
+    private RemoteFileService remoteFileService;
+    private WireMockServer wireMockServer;
 
     // Test data
-    String filename = "foo";
-    String streamId = "1";
-    String contentFile = "dummy";
+    private String filename = "foo";
+    private String streamId = "1";
+    private String contentFile = "dummy";
 
     @BeforeEach
     void setup() throws Exception {

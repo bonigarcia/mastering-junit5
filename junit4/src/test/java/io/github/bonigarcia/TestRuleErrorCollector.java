@@ -1,12 +1,12 @@
 
 package io.github.bonigarcia;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-
 import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
+
+import static org.hamcrest.CoreMatchers.equalTo;
 
 public class TestRuleErrorCollector {
 

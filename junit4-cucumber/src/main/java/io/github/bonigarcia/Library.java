@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Library {
+class Library {
 
     private final List<Book> store = new ArrayList<>();
 
@@ -20,10 +20,8 @@ public class Library {
         end.setTime(to);
         end.roll(Calendar.YEAR, 1);
 
-        return store.stream().filter(book -> {
-            return from.before(book.getPublished())
-                    && end.getTime().after(book.getPublished());
-        }).sorted(Comparator.comparing(Book::getPublished).reversed())
+        return store.stream().filter(book -> from.before(book.getPublished())
+                && end.getTime().after(book.getPublished())).sorted(Comparator.comparing(Book::getPublished).reversed())
                 .collect(Collectors.toList());
     }
 
