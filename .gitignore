@@ -1,13 +1,24 @@
-*~
-target
+/build/
+
+### STS ###
+.apt_generated
 .classpath
+.factorypath
 .project
 .settings
-.metadata
-.gradle
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
 .idea
-.allure
+*.iws
 *.iml
-build
-allure-results
-bin
+*.ipr
+/out/
+target/
+
+gradle
+.gradle
+
+/gradlew
+!/gradlew.bat

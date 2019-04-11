@@ -1,0 +1,35 @@
+
+
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+repositories {
+    mavenLocal()
+    maven {
+        url = 'http://repo.maven.apache.org/maven2'
+    }
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter:1.5.6.RELEASE'
+    testCompile 'org.springframework.boot:spring-boot-starter-test:1.5.6.RELEASE'
+    testCompile 'junit:junit:4.12'
+}
+
+group = 'io.github.bonigarcia'
+version = '1.0.0'
+sourceCompatibility = '1.8'
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from(components.java)
+        }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}

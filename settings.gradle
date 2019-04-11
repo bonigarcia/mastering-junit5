@@ -1,5 +1,12 @@
+rootProject.name = 'mastering-junit5'
+
+include ':junit4'
+include ':junit4-cucumber'
+include ':junit4-mockito'
+include ':junit4-spring'
+include ':junit4-spring-boot'
+
 include ':junit5-allure'
-include ':junit5-android'
 include ':junit5-assertions'
 include ':junit5-conditional-tests'
 include ':junit5-console-launcher'
