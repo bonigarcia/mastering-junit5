@@ -3,7 +3,7 @@ repositories {
 }
 
 ext {
-    junitJupiterVersion  = '5.3.0-M1'
+    junitJupiterVersion  = '5.3.2'
     springVersion = '5.0.5.RELEASE'
 }
 
