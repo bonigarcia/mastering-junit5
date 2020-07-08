@@ -29,8 +29,8 @@ Moreover, the integration with third-party frameworks and technologies is also i
 * Android (open source mobile operating system based on Linux).
 * REST services (using REST Assured, Retrofit2, or WireMock).
 
-mastering-junit5 is being sponsored by the following tool; please help to support us by taking a look and signing up to a free trial
-<a href="https://tracking.gitads.io/?repo=mastering-junit5"><img src="https://images.gitads.io/mastering-junit5" alt="GitAds"/></a>
+**mastering-junit5** is being sponsored by the following tool; please help to support us by taking a look and signing up to a free trial
+<br><a href="https://tracking.gitads.io/?repo=mastering-junit5"><img src="https://images.gitads.io/mastering-junit5" alt="GitAds"/></a>
 
 # JUnit 5 versions
 
