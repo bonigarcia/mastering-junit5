@@ -6,8 +6,6 @@ dist: xenial
 
 install: true
 
-jdk: oraclejdk8
-
 services:
     - xvfb
 
