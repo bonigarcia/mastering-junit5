@@ -4,7 +4,7 @@ repositories {
 
 ext {
     junitJupiterVersion  = '5.3.2'
-    cucumberVersion = '2.3.1'
+    cucumberVersion = '6.6.1'
 }
 
 apply plugin: 'java'
@@ -33,4 +33,5 @@ compileTestJava {
 dependencies {
     testCompile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
     testCompile("io.cucumber:cucumber-java:${cucumberVersion}")
+    testCompile("io.cucumber:cucumber-junit-platform-engine:${cucumberVersion}")
 }
