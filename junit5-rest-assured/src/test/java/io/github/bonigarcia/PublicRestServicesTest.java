@@ -36,9 +36,9 @@ public class PublicRestServicesTest {
     @Test
     void testCountryService() {
         given().when()
-                .get("http://services.groupkt.com/country/get/iso2code/ES")
+                .get("https://restcountries.eu/rest/v2/alpha/es")
                 .then().assertThat().statusCode(200)
-                .body("RestResponse.result.name", equalTo("Spain"));
+                .body("name", equalTo("Spain"));
     }
 
 }
