@@ -25,10 +25,10 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import io.github.bonigarcia.seljup.DriverCapabilities;
 import io.github.bonigarcia.seljup.DriverUrl;
-import io.github.bonigarcia.seljup.SeleniumExtension;
+import io.github.bonigarcia.seljup.SeleniumJupiter;
 
 @Disabled
-@ExtendWith(SeleniumExtension.class)
+@ExtendWith(SeleniumJupiter.class)
 public class RemoteWebDriverTest {
 
     @Test

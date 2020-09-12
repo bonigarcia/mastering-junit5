@@ -27,10 +27,10 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import io.appium.java_client.AppiumDriver;
 import io.github.bonigarcia.seljup.DriverCapabilities;
-import io.github.bonigarcia.seljup.SeleniumExtension;
+import io.github.bonigarcia.seljup.SeleniumJupiter;
 
 @Disabled
-@ExtendWith(SeleniumExtension.class)
+@ExtendWith(SeleniumJupiter.class)
 public class AppiumTest {
 
     @DriverCapabilities
