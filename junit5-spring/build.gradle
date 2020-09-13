@@ -12,8 +12,8 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 
 jar {
-    baseName = 'junit5-spring'
-    version = '1.0.0'
+    archiveBaseName = 'junit5-spring'
+    archiveVersion = '1.0.0'
 }
 
 test {
@@ -32,8 +32,8 @@ compileTestJava {
 }
 
 dependencies {
-    compile("org.springframework:spring-context:${springVersion}")
+    implementation("org.springframework:spring-context:${springVersion}")
 
-    testCompile("org.springframework:spring-test:${springVersion}")
-    testCompile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    testImplementation("org.springframework:spring-test:${springVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
 }

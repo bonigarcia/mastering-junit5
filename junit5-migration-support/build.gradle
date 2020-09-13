@@ -11,8 +11,8 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 
 jar {
-    baseName = 'junit5-migration-support'
-    version = '1.0.0'
+    archiveBaseName = 'junit5-migration-support'
+    archiveVersion = '1.0.0'
 }
 
 test {
@@ -31,6 +31,6 @@ compileTestJava {
 }
 
 dependencies {
-    testCompile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
-    testCompile("org.junit.jupiter:junit-jupiter-migrationsupport:${junitJupiterVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter-migrationsupport:${junitJupiterVersion}")
 }

@@ -13,8 +13,8 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 
 jar {
-    baseName = 'junit5-parallel-execution'
-    version = '1.0.0'
+    archiveBaseName = 'junit5-parallel-execution'
+    archiveVersion = '1.0.0'
 }
 
 test {
@@ -33,7 +33,7 @@ compileTestJava {
 }
 
 dependencies {
-    testCompile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
-    testCompile("org.slf4j:slf4j-api:${slf4jVersion}")
-    testCompile("ch.qos.logback:logback-classic:${logbackVersion}")  
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    testImplementation("org.slf4j:slf4j-api:${slf4jVersion}")
+    testImplementation("ch.qos.logback:logback-classic:${logbackVersion}")  
 }

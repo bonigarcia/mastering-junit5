@@ -11,8 +11,8 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 
 jar {
-    baseName = 'junit5-meta-annotations'
-    version = '1.0.0'
+    archiveBaseName = 'junit5-meta-annotations'
+    archiveVersion = '1.0.0'
 }
 
 test {
@@ -33,5 +33,5 @@ compileTestJava {
 }
 
 dependencies {
-    compile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    implementation("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
 }

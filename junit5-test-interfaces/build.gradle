@@ -13,8 +13,8 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 
 jar {
-    baseName = 'junit5-test-interfaces'
-    version = '1.0.0'
+    archiveBaseName = 'junit5-test-interfaces'
+    archiveVersion = '1.0.0'
 }
 
 test {
@@ -33,8 +33,8 @@ compileTestJava {
 }
 
 dependencies {
-    compile("org.junit.platform:junit-platform-launcher:${junitPlatformVersion}")
-    compile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
-    compile("org.slf4j:slf4j-api:${slf4jVersion}")
-    compile("org.slf4j:slf4j-simple:${slf4jVersion}")
+    implementation("org.junit.platform:junit-platform-launcher:${junitPlatformVersion}")
+    implementation("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    implementation("org.slf4j:slf4j-api:${slf4jVersion}")
+    implementation("org.slf4j:slf4j-simple:${slf4jVersion}")
 }

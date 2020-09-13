@@ -12,8 +12,8 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 
 jar {
-    baseName = 'junit5-mockito'
-    version = '1.0.0'
+    archiveBaseName = 'junit5-mockito'
+    archiveVersion = '1.0.0'
 }
 
 test {
@@ -32,6 +32,6 @@ compileTestJava {
 }
 
 dependencies {
-    testCompile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
-    testCompile("org.mockito:mockito-junit-jupiter:${mockitoJupiterVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    testImplementation("org.mockito:mockito-junit-jupiter:${mockitoJupiterVersion}")
 }

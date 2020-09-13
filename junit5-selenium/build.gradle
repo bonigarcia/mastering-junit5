@@ -13,8 +13,8 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 
 jar {
-    baseName = 'junit5-selenium'
-    version = '1.0.0'
+    archiveBaseName = 'junit5-selenium'
+    archiveVersion = '1.0.0'
 }
 
 test {
@@ -33,7 +33,7 @@ compileTestJava {
 }
 
 dependencies {
-    testCompile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
-    testCompile("io.github.bonigarcia:selenium-jupiter:${seleniumJupiterVersion}")
-    testCompile("org.seleniumhq.selenium:htmlunit-driver:${htmlUnitDriver}")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    testImplementation("io.github.bonigarcia:selenium-jupiter:${seleniumJupiterVersion}")
+    testImplementation("org.seleniumhq.selenium:htmlunit-driver:${htmlUnitDriver}")
 }

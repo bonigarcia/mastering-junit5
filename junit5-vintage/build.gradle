@@ -12,8 +12,8 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 
 jar {
-    baseName = 'junit5-vintage'
-    version = '1.0.0'
+    archiveBaseName = 'junit5-vintage'
+    archiveVersion = '1.0.0'
 }
 
 test {
@@ -27,6 +27,6 @@ compileTestJava {
 }
 
 dependencies {
-    testCompile("junit:junit:${junitLegacyVersion}")
-    testRuntime("org.junit.vintage:junit-vintage-engine:${junitVintageVersion}")
+    testImplementation("junit:junit:${junitLegacyVersion}")
+    testRuntimeOnly("org.junit.vintage:junit-vintage-engine:${junitVintageVersion}")
 }

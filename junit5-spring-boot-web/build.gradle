@@ -26,8 +26,8 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 jar {
-    baseName = 'junit5-spring-boot-web'
-    version = '1.0.0'
+    archiveBaseName = 'junit5-spring-boot-web'
+    archiveVersion = '1.0.0'
 }
 
 test {
@@ -46,9 +46,9 @@ compileTestJava {
 }
 
 dependencies {
-    compile('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.springframework.boot:spring-boot-starter-web')
 
-    testCompile("org.springframework.boot:spring-boot-starter-test")
-    testCompile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
-    testCompile("org.mockito:mockito-junit-jupiter:${mockitoJupiterVersion}")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    testImplementation("org.mockito:mockito-junit-jupiter:${mockitoJupiterVersion}")
 }

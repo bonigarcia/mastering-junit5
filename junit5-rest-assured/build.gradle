@@ -12,8 +12,8 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 
 jar {
-    baseName = 'junit5-rest-assured'
-    version = '1.0.0'
+    archiveBaseName = 'junit5-rest-assured'
+    archiveVersion = '1.0.0'
 }
 
 test {
@@ -32,6 +32,6 @@ compileTestJava {
 }
 
 dependencies {
-    testCompile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
-    testCompile("io.rest-assured:rest-assured:${restAssuredVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    testImplementation("io.rest-assured:rest-assured:${restAssuredVersion}")
 }

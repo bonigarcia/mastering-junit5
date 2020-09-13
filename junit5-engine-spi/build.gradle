@@ -11,8 +11,8 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 
 jar {
-    baseName = 'junit5-engine-spi'
-    version = '1.0.0'
+    archiveBaseName = 'junit5-engine-spi'
+    archiveVersion = '1.0.0'
 }
 
 compileTestJava {
@@ -22,5 +22,5 @@ compileTestJava {
 }
 
 dependencies {
-	compile("org.junit.platform:junit-platform-engine:${junitPlatformVersion}")
+	implementation("org.junit.platform:junit-platform-engine:${junitPlatformVersion}")
 }

@@ -14,8 +14,8 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 
 jar {
-    baseName = 'junit5-wiremock'
-    version = '1.0.0'
+    archiveBaseName = 'junit5-wiremock'
+    archiveVersion = '1.0.0'
 }
 
 test {
@@ -34,12 +34,12 @@ compileTestJava {
 }
 
 dependencies {
-    compile("com.squareup.retrofit2:retrofit:${retrofitVersion}")
-    compile("com.squareup.retrofit2:adapter-rxjava:${retrofitVersion}")
-    compile("com.squareup.retrofit2:converter-gson:${retrofitVersion}")
-    compile("org.slf4j:slf4j-api:${slf4jVersion}")
-    compile("org.slf4j:slf4j-simple:${slf4jVersion}")
+    implementation("com.squareup.retrofit2:retrofit:${retrofitVersion}")
+    implementation("com.squareup.retrofit2:adapter-rxjava:${retrofitVersion}")
+    implementation("com.squareup.retrofit2:converter-gson:${retrofitVersion}")
+    implementation("org.slf4j:slf4j-api:${slf4jVersion}")
+    implementation("org.slf4j:slf4j-simple:${slf4jVersion}")
 
-    testCompile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
-    testCompile("com.github.tomakehurst:wiremock:${wireMockVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    testImplementation("com.github.tomakehurst:wiremock:${wireMockVersion}")
 }

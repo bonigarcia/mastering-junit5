@@ -12,8 +12,8 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 
 jar {
-    baseName = 'junit5-cucumber'
-    version = '1.0.0'
+    archiveBaseName = 'junit5-cucumber'
+    archiveVersion = '1.0.0'
 }
 
 test {
@@ -32,7 +32,7 @@ compileTestJava {
 }
 
 dependencies {
-    testCompile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
-    testCompile("io.cucumber:cucumber-java:${cucumberVersion}")
-    testCompile("io.cucumber:cucumber-junit-platform-engine:${cucumberVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    testImplementation("io.cucumber:cucumber-java:${cucumberVersion}")
+    testImplementation("io.cucumber:cucumber-junit-platform-engine:${cucumberVersion}")
 }

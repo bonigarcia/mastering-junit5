@@ -12,8 +12,8 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 
 jar {
-    baseName = 'junit5-junit4-runner'
-    version = '1.0.0'
+    archiveBaseName = 'junit5-junit4-runner'
+    archiveVersion = '1.0.0'
 }
 
 test {
@@ -32,6 +32,6 @@ compileTestJava {
 }
 
 dependencies {
-    testCompile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
-    testCompile("org.junit.platform:junit-platform-runner:${junitPlatformVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    testImplementation("org.junit.platform:junit-platform-runner:${junitPlatformVersion}")
 }

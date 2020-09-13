@@ -11,8 +11,8 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 
 jar {
-    baseName = 'junit5-extension-model-automatic'
-    version = '1.0.0'
+    archiveBaseName = 'junit5-extension-model-automatic'
+    archiveVersion = '1.0.0'
 }
 
 test {
@@ -35,5 +35,5 @@ compileTestJava {
 }
 
 dependencies {
-    compile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    implementation("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
 }
