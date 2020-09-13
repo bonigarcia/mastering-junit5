@@ -1,15 +1,3 @@
-buildscript {
-    ext {
-        allureGradleVersion = '2.8.1'
-    }
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath "io.qameta.allure:allure-gradle:${allureGradleVersion}"
-    }
-}
-
 repositories {
     mavenCentral()
 }
@@ -21,7 +9,6 @@ ext {
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
-apply plugin: 'io.qameta.allure'
 
 jar {
     archiveBaseName = 'junit5-allure'
@@ -34,15 +21,6 @@ test {
     testLogging {
         events "passed", "skipped", "failed"
         showStandardStreams = true
-    }
-}
-
-allure {
-    autoconfigure = true
-    version = '2.13.5'
-
-    useJUnit5 {
-       version = '2.13.5'
     }
 }
 

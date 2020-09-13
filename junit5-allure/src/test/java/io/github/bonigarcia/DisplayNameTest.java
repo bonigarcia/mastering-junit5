@@ -28,8 +28,8 @@ class DisplayNameTest {
     }
 
     @Test
-    @DisplayName("This test is 👌🏻")
-    void testWithEmoji() {
+    @DisplayName("This test is ok")
+    void testOk() {
     }
 
 }
