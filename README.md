@@ -18,6 +18,7 @@ This repository contains code examples of [JUnit 5] for the book [Mastering Soft
 * Test interfaces.
 * Test templates.
 * Parameterized tests.
+* Parallel execution.
 
 Moreover, the integration with third-party frameworks and technologies is also illustrated with examples, concretely:
 
@@ -36,6 +37,7 @@ This repository has different tags, one per minor version of JUnit 5. Currently,
 * `5.0`: Examples using JUnit 5.0.x. The examples of the book [Mastering Software Testing with JUnit 5] are based on this version.
 * `5.1`: Examples using JUnit 5.1.x.
 * `5.2`: Examples using JUnit 5.2.x.
+* `5.3`: Examples using JUnit 5.3.x.
 
 # Complete example
 
@@ -44,7 +46,7 @@ with a complete set of JUnit 5 tests (unit with Mockito, integration with Spring
 
 # About
 
-This is a project made by [Boni Garcia], Assistant Professor at [Universidad Rey Juan Carlos], Spain. Copyright &copy; 2017-2019.
+This is a project made by [Boni Garcia], Assistant Professor at [Universidad Rey Juan Carlos], Spain. Copyright &copy; 2017-2020.
 
 [JUnit 5]: http://junit.org/junit5/
 [Boni Garcia]: http://bonigarcia.github.io/
