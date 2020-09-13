@@ -33,6 +33,7 @@
         <module>junit5-meta-annotations</module>
         <module>junit5-migration-support</module>
         <module>junit5-mockito</module>
+        <module>junit5-ordered-tests</module>
         <module>junit5-parallel-execution</module>
         <module>junit5-nested-tests</module>
         <module>junit5-parameterized</module>

@@ -1,0 +1,35 @@
+repositories {
+    mavenCentral()
+}
+
+ext {
+    junitJupiterVersion = '5.6.2'
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+jar {
+    archiveBaseName = 'junit5-nested-tests'
+    archiveVersion = '1.0.0'
+}
+
+test {
+    useJUnitPlatform()
+
+    testLogging {
+        events "passed", "skipped", "failed"
+        showStandardStreams = true
+    }
+}
+
+compileTestJava {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+    options.compilerArgs += '-parameters'
+}
+
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+}

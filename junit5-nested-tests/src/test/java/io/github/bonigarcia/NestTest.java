@@ -34,6 +34,7 @@ class NestTest {
 
     @Nested
     class InnerClass1 {
+
         @BeforeEach
         void setup2() {
             System.out.println("Setup 2");
