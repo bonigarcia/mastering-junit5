@@ -16,7 +16,9 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
 import static org.junit.Assert.assertEquals;
+import static org.slf4j.LoggerFactory.getLogger;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -24,19 +26,22 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.slf4j.Logger;
 
 public class TestSimple {
+
+    static final Logger log = getLogger(lookup().lookupClass());
 
     // Phase 1.1: Setup (for all tests)
     @BeforeClass
     public static void setupAll() {
-        System.out.println("<Setup Class>");
+        log.debug("<Setup Class>");
     }
 
     // Phase 1.2: Setup (for each test)
     @Before
     public void setupTest() {
-        System.out.println("<Setup Test>");
+        log.debug("<Setup Test>");
     }
 
     // Test 1: This test is going to succeed
@@ -45,7 +50,7 @@ public class TestSimple {
         // Phase 2: Simulation of exercise
         int expected = 60;
         int real = 60;
-        System.out.println("** Test 1 **");
+        log.debug("** Test 1 **");
 
         // Phase 3: Verify
         assertEquals(expected + " should be equals to " + real, expected, real);
@@ -58,7 +63,7 @@ public class TestSimple {
         // Phase 2: Simulation of exercise
         int expected = 60;
         int real = 20;
-        System.out.println("** Test 2 **");
+        log.debug("** Test 2 **");
 
         // Phase 3: Verify
         assertEquals(expected + " should be equals to " + real, expected, real);
@@ -67,13 +72,13 @@ public class TestSimple {
     // Phase 4.1: Teardown (for each test)
     @After
     public void teardownTest() {
-        System.out.println("</Ending Test>");
+        log.debug("</Ending Test>");
     }
 
     // Phase 4.2: Teardown (for all test)
     @AfterClass
     public static void teardownClass() {
-        System.out.println("</Ending Class>");
+        log.debug("</Ending Class>");
     }
 
 }

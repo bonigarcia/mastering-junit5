@@ -16,21 +16,28 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.slf4j.LoggerFactory.getLogger;
+
 import java.io.File;
 import java.io.IOException;
 
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
+import org.slf4j.Logger;
 
 public class TestRuleTemporaryFolder {
+
+    static final Logger log = getLogger(lookup().lookupClass());
 
     @Rule
     public TemporaryFolder folder = new TemporaryFolder();
 
     @Test
     public void testUsingTempFolder() throws IOException {
-        File file = folder.newFile("myfile.txt");
-        System.out.println(file);
+        File fileInTmpFolder = folder.newFile("myfile.txt");
+
+        log.debug("File in tmp folder: {}", fileInTmpFolder);
     }
 }

@@ -16,7 +16,12 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.slf4j.LoggerFactory.getLogger;
+
 import java.io.IOException;
+
+import org.slf4j.Logger;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -26,6 +31,8 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RemoteFileService {
+
+    static final Logger log = getLogger(lookup().lookupClass());
 
     private RemoteFileApi remoteFileApi;
 
@@ -41,14 +48,15 @@ public class RemoteFileService {
         Call<ResponseBody> openFile = remoteFileApi.openFile(file);
         Response<ResponseBody> execute = openFile.execute();
         String streamId = execute.body().string();
-        System.out.println("Stream " + streamId + " open");
+        log.info("Stream {} open", streamId);
 
         Call<ResponseBody> readStream = remoteFileApi.readStream(streamId);
         byte[] content = readStream.execute().body().bytes();
-        System.out.println("Received " + content.length + " bytes");
+        log.info("Received {} bytes", content.length);
 
         remoteFileApi.closeStream(streamId).execute();
-        System.out.println("Stream " + streamId + " closed");
+        log.info("Received {} bytes", content.length);
+        log.info("Stream {} closed", streamId);
 
         return content;
     }

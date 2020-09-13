@@ -16,15 +16,21 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
 import static org.junit.Assert.assertTrue;
+import static org.slf4j.LoggerFactory.getLogger;
 
 import org.junit.Test;
+import org.slf4j.Logger;
 
 public class TestMinimal2 {
 
+    static final Logger log = getLogger(lookup().lookupClass());
+
     @Test
     public void test2() {
-        System.out.println("## Test 2 ##");
+        log.debug("## Test 2 ##");
+
         assertTrue(true);
     }
 

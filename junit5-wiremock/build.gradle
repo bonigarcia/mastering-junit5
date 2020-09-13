@@ -4,9 +4,10 @@ repositories {
 
 ext {
     retrofitVersion  = '2.3.0'
-    slf4jVersion  = '1.7.12'
+    slf4jVersion  = '1.7.30'
     junitJupiterVersion = '5.5.2'
     wireMockVersion  = '2.8.0'
+    logbackVersion  = '1.2.3'
 }
 
 apply plugin: 'java'
@@ -38,7 +39,7 @@ dependencies {
     implementation("com.squareup.retrofit2:adapter-rxjava:${retrofitVersion}")
     implementation("com.squareup.retrofit2:converter-gson:${retrofitVersion}")
     implementation("org.slf4j:slf4j-api:${slf4jVersion}")
-    implementation("org.slf4j:slf4j-simple:${slf4jVersion}")
+    implementation("ch.qos.logback:logback-classic:${logbackVersion}")
 
     testImplementation("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
     testImplementation("com.github.tomakehurst:wiremock:${wireMockVersion}")

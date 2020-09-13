@@ -16,26 +16,32 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.slf4j.LoggerFactory.getLogger;
+
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import org.slf4j.Logger;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TestOrder {
 
+    static final Logger log = getLogger(lookup().lookupClass());
+
     @Test
     public void testA() {
-        System.out.println("Test 1");
+        log.debug("Test 1");
     }
 
     @Test
     public void testB() {
-        System.out.println("Test 2");
+        log.debug("Test 2");
     }
 
     @Test
     public void testC() {
-        System.out.println("Test 3");
+        log.debug("Test 3");
     }
 
 }

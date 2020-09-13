@@ -16,12 +16,18 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.slf4j.LoggerFactory.getLogger;
+
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
 import org.junit.Test;
 import org.junit.rules.ExternalResource;
+import org.slf4j.Logger;
 
 public class TestClassRule {
+
+    static final Logger log = getLogger(lookup().lookupClass());
 
     private static Resource resource;
 
@@ -36,23 +42,22 @@ public class TestClassRule {
         @Override
         protected void after() {
             resource.close();
-            System.out.println();
         }
     };
 
     @BeforeClass
     public static void before() {
-        System.out.println("before class");
+        log.debug("before class");
     }
 
     @Test
     public void someTest() throws Exception {
-        System.out.println(resource.get());
+        log.debug("Resource in one test {}", resource.get());
     }
 
     @Test
     public void someTest2() throws Exception {
-        System.out.println(resource.get());
+        log.debug("Resource in other test {}", resource.get());
     }
 
 }

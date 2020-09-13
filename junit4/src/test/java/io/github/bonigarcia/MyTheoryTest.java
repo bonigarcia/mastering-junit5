@@ -16,15 +16,20 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
 import static org.junit.Assert.assertTrue;
+import static org.slf4j.LoggerFactory.getLogger;
 
 import org.junit.experimental.theories.DataPoints;
 import org.junit.experimental.theories.Theories;
 import org.junit.experimental.theories.Theory;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
 
 @RunWith(Theories.class)
 public class MyTheoryTest {
+
+    static final Logger log = getLogger(lookup().lookupClass());
 
     @DataPoints
     public static int[] positiveIntegers() {
@@ -33,7 +38,7 @@ public class MyTheoryTest {
 
     @Theory
     public void testSum(int a, int b) {
-        System.out.println("Checking " + a + "+" + b);
+        log.debug("Checking {} + {}", a, b);
         assertTrue(a + b > a);
         assertTrue(a + b > b);
     }

@@ -16,11 +16,19 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.slf4j.LoggerFactory.getLogger;
+
+import org.slf4j.Logger;
+
 public class LoginController {
+
+    static final Logger log = getLogger(lookup().lookupClass());
+
     public LoginService loginService;
 
     public String login(UserForm userForm) {
-        System.out.println("LoginController.login " + userForm);
+        log.debug("LoginController.login {}", userForm);
 
         try {
             if (userForm == null) {
@@ -36,7 +44,7 @@ public class LoginController {
     }
 
     public void logout(UserForm userForm) {
-        System.out.println("LoginController.logout " + userForm);
+        log.debug("LoginController.logout {}", userForm);
 
         loginService.logout(userForm);
     }

@@ -16,13 +16,20 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.slf4j.LoggerFactory.getLogger;
+
+import org.slf4j.Logger;
+
 import junit.framework.TestCase;
 
 public class TestSimple extends TestCase {
 
+    static final Logger log = getLogger(lookup().lookupClass());
+
     // Phase 1: Setup (for each test)
     protected void setUp() throws Exception {
-        System.out.println("<Setup>");
+        log.debug("<Setup>");
     }
 
     // Test 1
@@ -30,7 +37,7 @@ public class TestSimple extends TestCase {
         // Phase 2: Simulation of exercise
         int expected = 60;
         int real = 60;
-        System.out.println("** Test 1 **");
+        log.debug("** Test 1 **");
 
         // Phase 3: Verify
         assertEquals(expected + " should be equals to " + real, expected, real);
@@ -41,7 +48,7 @@ public class TestSimple extends TestCase {
         // Phase 2: Simulation of exercise
         int expected = 20;
         int real = 20;
-        System.out.println("** Test 2 **");
+        log.debug("** Test 2 **");
 
         // Phase 3: Verify
         assertEquals(expected + " should be equals to " + real, expected, real);
@@ -49,7 +56,7 @@ public class TestSimple extends TestCase {
 
     // Phase 4: Teardown (for each test)
     protected void tearDown() throws Exception {
-        System.out.println("</Ending>");
+        log.debug("</Ending>");
     }
 
 }

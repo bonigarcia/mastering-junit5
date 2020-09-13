@@ -16,27 +16,31 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
 import static org.junit.Assert.fail;
+import static org.slf4j.LoggerFactory.getLogger;
 
 import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
+import org.slf4j.Logger;
 
 public class TestRuleWatcher {
+
+    static final Logger log = getLogger(lookup().lookupClass());
 
     @Rule
     public TestWatcher watchman = new TestWatcher() {
         @Override
         protected void succeeded(Description description) {
-            System.out
-                    .println("Test succeeded: " + description.getMethodName());
+            log.debug("Test succeeded: {}", description.getMethodName());
         }
 
         @Override
         protected void failed(Throwable e, Description description) {
-            System.out.println("Test failed: " + description.getMethodName());
+            log.debug("Test failed: {}", description.getMethodName());
         }
     };
 
