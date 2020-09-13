@@ -32,7 +32,7 @@ public class TestRuleName {
         assertEquals("testA", name.getMethodName());
     }
 
-      @Test
+    @Test
     public void testB() {
         assertEquals("testB", name.getMethodName());
     }

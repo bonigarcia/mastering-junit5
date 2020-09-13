@@ -16,26 +16,31 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.slf4j.LoggerFactory.getLogger;
+
+import java.io.File;
+import java.io.IOException;
+
 import org.junit.Rule;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.migrationsupport.rules.EnableRuleMigrationSupport;
-import org.junit.rules.ExpectedException;
+import org.junit.rules.TemporaryFolder;
+import org.slf4j.Logger;
 
 @EnableRuleMigrationSupport
 class ExpectedExceptionRuleTest {
 
+    static final Logger log = getLogger(lookup().lookupClass());
+
     @Rule
-    ExpectedException thrown = ExpectedException.none();
+    public final TemporaryFolder folder = new TemporaryFolder();
 
     @Test
-    void throwsNothing() {
+    public void testUsingTempFolder() throws IOException {
+        File fileInTmpFolder = folder.newFile("myfile.txt");
+
+        log.debug("File in tmp folder: {}", fileInTmpFolder);
     }
 
-    @Disabled
-    @Test
-    void throwsNullPointerException() {
-        thrown.expect(NullPointerException.class);
-        throw new NullPointerException();
-    }
 }
