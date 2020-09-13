@@ -1,0 +1,39 @@
+repositories {
+    mavenCentral()
+}
+
+ext {
+    junitJupiterVersion  = '5.3.2'
+    slf4jVersion = '1.7.30'
+    logbackVersion = '1.2.3'
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+jar {
+    baseName = 'junit5-parallel-execution'
+    version = '1.0.0'
+}
+
+test {
+    useJUnitPlatform()
+
+    testLogging {
+        events "passed", "skipped", "failed"
+        showStandardStreams = true
+    }
+}
+
+compileTestJava {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+    options.compilerArgs += '-parameters'
+}
+
+dependencies {
+    testCompile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    testCompile("org.slf4j:slf4j-api:${slf4jVersion}")
+    testCompile("ch.qos.logback:logback-classic:${logbackVersion}")  
+}
