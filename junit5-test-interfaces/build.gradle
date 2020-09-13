@@ -4,7 +4,6 @@ repositories {
 
 ext {
     junitJupiterVersion = '5.6.2'
-    junitPlatformVersion = '1.4.2'
     slf4jVersion  = '1.7.12'
 }
 
@@ -33,7 +32,6 @@ compileTestJava {
 }
 
 dependencies {
-    implementation("org.junit.platform:junit-platform-launcher:${junitPlatformVersion}")
     implementation("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
     implementation("org.slf4j:slf4j-api:${slf4jVersion}")
     implementation("org.slf4j:slf4j-simple:${slf4jVersion}")
