@@ -16,6 +16,9 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.slf4j.LoggerFactory.getLogger;
+
 import java.lang.reflect.AnnotatedElement;
 import java.util.Arrays;
 import java.util.Optional;
@@ -24,8 +27,11 @@ import org.junit.jupiter.api.extension.ConditionEvaluationResult;
 import org.junit.jupiter.api.extension.ExecutionCondition;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.platform.commons.util.AnnotationUtils;
+import org.slf4j.Logger;
 
 public class OsCondition implements ExecutionCondition {
+
+    static final Logger log = getLogger(lookup().lookupClass());
 
     @Override
     public ConditionEvaluationResult evaluateExecutionCondition(
@@ -49,7 +55,7 @@ public class OsCondition implements ExecutionCondition {
             }
         }
 
-        System.out.println("--> " + out.getReason().get());
+        log.debug("Reason {}", out.getReason().get());
         return out;
     }
 

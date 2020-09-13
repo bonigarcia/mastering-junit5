@@ -16,7 +16,9 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.slf4j.LoggerFactory.getLogger;
 
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
@@ -24,8 +26,11 @@ import java.util.stream.LongStream;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.slf4j.Logger;
 
 class MethodSourcePrimitiveTypesParameterizedTest {
+
+    static final Logger log = getLogger(lookup().lookupClass());
 
     static IntStream intProvider() {
         return IntStream.of(0, 1);
@@ -34,8 +39,7 @@ class MethodSourcePrimitiveTypesParameterizedTest {
     @ParameterizedTest
     @MethodSource("intProvider")
     void testWithIntProvider(int argument) {
-        System.out
-                .println("Parameterized test with (int) argument: " + argument);
+        log.debug("Parameterized test with (int) argument: {}", argument);
         assertNotNull(argument);
     }
 
@@ -46,8 +50,7 @@ class MethodSourcePrimitiveTypesParameterizedTest {
     @ParameterizedTest
     @MethodSource("doubleProvider")
     void testWithDoubleProvider(double argument) {
-        System.out.println(
-                "Parameterized test with (double) argument: " + argument);
+        log.debug("Parameterized test with (double) argument: {}", argument);
         assertNotNull(argument);
     }
 
@@ -58,8 +61,7 @@ class MethodSourcePrimitiveTypesParameterizedTest {
     @ParameterizedTest
     @MethodSource("longProvider")
     void testWithLongProvider(long argument) {
-        System.out.println(
-                "Parameterized test with (long) argument: " + argument);
+        log.debug("Parameterized test with (long) argument: {}", argument);
         assertNotNull(argument);
     }
 

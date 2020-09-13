@@ -16,21 +16,26 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
 import static org.junit.jupiter.api.DynamicTest.dynamicTest;
+import static org.slf4j.LoggerFactory.getLogger;
 
 import java.util.stream.Stream;
 
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.TestFactory;
+import org.slf4j.Logger;
 
 class DynamicExampleTest {
+
+    static final Logger log = getLogger(lookup().lookupClass());
 
     @TestFactory
     Stream<DynamicTest> dynamicTestsFromStream() {
         Stream<String> inputStream = Stream.of("A", "B", "C");
         return inputStream.map(
                 input -> dynamicTest("Display name for input " + input, () -> {
-                    System.out.println("Testing " + input);
+                    log.debug("Testing {}", input);
                 }));
     }
 

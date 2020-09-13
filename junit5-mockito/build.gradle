@@ -3,6 +3,9 @@ repositories {
 }
 
 ext {
+    slf4jVersion  = '1.7.30'
+    logbackVersion  = '1.2.3'
+
     junitJupiterVersion = '5.5.2'
     mockitoJupiterVersion = '2.19.0'
 }
@@ -32,6 +35,9 @@ compileTestJava {
 }
 
 dependencies {
+    implementation("org.slf4j:slf4j-api:${slf4jVersion}")
+    implementation("ch.qos.logback:logback-classic:${logbackVersion}")
+
     testImplementation("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
     testImplementation("org.mockito:mockito-junit-jupiter:${mockitoJupiterVersion}")
 }

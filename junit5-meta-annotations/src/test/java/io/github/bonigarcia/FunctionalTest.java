@@ -16,19 +16,25 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.slf4j.LoggerFactory.getLogger;
+
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
 
 @Functional
 class FunctionalTest {
 
+    static final Logger log = getLogger(lookup().lookupClass());
+
     @Test
     void testOne() {
-        System.out.println("Functional Test 1");
+        log.debug("Functional Test 1");
     }
 
     @Test
     void testTwo() {
-        System.out.println("Functional Test 2");
+        log.debug("Functional Test 2");
     }
 
 }

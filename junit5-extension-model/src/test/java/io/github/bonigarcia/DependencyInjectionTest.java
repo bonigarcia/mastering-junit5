@@ -16,15 +16,21 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.slf4j.LoggerFactory.getLogger;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.slf4j.Logger;
 
 public class DependencyInjectionTest {
+
+    static final Logger log = getLogger(lookup().lookupClass());
 
     @ExtendWith(MyParameterResolver.class)
     @Test
     public void test(Object parameter) {
-        System.out.println("My parameter " + parameter);
+        log.debug("My parameter {}", parameter);
     }
 
 }

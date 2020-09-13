@@ -16,21 +16,26 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.slf4j.LoggerFactory.getLogger;
 
 import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
 
 @RunWith(JUnitPlatform.class)
 public class JUnit5CompatibleTest {
 
-	@Test
-	void myTest() {
-		String message = "1+1 should be equal to 2";
-		System.out.println(message);
+    static final Logger log = getLogger(lookup().lookupClass());
 
-		assertEquals(2, 1 + 1, message);
-	}
+    @Test
+    void myTest() {
+        String message = "1+1 should be equal to 2";
+        log.debug("{}", message);
+
+        assertEquals(2, 1 + 1, message);
+    }
 
 }

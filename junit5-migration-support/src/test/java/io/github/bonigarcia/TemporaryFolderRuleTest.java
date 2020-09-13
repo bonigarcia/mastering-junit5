@@ -16,6 +16,9 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.slf4j.LoggerFactory.getLogger;
+
 import java.io.IOException;
 
 import org.junit.Rule;
@@ -24,9 +27,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.migrationsupport.rules.EnableRuleMigrationSupport;
 import org.junit.rules.TemporaryFolder;
+import org.slf4j.Logger;
 
 @EnableRuleMigrationSupport
 class TemporaryFolderRuleTest {
+
+    static final Logger log = getLogger(lookup().lookupClass());
 
     @Rule
     TemporaryFolder temporaryFolder = new TemporaryFolder();
@@ -38,7 +44,7 @@ class TemporaryFolderRuleTest {
 
     @Test
     void test() {
-        System.out.println("Temporary folder: " + temporaryFolder.getRoot());
+        log.debug("Temporary folder: {}", temporaryFolder.getRoot());
     }
 
     @AfterEach

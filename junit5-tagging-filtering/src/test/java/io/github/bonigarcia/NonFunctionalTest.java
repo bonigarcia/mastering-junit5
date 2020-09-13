@@ -16,36 +16,42 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.slf4j.LoggerFactory.getLogger;
+
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
 
 @Tag("non-functional")
 class NonFunctionalTest {
+
+    static final Logger log = getLogger(lookup().lookupClass());
 
     @Test
     @Tag("performance")
     @Tag("load")
     void testOne() {
-        System.out.println("Non-Functional Test 1 (Performance/Load)");
+        log.debug("Non-Functional Test 1 (Performance/Load)");
     }
 
     @Test
     @Tag("performance")
     @Tag("stress")
     void testTwo() {
-        System.out.println("Non-Functional Test 2 (Performance/Stress)");
+        log.debug("Non-Functional Test 2 (Performance/Stress)");
     }
 
     @Test
     @Tag("security")
     void testThree() {
-        System.out.println("Non-Functional Test 3 (Security)");
+        log.debug("Non-Functional Test 3 (Security)");
     }
 
     @Test
     @Tag("usability")
     void testFour() {
-        System.out.println("Non-Functional Test 4 (Usability)");
+        log.debug("Non-Functional Test 4 (Usability)");
     }
 
 }

@@ -16,28 +16,34 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.slf4j.LoggerFactory.getLogger;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
+import org.slf4j.Logger;
 
 class TestInfoTest {
+
+    static final Logger log = getLogger(lookup().lookupClass());
 
     @BeforeEach
     void init(TestInfo testInfo) {
         String displayName = testInfo.getDisplayName();
-        System.out.printf("@BeforeEach %s %n", displayName);
+        log.debug("@BeforeEach {}", displayName);
     }
 
     @Test
     @DisplayName("My test")
     @Tag("my-tag")
     void testOne(TestInfo testInfo) {
-        System.out.println(testInfo.getDisplayName());
-        System.out.println(testInfo.getTags());
-        System.out.println(testInfo.getTestClass());
-        System.out.println(testInfo.getTestMethod());
+        log.debug("Display name {}", testInfo.getDisplayName());
+        log.debug("Tags {}", testInfo.getTags());
+        log.debug("Test class {}", testInfo.getTestClass());
+        log.debug("Test method {}", testInfo.getTestMethod());
     }
 
     @Test

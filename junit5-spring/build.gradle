@@ -3,8 +3,11 @@ repositories {
 }
 
 ext {
-    junitJupiterVersion = '5.5.2'
+    slf4jVersion  = '1.7.30'
+    logbackVersion  = '1.2.3'
     springVersion = '5.0.5.RELEASE'
+
+    junitJupiterVersion = '5.5.2'
 }
 
 apply plugin: 'java'
@@ -32,6 +35,8 @@ compileTestJava {
 }
 
 dependencies {
+    implementation("org.slf4j:slf4j-api:${slf4jVersion}")
+    implementation("ch.qos.logback:logback-classic:${logbackVersion}")
     implementation("org.springframework:spring-context:${springVersion}")
 
     testImplementation("org.springframework:spring-test:${springVersion}")

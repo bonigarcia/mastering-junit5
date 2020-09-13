@@ -7,7 +7,11 @@
     <version>1.0.0</version>
 
     <properties>
+        <slf4j.version>1.7.30</slf4j.version>
+        <logback.version>1.2.3</logback.version>
+
         <junit-legacy.version>4.13</junit-legacy.version>
+
         <maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
 
         <java.version>1.8</java.version>
@@ -20,6 +24,17 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

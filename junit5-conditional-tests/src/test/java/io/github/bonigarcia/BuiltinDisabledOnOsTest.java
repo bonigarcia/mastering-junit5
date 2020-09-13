@@ -16,31 +16,36 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
 import static org.junit.jupiter.api.condition.OS.LINUX;
 import static org.junit.jupiter.api.condition.OS.MAC;
 import static org.junit.jupiter.api.condition.OS.WINDOWS;
+import static org.slf4j.LoggerFactory.getLogger;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.DisabledOnOs;
+import org.slf4j.Logger;
 
 class BuiltinDisabledOnOsTest {
+
+    static final Logger log = getLogger(lookup().lookupClass());
 
     @DisabledOnOs(LINUX)
     @Test
     void notLinuxTest() {
-        System.out.println("Disabled on Linux");
+        log.debug("Disabled on Linux");
     }
 
     @DisabledOnOs(WINDOWS)
     @Test
     void notWinTest() {
-        System.out.println("Disabled on Windows");
+        log.debug("Disabled on Windows");
     }
 
     @DisabledOnOs(MAC)
     @Test
     void notMacTest() {
-        System.out.println("Disabled on Mac");
+        log.debug("Disabled on Mac");
     }
 
 }

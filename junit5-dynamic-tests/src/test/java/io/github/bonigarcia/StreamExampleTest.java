@@ -16,8 +16,10 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.DynamicTest.stream;
+import static org.slf4j.LoggerFactory.getLogger;
 
 import java.util.Arrays;
 import java.util.Iterator;
@@ -28,8 +30,11 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.TestFactory;
 import org.junit.jupiter.api.function.ThrowingConsumer;
+import org.slf4j.Logger;
 
 class StreamExampleTest {
+
+    static final Logger log = getLogger(lookup().lookupClass());
 
     @Disabled
     @TestFactory
@@ -44,7 +49,7 @@ class StreamExampleTest {
 
         // Test executor
         ThrowingConsumer<Integer> testExecutor = (input) -> {
-            System.out.println(input);
+            log.debug("Input {}", input);
             assertTrue(input % 2 == 0);
         };
 

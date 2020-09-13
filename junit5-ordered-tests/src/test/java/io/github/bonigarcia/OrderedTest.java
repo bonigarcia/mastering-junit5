@@ -17,23 +17,30 @@
 package io.github.bonigarcia;
 
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
+import org.slf4j.Logger;
+
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.slf4j.LoggerFactory.getLogger;
+
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
 @TestMethodOrder(OrderAnnotation.class)
-class OrderedSeleniumTest {
+class OrderedTest {
+
+    static final Logger log = getLogger(lookup().lookupClass());
 
     @Test
     @Order(1)
     void testStep1() {
-        System.out.println("Step 1");
+        log.debug("Step 1");
     }
 
     @Test
     @Order(2)
     void testStep2() {
-        System.out.println("Step 2");
+        log.debug("Step 2");
     }
 
 }

@@ -16,42 +16,48 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.slf4j.LoggerFactory.getLogger;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
 
 class LifecycleJUnit5Test {
 
+    static final Logger log = getLogger(lookup().lookupClass());
+
     @BeforeAll
     static void setupAll() {
-        System.out.println("Setup ALL TESTS in the class");
+        log.debug("Setup ALL TESTS in the class");
     }
 
     @BeforeEach
     void setup() {
-        System.out.println("Setup EACH TEST in the class");
+        log.debug("Setup EACH TEST in the class");
     }
 
     @Test
     void testOne() {
-        System.out.println("TEST 1");
+        log.debug("TEST 1");
     }
 
     @Test
     void testTwo() {
-        System.out.println("TEST 2");
+        log.debug("TEST 2");
     }
 
     @AfterEach
     void teardown() {
-        System.out.println("Teardown EACH TEST in the class");
+        log.debug("Teardown EACH TEST in the class");
     }
 
     @AfterAll
     static void teardownAll() {
-        System.out.println("Teardown ALL TESTS in the class");
+        log.debug("Teardown ALL TESTS in the class");
     }
 
 }

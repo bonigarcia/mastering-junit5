@@ -3,7 +3,11 @@ repositories {
 }
 
 ext {
+    slf4jVersion  = '1.7.30'
+    logbackVersion  = '1.2.3'
+
     junitVintageVersion  = '4.12.3'
+
     junitLegacyVersion  = '4.13'
 }
 
@@ -27,6 +31,10 @@ compileTestJava {
 }
 
 dependencies {
+    implementation("org.slf4j:slf4j-api:${slf4jVersion}")
+    implementation("ch.qos.logback:logback-classic:${logbackVersion}")
+
     testImplementation("junit:junit:${junitLegacyVersion}")
+
     testRuntimeOnly("org.junit.vintage:junit-vintage-engine:${junitVintageVersion}")
 }

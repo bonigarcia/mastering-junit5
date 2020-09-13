@@ -16,17 +16,23 @@
  */
 package io.github.bonigarcia;
 
+import static org.slf4j.LoggerFactory.getLogger;
+
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
 
 import static io.github.bonigarcia.Os.MAC;
+import static java.lang.invoke.MethodHandles.lookup;
 import static io.github.bonigarcia.Os.LINUX;
 
 class DisabledOnOsTest {
 
+    static final Logger log = getLogger(lookup().lookupClass());
+
     @DisabledOnOs({ MAC, LINUX })
     @Test
     void conditionalTest() {
-        System.out.println("This test will be disabled on MAC and LINUX");
+        log.debug("This test will be disabled on MAC and LINUX");
     }
 
 }

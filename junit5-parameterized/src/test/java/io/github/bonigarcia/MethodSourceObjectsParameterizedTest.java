@@ -16,14 +16,19 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.slf4j.LoggerFactory.getLogger;
 
 import java.util.stream.Stream;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.slf4j.Logger;
 
 class MethodSourceObjectsParameterizedTest {
+
+    static final Logger log = getLogger(lookup().lookupClass());
 
     static Stream<Person> personProvider() {
         Person john = new Person("John", "Doe");
@@ -34,8 +39,7 @@ class MethodSourceObjectsParameterizedTest {
     @ParameterizedTest
     @MethodSource("personProvider")
     void testWithPersonProvider(Person argument) {
-        System.out.println(
-                "Parameterized test with (Person) argument: " + argument);
+        log.debug("Parameterized test with (Person) argument: {}", argument);
         assertNotNull(argument);
     }
 

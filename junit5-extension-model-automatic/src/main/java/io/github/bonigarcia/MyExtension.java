@@ -16,14 +16,20 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.slf4j.LoggerFactory.getLogger;
+
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
+import org.slf4j.Logger;
 
 public class MyExtension implements BeforeEachCallback {
 
+    static final Logger log = getLogger(lookup().lookupClass());
+
     @Override
     public void beforeEach(ExtensionContext context) throws Exception {
-        System.out.println("Using my extension automatically");
+        log.debug("Using my extension automatically");
     }
 
 }

@@ -16,10 +16,17 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.slf4j.LoggerFactory.getLogger;
+
 import java.util.HashMap;
 import java.util.Map;
 
+import org.slf4j.Logger;
+
 public class LoginRepository {
+
+    static final Logger log = getLogger(lookup().lookupClass());
 
     Map<String, String> users;
 
@@ -33,7 +40,7 @@ public class LoginRepository {
     }
 
     public boolean login(UserForm userForm) {
-        System.out.println("LoginRepository.login " + userForm);
+        log.debug("LoginRepository.login {}", userForm);
 
         String username = userForm.getUsername();
         String password = userForm.getPassword();

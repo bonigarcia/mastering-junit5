@@ -3,10 +3,11 @@ repositories {
 }
 
 ext {
+    slf4jVersion  = '1.7.30'
+    logbackVersion  = '1.2.3'
     junitJupiterVersion = '5.5.2'
     junitDockerVersion = '1.0.0'
     mysqlConnectorVersion = '5.1.43'
-    slf4jVersion  = '1.7.12'
 }
 
 apply plugin: 'java'
@@ -34,9 +35,10 @@ compileTestJava {
 }
 
 dependencies {
+    implementation("org.slf4j:slf4j-api:${slf4jVersion}")
+    implementation("ch.qos.logback:logback-classic:${logbackVersion}")
+
     testImplementation("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
     testImplementation("com.github.faustxvi:junit5-docker:${junitDockerVersion}")
     testImplementation("mysql:mysql-connector-java:${mysqlConnectorVersion}")
-    testImplementation("org.slf4j:slf4j-api:${slf4jVersion}")
-    testImplementation("org.slf4j:slf4j-simple:${slf4jVersion}")
 }

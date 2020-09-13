@@ -16,15 +16,23 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.slf4j.LoggerFactory.getLogger;
+
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+
 public class LoginService {
+
+    static final Logger log = getLogger(lookup().lookupClass());
+
     private LoginRepository loginRepository = new LoginRepository();
     private List<String> usersLogged = new ArrayList<>();
 
     public boolean login(UserForm userForm) {
-        System.out.println("LoginService.login " + userForm);
+        log.debug("LoginService.login {}", userForm);
 
         // Preconditions
         checkForm(userForm);
@@ -44,7 +52,7 @@ public class LoginService {
     }
 
     public void logout(UserForm userForm) {
-        System.out.println("LoginService.logout " + userForm);
+        log.debug("LoginService.logout {}", userForm);
 
         // Preconditions
         checkForm(userForm);

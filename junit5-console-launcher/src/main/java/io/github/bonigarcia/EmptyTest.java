@@ -16,13 +16,19 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.slf4j.LoggerFactory.getLogger;
+
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
 
 class EmptyTest {
 
-	@Test
-	void myTest() {
-		System.out.println("This is an empty test");
-	}
+    static final Logger log = getLogger(lookup().lookupClass());
+
+    @Test
+    void myTest() {
+        log.debug("This is an empty test");
+    }
 
 }

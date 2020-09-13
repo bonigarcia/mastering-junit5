@@ -16,16 +16,21 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
 import static org.junit.Assert.assertEquals;
+import static org.slf4j.LoggerFactory.getLogger;
 
 import org.junit.Test;
+import org.slf4j.Logger;
 
 public class LegacyJUnit4Test {
+
+    static final Logger log = getLogger(lookup().lookupClass());
 
     @Test
     public void myFirstTest() {
         String message = "1+1 should be equal to 2";
-        System.out.println(message);
+        log.debug(message);
 
         assertEquals(message, 2, 1 + 1);
     }
