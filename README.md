@@ -34,10 +34,12 @@ Moreover, the integration with third-party frameworks and technologies is also i
 
 This repository has different tags, one per minor version of JUnit 5. Currently, the available tags are the following:
 
-* `5.0`: Examples using JUnit 5.0.x. The examples of the book [Mastering Software Testing with JUnit 5] are based on this version.
-* `5.1`: Examples using JUnit 5.1.x.
-* `5.2`: Examples using JUnit 5.2.x.
-* `5.3`: Examples using JUnit 5.3.x.
+* `5.0`: Examples using JUnit 5.0.3. The examples of the book [Mastering Software Testing with JUnit 5] are based on this version.
+* `5.1`: Examples using JUnit 5.1.1.
+* `5.2`: Examples using JUnit 5.2.0.
+* `5.3`: Examples using JUnit 5.3.2.
+* `5.4`: Examples using JUnit 5.4.2.
+* `5.5`: Examples using JUnit 5.5.2.
 
 # Complete example
 
