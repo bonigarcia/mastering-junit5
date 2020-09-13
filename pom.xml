@@ -23,6 +23,7 @@
         <module>junit5-dependency-injection</module>
         <module>junit5-docker</module>
         <module>junit5-dynamic-tests</module>
+        <module>junit5-engine-spi</module>
         <module>junit5-extension-model</module>
         <module>junit5-extension-model-automatic</module>
         <module>junit5-failsafe</module>
