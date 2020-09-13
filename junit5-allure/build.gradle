@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        allureGradleVersion = '2.5'
+        allureGradleVersion = '2.8.1'
     }
     repositories {
         jcenter()
@@ -39,10 +39,10 @@ test {
 
 allure {
     autoconfigure = true
-    version = '2.6.0'
+    version = '2.13.5'
 
     useJUnit5 {
-       version = '2.6.0'
+       version = '2.13.5'
     }
 }
 
