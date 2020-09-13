@@ -17,8 +17,8 @@ jar {
 
 test {
     useJUnitPlatform {
-        includeTags 'non-functional'
-        excludeTags 'functional'
+        includeTags 'functional'
+        excludeTags 'non-functional'
         includeEngines 'junit-jupiter'
         excludeEngines 'junit-vintage'
     }
