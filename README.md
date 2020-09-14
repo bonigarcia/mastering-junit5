@@ -50,11 +50,11 @@ with a complete set of JUnit 5 tests (unit with Mockito, integration with Spring
 
 # About
 
-This is a project made by [Boni Garcia], Assistant Professor at [Universidad Rey Juan Carlos], Spain. Copyright &copy; 2017-2020.
+This is a project made by [Boni Garcia], Assistant Professor at [Universidad Carlos III de Madrid], Spain. Copyright &copy; 2017-2020.
 
 [JUnit 5]: http://junit.org/junit5/
 [Boni Garcia]: http://bonigarcia.github.io/
-[Universidad Rey Juan Carlos]: https://www.urjc.es/
+[Universidad Carlos III de Madrid]: http://www.it.uc3m.es/bogarcia/index.html
 [Logo]: http://bonigarcia.github.io/img/mastering_junit5_logo.png
 [GitHub Repository]: https://github.com/bonigarcia/mastering-junit5
 [Mastering Software Testing with JUnit 5]: https://www.amazon.com/Mastering-Software-Testing-JUnit-Comprehensive-ebook/dp/B076ZQCK5Q
