@@ -3,7 +3,7 @@ repositories {
 }
 
 ext {
-    junitJupiterVersion = '5.6.3'
+    junitJupiterVersion = '5.7.0'
     cucumberVersion = '6.6.1'
 }
 
