@@ -19,6 +19,7 @@ This repository contains code examples of [JUnit 5] for the book [Mastering Soft
 * Test templates.
 * Parameterized tests.
 * Parallel execution.
+* Ordered tests.
 
 Moreover, the integration with third-party frameworks and technologies is also illustrated with examples, concretely:
 
