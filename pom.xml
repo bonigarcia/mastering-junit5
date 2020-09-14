@@ -27,7 +27,6 @@
         <module>junit5-extension-model</module>
         <module>junit5-extension-model-automatic</module>
         <module>junit5-failsafe</module>
-        <module>junit5-hello-world</module>
         <module>junit5-junit4-runner</module>
         <module>junit5-launcher-api</module>
         <module>junit5-meta-annotations</module>
