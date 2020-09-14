@@ -14,10 +14,6 @@ repositories {
     mavenCentral()
 }
 
-ext {
-    junitJupiterVersion = '5.7.0'
-}
-
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
@@ -47,6 +43,6 @@ compileTestJava {
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')
 
-    testImplementation("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
