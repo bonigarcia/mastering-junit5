@@ -17,6 +17,7 @@
         <module>junit4-spring-boot</module>
         <module>junit5-allure</module>
         <module>junit5-assertions</module>
+        <module>junit5-basic-tests</module>
         <module>junit5-conditional-tests</module>
         <module>junit5-console-launcher</module>
         <module>junit5-cucumber</module>
@@ -44,7 +45,6 @@
         <module>junit5-spring-boot</module>
         <module>junit5-spring-boot-rest</module>
         <module>junit5-spring-boot-web</module>
-        <module>junit5-standard-tests</module>
         <module>junit5-tagging-filtering</module>
         <module>junit5-test-interfaces</module>
         <module>junit5-test-templates</module>
