@@ -1,5 +1,5 @@
 /*
- * (C) Copyright 2017 Boni Garcia (http://bonigarcia.github.io/)
+ * (C) Copyright 2020 Boni Garcia (http://bonigarcia.github.io/)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,45 +19,60 @@ package io.github.bonigarcia;
 import static java.lang.invoke.MethodHandles.lookup;
 import static org.slf4j.LoggerFactory.getLogger;
 
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestInstance.Lifecycle;
 import org.slf4j.Logger;
 
-class LifecycleJUnit5Test {
+@TestInstance(Lifecycle.PER_CLASS)
+class CompleteLifecycleJupiterTest {
 
     static final Logger log = getLogger(lookup().lookupClass());
 
+    MySUT mySut;
+
     @BeforeAll
-    static void setupAll() {
-        log.debug("Setup ALL TESTS in the class");
+    void setupAll() {
+        // setup (all)
+        mySut = new MySUT("Test_" + System.nanoTime());
     }
 
     @BeforeEach
     void setup() {
-        log.debug("Setup EACH TEST in the class");
+        // setup (each)
+        mySut.init();
     }
 
     @Test
-    void testOne() {
-        log.debug("TEST 1");
+    void sumTest() {
+        log.debug("Testing sum method in {} SUT", mySut.getName());
+
+        // exercise
+        int sum = mySut.sum(1, 2, 3);
+
+        // verify
+        Assertions.assertTrue(sum == 6);
     }
 
     @Test
-    void testTwo() {
-        log.debug("TEST 2");
+    void concanateTest() {
+        log.debug("Testing sum concatenate in {} SUT", mySut.getName());
+
+        // exercise
+        String phrase = mySut.concatenate("hello", "world");
+
+        // verify
+        Assertions.assertTrue(phrase.equals("hello world"));
     }
 
     @AfterEach
     void teardown() {
-        log.debug("Teardown EACH TEST in the class");
-    }
-
-    @AfterAll
-    static void teardownAll() {
-        log.debug("Teardown ALL TESTS in the class");
+        // release (each)
+        mySut.release();
     }
 
 }
