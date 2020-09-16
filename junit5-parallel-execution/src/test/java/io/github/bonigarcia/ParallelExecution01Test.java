@@ -28,20 +28,17 @@ class ParallelExecution01Test {
 
     @Test
     void test01() {
-        log.debug("ParallelExecution01Test 1.1");
-        log.debug("ParallelExecution01Test 1.2");
+        log.debug("01.test01");
     }
 
     @Test
     void test02() {
-        log.debug("ParallelExecution01Test 2.1");
-        log.debug("ParallelExecution01Test 2.2");
+        log.debug("01.test02");
     }
 
     @Test
     void test03() {
-        log.debug("ParallelExecution01Test 3.1");
-        log.debug("ParallelExecution01Test 3.2");
+        log.debug("01.test03");
     }
 
 }
