@@ -25,16 +25,19 @@ class DisplayNameTest {
     @Test
     @DisplayName("Custom test name containing spaces")
     void testWithDisplayNameContainingSpaces() {
+        // TODO
     }
 
     @Test
     @DisplayName("╯°□°）╯")
     void testWithDisplayNameContainingSpecialCharacters() {
+        // TODO
     }
 
     @Test
     @DisplayName("😱")
     void testWithDisplayNameContainingEmoji() {
+        // TODO
     }
 
 }
