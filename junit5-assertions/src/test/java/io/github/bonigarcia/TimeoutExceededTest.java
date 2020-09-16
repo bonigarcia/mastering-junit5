@@ -32,7 +32,7 @@ class TimeoutExceededTest {
         });
     }
 
-    @Disabled
+    @Disabled("Skipped for not breaking buld in Travis CI")
     @Test
     void timeoutExceeded() {
         assertTimeout(ofMillis(10), () -> {

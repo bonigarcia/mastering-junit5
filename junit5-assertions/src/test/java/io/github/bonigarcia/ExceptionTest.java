@@ -38,9 +38,7 @@ class ExceptionTest {
     @Test
     void exceptionTesting() {
         log.debug("Testing with assertThrows");
-        assertThrows(RuntimeException.class, () -> {
-            mySut.releaseId();
-        });
+        assertThrows(RuntimeException.class, mySut::releaseId);
         log.debug("End of test");
     }
 
