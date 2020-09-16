@@ -23,7 +23,7 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 
-@Disabled("All test in this class will be skipped")
+@Disabled("All tests in this class are skipped")
 class DisabledAllTest {
 
     static final Logger log = getLogger(lookup().lookupClass());
