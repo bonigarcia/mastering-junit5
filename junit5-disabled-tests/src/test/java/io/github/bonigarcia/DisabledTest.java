@@ -1,5 +1,5 @@
 /*
- * (C) Copyright 2017 Boni Garcia (http://bonigarcia.github.io/)
+ * (C) Copyright 2020 Boni Garcia (http://bonigarcia.github.io/)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,18 +16,26 @@
  */
 package io.github.bonigarcia;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.slf4j.LoggerFactory.getLogger;
 
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
 
-@Target({ ElementType.TYPE, ElementType.METHOD })
-@Retention(RetentionPolicy.RUNTIME)
-@ExtendWith(OsCondition.class)
-public @interface DisabledOnOs {
+class DisabledTest {
 
-    Os[] value();
+    static final Logger log = getLogger(lookup().lookupClass());
+
+    @Test
+    void test() {
+        log.debug("This test is executed");
+    }
+
+    @Disabled
+    @Test
+    void skippedTest() {
+        log.debug("This test is NOT executed");
+    }
 
 }

@@ -1,5 +1,5 @@
 /*
- * (C) Copyright 2017 Boni Garcia (http://bonigarcia.github.io/)
+ * (C) Copyright 2020 Boni Garcia (http://bonigarcia.github.io/)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,34 +16,26 @@
  */
 package io.github.bonigarcia;
 
-import static org.junit.jupiter.api.Assertions.fail;
-import static org.junit.jupiter.api.Assumptions.assumeFalse;
-import static org.junit.jupiter.api.Assumptions.assumeTrue;
-import static org.junit.jupiter.api.Assumptions.assumingThat;
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.slf4j.LoggerFactory.getLogger;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
 
-class AssumptionsTest {
+@Disabled("All test in this class will be skipped")
+class DisabledAllTest {
+
+    static final Logger log = getLogger(lookup().lookupClass());
 
     @Test
-    void assumeTrueTest() {
-        assumeTrue(false);
-        fail("Test 1 failed");
+    void skippedTestOne() {
+        log.debug("This test is NOT executed");
     }
 
     @Test
-    void assumeFalseTest() {
-        assumeFalse(this::getTrue);
-        fail("Test 2 failed");
-    }
-
-    private boolean getTrue() {
-        return true;
-    }
-
-    @Test
-    void assummingThatTest() {
-        assumingThat(false, () -> fail("Test 3 failed"));
+    void skippedTestTwo() {
+        log.debug("This test is NOT executed");
     }
 
 }
