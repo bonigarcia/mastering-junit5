@@ -19,10 +19,12 @@ package io.github.bonigarcia;
 import static java.lang.invoke.MethodHandles.lookup;
 import static org.slf4j.LoggerFactory.getLogger;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.parallel.Isolated;
 import org.slf4j.Logger;
 
+@Disabled
 @Isolated
 class IsolatedTest {
 
