@@ -21,35 +21,25 @@ import static org.slf4j.LoggerFactory.getLogger;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
-import org.junit.jupiter.api.TestInstance.Lifecycle;
 import org.slf4j.Logger;
 
-@TestInstance(Lifecycle.PER_CLASS)
-class CompleteLifecycleJupiterTest {
+class BasicTest {
 
     static final Logger log = getLogger(lookup().lookupClass());
 
     MySUT mySut;
 
-    @BeforeAll
-    void setupAll() {
-        // setup (all)
-        mySut = new MySUT("Test_" + System.nanoTime());
-    }
-
     @BeforeEach
     void setup() {
-        // setup (each)
-        mySut.init();
+        mySut = new MySUT("[Basic test]");
+        mySut.initId();
     }
 
     @Test
     void sumTest() {
-        log.debug("Testing sum method in {} SUT", mySut.getName());
+        log.debug("Testing sum method in {}", mySut.getName());
 
         // exercise
         int sum = mySut.sum(1, 2, 3);
@@ -71,8 +61,8 @@ class CompleteLifecycleJupiterTest {
 
     @AfterEach
     void teardown() {
-        // release (each)
-        mySut.release();
+        mySut.releaseId();
+        mySut.close();
     }
 
 }

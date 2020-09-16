@@ -19,51 +19,45 @@ package io.github.bonigarcia;
 import static java.lang.invoke.MethodHandles.lookup;
 import static org.slf4j.LoggerFactory.getLogger;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 
-class BasicJupiterTest {
+class LifecycleTest {
 
     static final Logger log = getLogger(lookup().lookupClass());
 
-    MySUT mySut;
+    @BeforeAll
+    static void setupAll() {
+        log.debug("@BeforeAll");
+    }
 
     @BeforeEach
     void setup() {
-        // setup
-        mySut = new MySUT("Test_" + System.nanoTime());
-        mySut.init();
+        log.debug("@BeforeEach");
     }
 
     @Test
-    void sumTest() {
-        log.debug("Testing sum method in {} SUT", mySut.getName());
-
-        // exercise
-        int sum = mySut.sum(1, 2, 3);
-
-        // verify
-        Assertions.assertTrue(sum == 6);
+    void test1() {
+        log.debug("@Test [1]");
     }
 
     @Test
-    void concanateTest() {
-        log.debug("Testing sum concatenate in {} SUT", mySut.getName());
-
-        // exercise
-        String phrase = mySut.concatenate("hello", "world");
-
-        // verify
-        Assertions.assertTrue(phrase.equals("hello world"));
+    void test2() {
+        log.debug("@Test [2]");
     }
 
     @AfterEach
     void teardown() {
-        // release
-        mySut.release();
+        log.debug("@AfterEach");
+    }
+
+    @AfterAll
+    static void teardownAll() {
+        log.debug("@AfterAll");
     }
 
 }
