@@ -53,10 +53,12 @@ class NestTest {
 
         @Nested
         class InnerClass2 {
+
             @Test
             void innerTest2() {
                 log.debug("Test 3");
             }
+
         }
     }
 }
