@@ -43,6 +43,9 @@ public class MySUT implements Closeable {
     }
 
     public void releaseId() {
+        if (id == null) {
+            throw new IllegalArgumentException(name + " not initilized");
+        }
         log.info("Id released: {}", id);
         id = null;
     }
