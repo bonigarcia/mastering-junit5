@@ -1,5 +1,5 @@
 /*
- * (C) Copyright 2017 Boni Garcia (http://bonigarcia.github.io/)
+ * (C) Copyright 2018 Boni Garcia (http://bonigarcia.github.io/)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,23 +16,36 @@
  */
 package io.github.bonigarcia;
 
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.junit.jupiter.api.condition.OS.LINUX;
+import static org.junit.jupiter.api.condition.OS.MAC;
+import static org.junit.jupiter.api.condition.OS.WINDOWS;
 import static org.slf4j.LoggerFactory.getLogger;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledOnOs;
 import org.slf4j.Logger;
-
-import static io.github.bonigarcia.Os.MAC;
-import static java.lang.invoke.MethodHandles.lookup;
-import static io.github.bonigarcia.Os.LINUX;
 
 class DisabledOnOsTest {
 
     static final Logger log = getLogger(lookup().lookupClass());
 
-    @DisabledOnOs({ MAC, LINUX })
+    @DisabledOnOs(LINUX)
     @Test
-    void conditionalTest() {
-        log.debug("This test will be disabled on MAC and LINUX");
+    void notLinuxTest() {
+        log.debug("Disabled on Linux");
+    }
+
+    @DisabledOnOs(WINDOWS)
+    @Test
+    void notWinTest() {
+        log.debug("Disabled on Windows");
+    }
+
+    @DisabledOnOs(MAC)
+    @Test
+    void notMacTest() {
+        log.debug("Disabled on Mac");
     }
 
 }
