@@ -16,20 +16,32 @@
  */
 package io.github.bonigarcia;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static java.lang.invoke.MethodHandles.lookup;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.slf4j.LoggerFactory.getLogger;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
 
 class ExceptionTest {
 
+    static final Logger log = getLogger(lookup().lookupClass());
+
+    MySUT mySut;
+
+    @BeforeEach
+    void setup() {
+        mySut = new MySUT("[Assertions test]");
+    }
+
     @Test
     void exceptionTesting() {
-        Throwable exception = assertThrows(IllegalArgumentException.class,
-                () -> {
-                    throw new IllegalArgumentException("a message");
-                });
-        assertEquals("a message", exception.getMessage());
+        log.debug("Testing with assertThrows");
+        assertThrows(RuntimeException.class, () -> {
+            mySut.releaseId();
+        });
+        log.debug("End of test");
     }
 
 }
