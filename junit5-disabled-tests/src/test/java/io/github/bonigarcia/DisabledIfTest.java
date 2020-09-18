@@ -21,6 +21,10 @@ import static org.slf4j.LoggerFactory.getLogger;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.DisabledIf;
+import org.junit.jupiter.api.condition.DisabledIfEnvironmentVariable;
+import org.junit.jupiter.api.condition.DisabledIfEnvironmentVariables;
+import org.junit.jupiter.api.condition.DisabledIfSystemProperties;
+import org.junit.jupiter.api.condition.DisabledIfSystemProperty;
 import org.junit.jupiter.api.condition.EnabledIf;
 import org.slf4j.Logger;
 
@@ -37,6 +41,34 @@ class DisabledIfTest {
     @DisabledIf("customCondition")
     void skippedTest() {
         log.debug("This test is NOT executed");
+    }
+
+    @DisabledIfEnvironmentVariable(named = "ENV", matches = "staging-server")
+    void envTest() {
+        log.debug(
+                "This test is executed depending on the value of an environment variable");
+    }
+
+    @DisabledIfEnvironmentVariables({
+            @DisabledIfEnvironmentVariable(named = "ENV", matches = ".*development.*"),
+            @DisabledIfEnvironmentVariable(named = "OS_ARCH", matches = ".*64.*") })
+    void envsTest() {
+        log.debug(
+                "This test is executed depending on the value of several environment variables");
+    }
+
+    @DisabledIfSystemProperty(named = "ci-server", matches = "true")
+    void sysPropTest() {
+        log.debug(
+                "This test is executed depending on the value of a system property");
+    }
+
+    @DisabledIfSystemProperties({
+            @DisabledIfSystemProperty(named = "ci-server", matches = "true"),
+            @DisabledIfSystemProperty(named = "jenkins", matches = "true") })
+    void sysPropsTest() {
+        log.debug(
+                "This test is executed depending on the value of several system properties");
     }
 
     boolean customCondition() {
