@@ -36,9 +36,4 @@ class ParallelExecution01Test {
         log.debug("01.test02");
     }
 
-    @Test
-    void test03() {
-        log.debug("01.test03");
-    }
-
 }
