@@ -49,4 +49,11 @@ class ValueSourcePrimitiveTypesParameterizedTest {
         assertNotNull(argument);
     }
 
+    @ParameterizedTest
+    @ValueSource(strings = { "aa", "bb" })
+    void testWithsStrings(String argument) {
+        log.debug("Parameterized test with (String) argument: {}", argument);
+        assertNotNull(argument);
+    }
+
 }
