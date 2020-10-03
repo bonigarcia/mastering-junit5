@@ -20,6 +20,7 @@
         <module>junit5-basic-tests</module>
         <module>junit5-console-launcher</module>
         <module>junit5-cucumber</module>
+        <module>junit5-cucumber-selenium</module>
         <module>junit5-dependency-injection</module>
         <module>junit5-disabled-tests</module>
         <module>junit5-docker</module>
