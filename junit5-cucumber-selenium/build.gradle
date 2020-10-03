@@ -44,5 +44,5 @@ dependencies {
     testImplementation("io.cucumber:cucumber-java:${cucumberVersion}")
     testImplementation("io.cucumber:cucumber-junit-platform-engine:${cucumberVersion}")
     testImplementation("org.seleniumhq.selenium:selenium-java:${seleniumJavaVersion}")
-    testImplementation("io.github.bonigarcia:webbdrivermanager:${webdrivermanagerVersion}")
+    testImplementation("io.github.bonigarcia:webdrivermanager:${webdrivermanagerVersion}")
 }
