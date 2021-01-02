@@ -18,7 +18,6 @@ package io.github.bonigarcia;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
@@ -66,7 +65,6 @@ class LoginControllerLoginTest {
         // Verification
         assertEquals("KO", reseponseLogin);
         verify(loginService).login(userForm);
-        verifyNoInteractions(loginService);
     }
 
 }
