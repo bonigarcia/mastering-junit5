@@ -6,3 +6,15 @@ updates:
     interval: daily
     time: '08:00'
   open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit4-mockito"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-mockito"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
