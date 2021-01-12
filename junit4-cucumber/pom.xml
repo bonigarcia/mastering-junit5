@@ -8,7 +8,7 @@
 
     <properties>
         <junit.version>4.13.1</junit.version>
-        <cucumber.version>2.0.0</cucumber.version>
+        <cucumber.version>6.9.1</cucumber.version>
 
         <java.version>1.8</java.version>
         <maven.compiler.target>${java.version}</maven.compiler.target>
