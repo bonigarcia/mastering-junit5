@@ -5,9 +5,9 @@ repositories {
 ext {
     slf4jVersion  = '1.7.30'
     logbackVersion  = '1.2.3'
-    retrofitVersion  = '2.3.0'
+    retrofitVersion  = '2.9.0'
     junitJupiterVersion = '5.7.0'
-    wireMockVersion  = '2.8.0'
+    wireMockVersion  = '2.27.2'
 }
 
 apply plugin: 'java'
