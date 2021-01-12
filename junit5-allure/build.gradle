@@ -1,14 +1,38 @@
+buildscript {
+    ext {
+        allureGradleVersion = '2.8.1'
+    }
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "io.qameta.allure:allure-gradle:${allureGradleVersion}"
+    }
+}
+
 repositories {
     mavenCentral()
 }
 
 ext {
-    junitJupiterVersion = '5.5.2'
+    junitJupiterVersion = '5.7.0'
+    allureGradleVersion = '2.8.1'
 }
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
+apply plugin: 'io.qameta.allure'
+
+allure {
+    autoconfigure = true
+    version = '2.8.1'
+
+    useJUnit5 {
+       version = '2.0-BETA10'
+    }
+}
 
 jar {
     archiveBaseName = 'junit5-allure'
