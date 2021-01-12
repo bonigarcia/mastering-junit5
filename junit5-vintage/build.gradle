@@ -6,9 +6,9 @@ ext {
     slf4jVersion  = '1.7.30'
     logbackVersion  = '1.2.3'
 
-    junitVintageVersion  = '4.12.3'
+    junitVintageVersion  = '5.7.0'
 
-    junitLegacyVersion  = '4.13'
+    junitLegacyVersion  = '4.13.1'
 }
 
 apply plugin: 'java'

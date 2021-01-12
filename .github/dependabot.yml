@@ -6,3 +6,225 @@ updates:
     interval: daily
     time: '08:00'
   open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-allure"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-android"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-assertions"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-basic-tests"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-console-launcher"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-cucumber"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-cucumber-selenium"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-dependency-injection"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-disabled-tests"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-docker"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-dynamic-tests"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-engine-spi"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-extension-model"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-extension-model-automatic"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-gradle-hello-world"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-junit4-runner"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-launcher-api"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-meta-annotations"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-migration-support"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-mockito"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-nested-tests"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-ordered-tests"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-parallel-execution"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-parameterized"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-repeated-tests"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-reporting"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-rest-assured"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-selenium"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-spring"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-spring-boot"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-spring-boot-rest"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-spring-boot-web"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-tagging-filtering"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-test-interfaces"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-test-templates"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-vintage"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
+- package-ecosystem: gradle
+  directory: "/junit5-wiremock"
+  schedule:
+    interval: daily
+    time: '08:00'
+  open-pull-requests-limit: 99
