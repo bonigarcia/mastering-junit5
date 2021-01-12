@@ -31,7 +31,9 @@ public class TruthTest {
     void test() {
         log.debug("Assertion using Truth");
 
-        assertThat(1 + 1).isEqualTo(2);
+        int sum = 1 + 1;
+
+        assertThat(sum).isEqualTo(2);
     }
 
 }
