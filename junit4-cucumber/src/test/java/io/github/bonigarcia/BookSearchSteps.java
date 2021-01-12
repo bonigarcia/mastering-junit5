@@ -18,39 +18,46 @@ package io.github.bonigarcia;
 
 import static org.junit.Assert.assertEquals;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import cucumber.api.Format;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class BookSearchSteps {
     Library library = new Library();
     List<Book> result = new ArrayList<>();
 
-    @Given(".+book with the title '(.+)', written by '(.+)', published in (.+)")
-    public void addNewBook(final String title, final String author,
-            @Format("dd MMMMM yyyy") final Date published) {
+    @Given("a book with the title {string}, written by {string}, published in {string}")
+    public void addNewBook(String title, String author, String date)
+            throws ParseException {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        Date published = dateFormat.parse(date);
         Book book = new Book(title, author, published);
         library.addBook(book);
     }
 
-    @When("^the customer searches for books published between (\\d+) and (\\d+)$")
-    public void setSearchParameters(@Format("yyyy") Date from,
-            @Format("yyyy") Date to) {
+    @When("the customer searches for books published between {string} and {string}")
+    public void setSearchParameters(String year1, String year2)
+            throws ParseException {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy");
+        Date from = dateFormat.parse(year1);
+        Date to = dateFormat.parse(year2);
         result = library.findBooks(from, to);
     }
 
-    @Then("(\\d+) books should have been found$")
+    @Then("{int} books should have been found")
     public void verifyAmountOfBooksFound(int booksFound) {
         assertEquals(result.size(), booksFound);
     }
 
-    @Then("Book (\\d+) should have the title '(.+)'$")
+    @Then("Book {int} should have the title {string}")
     public void verifyBookAtPosition(int position, String title) {
         assertEquals(result.get(position - 1).getTitle(), title);
     }
+
 }
