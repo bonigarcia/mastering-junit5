@@ -12,7 +12,7 @@
 
         <junit-jupiter.version>5.7.0</junit-jupiter.version>
         <hamcrest.version>2.2</hamcrest.version>
-        <truth.version>1.1</truth.version>
+        <truth.version>1.1.1</truth.version>
 
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
 
