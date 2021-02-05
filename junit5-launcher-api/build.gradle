@@ -3,7 +3,7 @@ repositories {
 }
 
 ext {
-    junitJupiterVersion = '5.7.0'
+    junitJupiterVersion = '5.7.1'
     junitPlatformVersion = '1.7.0'
 }
 
