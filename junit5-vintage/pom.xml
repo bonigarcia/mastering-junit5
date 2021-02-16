@@ -10,7 +10,7 @@
         <slf4j.version>1.7.30</slf4j.version>
         <logback.version>1.2.3</logback.version>
 
-        <junit-legacy.version>4.13.1</junit-legacy.version>
+        <junit-legacy.version>4.13.2</junit-legacy.version>
 
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
 
