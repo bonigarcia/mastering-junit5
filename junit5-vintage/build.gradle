@@ -8,7 +8,7 @@ ext {
 
     junitVintageVersion  = '5.7.1'
 
-    junitLegacyVersion  = '4.13.1'
+    junitLegacyVersion  = '4.13.2'
 }
 
 apply plugin: 'java'
