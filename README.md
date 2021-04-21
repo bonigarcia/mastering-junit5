@@ -1,8 +1,8 @@
 # [![][Logo]][GitHub Repository]
 
-[![Build Status](https://travis-ci.org/bonigarcia/mastering-junit5.svg?branch=master)](https://travis-ci.org/bonigarcia/mastering-junit5)
+[![Build Status](https://github.com/bonigarcia/mastering-junit5/workflows/build/badge.svg)](https://github.com/bonigarcia/mastering-junit5/actions)
 [![License badge](https://img.shields.io/badge/license-Apache2-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
-[![Support badge](https://img.shields.io/badge/stackoverflow-junit5-green.svg)](https://stackoverflow.com/questions/tagged/junit5)
+[![Support badge](https://img.shields.io/badge/stackoverflow-junit5-green.svg?logo=stackoverflow)](https://stackoverflow.com/questions/tagged/junit5)
 [![Twitter Follow](https://img.shields.io/twitter/follow/boni_gg.svg?style=social)](https://twitter.com/boni_gg)
 
 This repository contains code examples of [JUnit 5] for the book [Mastering Software Testing with JUnit 5], authored by [Boni Garcia] and published by [Packt]. These examples covers the main features of JUnit 5, such as:
