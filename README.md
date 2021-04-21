@@ -1,8 +1,8 @@
 # [![][Logo]][GitHub Repository]
 
 [![Build Status](https://travis-ci.org/bonigarcia/mastering-junit5.svg?branch=master)](https://travis-ci.org/bonigarcia/mastering-junit5)
-[![License badge](https://img.shields.io/badge/license-Apache2-green.svg)](http://www.apache.org/licenses/LICENSE-2.0)
-[![Support badge](https://img.shields.io/badge/stackoverflow-junit5-green.svg)](http://stackoverflow.com/questions/tagged/junit5)
+[![License badge](https://img.shields.io/badge/license-Apache2-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Support badge](https://img.shields.io/badge/stackoverflow-junit5-green.svg)](https://stackoverflow.com/questions/tagged/junit5)
 [![Twitter Follow](https://img.shields.io/twitter/follow/boni_gg.svg?style=social)](https://twitter.com/boni_gg)
 
 This repository contains code examples of [JUnit 5] for the book [Mastering Software Testing with JUnit 5], authored by [Boni Garcia] and published by [Packt]. These examples covers the main features of JUnit 5, such as:
@@ -52,10 +52,10 @@ with a complete set of JUnit 5 tests (unit with Mockito, integration with Spring
 
 This is a project made by [Boni Garcia], Visiting Professor at [Universidad Carlos III de Madrid], Spain. Copyright &copy; 2017-2021.
 
-[JUnit 5]: http://junit.org/junit5/
-[Boni Garcia]: http://bonigarcia.github.io/
-[Universidad Carlos III de Madrid]: http://www.it.uc3m.es/bogarcia/index.html
-[Logo]: http://bonigarcia.github.io/img/mastering_junit5_logo.png
+[JUnit 5]: https://junit.org/junit5/
+[Boni Garcia]: https://bonigarcia.github.io/
+[Universidad Carlos III de Madrid]: https://www.it.uc3m.es/bogarcia/index.html
+[Logo]: https://bonigarcia.github.io/img/mastering_junit5_logo.png
 [GitHub Repository]: https://github.com/bonigarcia/mastering-junit5
 [Mastering Software Testing with JUnit 5]: https://www.amazon.com/Mastering-Software-Testing-JUnit-Comprehensive-ebook/dp/B076ZQCK5Q
 [Packt]: https://www.packtpub.com/web-development/mastering-software-testing-junit-5
