@@ -6,7 +6,7 @@ ext {
     slf4jVersion  = '1.7.30'
     logbackVersion  = '1.2.3'
     retrofitVersion  = '2.9.0'
-    junitJupiterVersion = '5.7.1'
+    junitJupiterVersion = '5.7.2'
     wireMockVersion  = '2.27.2'
 }
 
