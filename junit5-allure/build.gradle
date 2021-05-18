@@ -16,7 +16,7 @@ repositories {
 }
 
 ext {
-    junitJupiterVersion = '5.7.1'
+    junitJupiterVersion = '5.7.2'
     allureGradleVersion = '2.8.1'
 }
 
