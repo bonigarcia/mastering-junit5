@@ -32,6 +32,8 @@ allure {
     useJUnit5 {
        version = '2.0-BETA10'
     }
+
+    configuration = "testImplementation"
 }
 
 jar {
