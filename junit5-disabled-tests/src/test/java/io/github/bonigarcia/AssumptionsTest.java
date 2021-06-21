@@ -19,7 +19,6 @@ package io.github.bonigarcia;
 import static java.lang.invoke.MethodHandles.lookup;
 import static org.junit.jupiter.api.Assumptions.assumeFalse;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
-import static org.junit.jupiter.api.Assumptions.assumingThat;
 import static org.slf4j.LoggerFactory.getLogger;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -47,15 +46,6 @@ class AssumptionsTest {
     void assumeFalseTest() {
         assumeFalse(mySut.getId() != null);
         log.debug("This test is executed");
-    }
-
-    @Test
-    void assummingThatTest() {
-        log.debug("This test is always executed");
-        assumingThat(mySut.getId() != null, () -> {
-            log.info("This logic is skipped");
-        });
-        log.debug("Finishing test");
     }
 
 }

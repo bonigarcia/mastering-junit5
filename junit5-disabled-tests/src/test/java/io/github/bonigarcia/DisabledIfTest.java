@@ -19,6 +19,7 @@ package io.github.bonigarcia;
 import static java.lang.invoke.MethodHandles.lookup;
 import static org.slf4j.LoggerFactory.getLogger;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.DisabledIf;
 import org.junit.jupiter.api.condition.DisabledIfEnvironmentVariable;
@@ -28,6 +29,7 @@ import org.junit.jupiter.api.condition.DisabledIfSystemProperty;
 import org.junit.jupiter.api.condition.EnabledIf;
 import org.slf4j.Logger;
 
+@Disabled("All tests in this class are skipped")
 class DisabledIfTest {
 
     static final Logger log = getLogger(lookup().lookupClass());
