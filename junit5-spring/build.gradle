@@ -40,5 +40,5 @@ dependencies {
     implementation("org.springframework:spring-context:${springVersion}")
 
     testImplementation("org.springframework:spring-test:${springVersion}")
-    testImplementation("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter:${junitJupiterVersion}")
 }

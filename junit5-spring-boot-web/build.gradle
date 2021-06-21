@@ -44,6 +44,6 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testImplementation("org.junit.jupiter:junit-jupiter-engine")
+    testImplementation("org.junit.jupiter:junit-jupiter")
     testImplementation("org.mockito:mockito-junit-jupiter")
 }

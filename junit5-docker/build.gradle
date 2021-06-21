@@ -38,7 +38,7 @@ dependencies {
     implementation("org.slf4j:slf4j-api:${slf4jVersion}")
     implementation("ch.qos.logback:logback-classic:${logbackVersion}")
 
-    testImplementation("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter:${junitJupiterVersion}")
     testImplementation("com.github.faustxvi:junit5-docker:${junitDockerVersion}")
     testImplementation("mysql:mysql-connector-java:${mysqlConnectorVersion}")
 }

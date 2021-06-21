@@ -35,5 +35,5 @@ compileTestJava {
 dependencies {
     testImplementation("org.slf4j:slf4j-api:${slf4jVersion}")
     testImplementation("ch.qos.logback:logback-classic:${logbackVersion}")
-    testImplementation("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter:${junitJupiterVersion}")
 }

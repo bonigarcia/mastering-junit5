@@ -39,5 +39,5 @@ compileTestJava {
 dependencies {
     implementation("org.slf4j:slf4j-api:${slf4jVersion}")
     implementation("ch.qos.logback:logback-classic:${logbackVersion}")
-    implementation("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    implementation("org.junit.jupiter:junit-jupiter:${junitJupiterVersion}")
 }

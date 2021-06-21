@@ -40,7 +40,7 @@ dependencies {
     implementation("org.slf4j:slf4j-api:${slf4jVersion}")
     implementation("ch.qos.logback:logback-classic:${logbackVersion}")
 
-    testImplementation("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter:${junitJupiterVersion}")
     testImplementation("io.cucumber:cucumber-java:${cucumberVersion}")
     testImplementation("io.cucumber:cucumber-junit-platform-engine:${cucumberVersion}")
     testImplementation("org.seleniumhq.selenium:selenium-java:${seleniumJavaVersion}")

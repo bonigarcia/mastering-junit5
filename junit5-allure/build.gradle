@@ -57,5 +57,5 @@ compileTestJava {
 }
 
 dependencies {
-    testImplementation("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter:${junitJupiterVersion}")
 }

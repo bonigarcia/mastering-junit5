@@ -41,6 +41,6 @@ dependencies {
     implementation("com.squareup.retrofit2:adapter-rxjava:${retrofitVersion}")
     implementation("com.squareup.retrofit2:converter-gson:${retrofitVersion}")
 
-    testImplementation("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter:${junitJupiterVersion}")
     testImplementation("com.github.tomakehurst:wiremock:${wireMockVersion}")
 }
