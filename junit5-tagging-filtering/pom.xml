@@ -49,10 +49,12 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
+                <!--
                 <configuration>
                     <groups>functional</groups>
                     <excludedGroups>non-functional</excludedGroups>
                 </configuration>
+                -->
             </plugin>
         </plugins>
     </build>

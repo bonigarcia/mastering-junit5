@@ -20,18 +20,23 @@ jar {
 
 test {
     useJUnitPlatform {
-        includeTags 'functional'
-        excludeTags 'non-functional'
-        includeEngines 'junit-jupiter'
-        excludeEngines 'junit-vintage'
+        includeTags 'non-functional'
+        excludeTags 'functional'
     }
     
-    filter {
-        includeTestsMatching '.*Spec'
-        includeTestsMatching '.*Test'
-        includeTestsMatching '.*Tests'
-        includeTestsMatching 'io.github.bonigarcia.*'
+    testLogging {
+        events "passed", "skipped", "failed"
+        showStandardStreams = true
     }
+}
+
+tasks.register("functionalTest", Test) {
+    useJUnitPlatform {
+        includeTags 'functional'
+        excludeTags 'non-functional'
+    }
+
+    mustRunAfter check
 
     testLogging {
         events "passed", "skipped", "failed"
