@@ -5,7 +5,7 @@
 [![Support badge](https://img.shields.io/badge/stackoverflow-junit5-green.svg?logo=stackoverflow)](https://stackoverflow.com/questions/tagged/junit5)
 [![Twitter Follow](https://img.shields.io/twitter/follow/boni_gg.svg?style=social)](https://twitter.com/boni_gg)
 
-This repository contains code examples of [JUnit 5] for the book [Mastering Software Testing with JUnit 5], authored by [Boni Garcia] and published by [Packt]. These examples covers the main features of JUnit 5, such as:
+This repository contains code examples of [JUnit 5] for the book [Mastering Software Testing with JUnit 5], authored by [Boni Garcia], edited by [Packt]. These examples cover the main features of JUnit 5, such as:
 
 * JUnit 5 tests lifecycle.
 * Assertions.
