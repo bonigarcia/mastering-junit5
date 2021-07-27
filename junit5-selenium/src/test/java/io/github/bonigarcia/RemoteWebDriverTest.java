@@ -37,7 +37,7 @@ public class RemoteWebDriverTest {
                     "browserName=chrome",
                     "version=59" }) RemoteWebDriver remoteChrome) {
 
-        remoteChrome.get("https://bonigarcia.github.io/selenium-jupiter/");
+        remoteChrome.get("https://bonigarcia.org/selenium-jupiter/");
 
         assertTrue(remoteChrome.getTitle().contains("JUnit 5 extension"));
     }

@@ -30,7 +30,7 @@ public class LocalWebDriverTest {
 
     @Test
     public void testWithChrome(ChromeDriver chrome) {
-        chrome.get("https://bonigarcia.github.io/selenium-jupiter/");
+        chrome.get("https://bonigarcia.org/selenium-jupiter/");
 
         assertTrue(chrome.getTitle().startsWith("Selenium-Jupiter"));
     }

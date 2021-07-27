@@ -50,7 +50,7 @@ public class AppiumTest {
                 .click();
         android.context(context);
 
-        android.get("https://bonigarcia.github.io/selenium-jupiter/");
+        android.get("https://bonigarcia.org/selenium-jupiter/");
         assertTrue(android.getTitle().contains("JUnit 5 extension"));
     }
 
