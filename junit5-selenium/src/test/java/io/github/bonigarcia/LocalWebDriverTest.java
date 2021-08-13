@@ -29,17 +29,15 @@ import io.github.bonigarcia.seljup.SeleniumJupiter;
 public class LocalWebDriverTest {
 
     @Test
-    public void testWithChrome(ChromeDriver chrome) {
-        chrome.get("https://bonigarcia.org/selenium-jupiter/");
-
-        assertTrue(chrome.getTitle().startsWith("Selenium-Jupiter"));
+    public void testWithChrome(ChromeDriver driver) {
+        driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
+        assertTrue(driver.getTitle().contains("Selenium WebDriver"));
     }
 
     @Test
-    public void testWithFirefox(FirefoxDriver firefox) {
-        firefox.get("http://www.seleniumhq.org/");
-
-        assertTrue(firefox.getTitle().startsWith("Selenium"));
+    public void testWithFirefox(FirefoxDriver driver) {
+        driver.get("http://www.seleniumhq.org/");
+        assertTrue(driver.getTitle().startsWith("Selenium"));
     }
 
 }

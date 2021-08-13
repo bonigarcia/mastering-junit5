@@ -35,11 +35,9 @@ public class RemoteWebDriverTest {
     void testWithRemoteChrome(
             @DriverUrl("http://localhost:4444/wd/hub") @DriverCapabilities({
                     "browserName=chrome",
-                    "version=59" }) RemoteWebDriver remoteChrome) {
-
-        remoteChrome.get("https://bonigarcia.org/selenium-jupiter/");
-
-        assertTrue(remoteChrome.getTitle().contains("JUnit 5 extension"));
+                    "version=59" }) RemoteWebDriver driver) {
+        driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
+        assertTrue(driver.getTitle().contains("Selenium WebDriver"));
     }
 
 }

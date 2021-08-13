@@ -41,17 +41,16 @@ public class AppiumTest {
     }
 
     @Test
-    void testWithAndroid(AppiumDriver<WebElement> android) {
-        String context = android.getContext();
-        android.context("NATIVE_APP");
-        android.findElement(By.id("com.android.chrome:id/terms_accept"))
+    void testWithAndroid(AppiumDriver<WebElement> driver) {
+        String context = driver.getContext();
+        driver.context("NATIVE_APP");
+        driver.findElement(By.id("com.android.chrome:id/terms_accept")).click();
+        driver.findElement(By.id("com.android.chrome:id/negative_button"))
                 .click();
-        android.findElement(By.id("com.android.chrome:id/negative_button"))
-                .click();
-        android.context(context);
+        driver.context(context);
 
-        android.get("https://bonigarcia.org/selenium-jupiter/");
-        assertTrue(android.getTitle().contains("JUnit 5 extension"));
+        driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
+        assertTrue(driver.getTitle().contains("Selenium WebDriver"));
     }
 
 }
