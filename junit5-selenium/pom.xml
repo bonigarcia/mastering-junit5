@@ -9,6 +9,7 @@
     <properties>
         <junit-jupiter.version>5.7.2</junit-jupiter.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+        <selenium-java.version>3.141.59</selenium-java.version>
         <selenium-jupiter.version>4.0.1</selenium-jupiter.version>
 
         <java.version>1.8</java.version>
@@ -25,6 +26,12 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium-java.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
