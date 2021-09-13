@@ -26,7 +26,7 @@ Moreover, the integration with third-party frameworks and technologies is also i
 * Mockito (popular mock framework).
 * Spring (Java framework aimed to created enterprise applications based on dependency injection).
 * Docker (container platform technology).
-* Selenium (test framework for web applications).
+* Selenium WebDriver (test framework for web applications).
 * Appium (driver for mobile devices).
 * Android (open source mobile operating system based on Linux).
 * REST services (using REST Assured, Retrofit2, or WireMock).
@@ -42,6 +42,7 @@ This repository has different tags, one per minor version of JUnit 5. Currently,
 * `5.4`: Examples using JUnit 5.4.2.
 * `5.5`: Examples using JUnit 5.5.2.
 * `5.6`: Examples using JUnit 5.6.3.
+* `5.7`: Examples using JUnit 5.7.2.
 
 # Complete example
 
