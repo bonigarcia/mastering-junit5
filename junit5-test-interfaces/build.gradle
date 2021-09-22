@@ -3,7 +3,7 @@ repositories {
 }
 
 ext {
-    junitJupiterVersion = '5.7.2'
+    junitJupiterVersion = '5.8.0'
     slf4jVersion  = '1.7.32'
 }
 
