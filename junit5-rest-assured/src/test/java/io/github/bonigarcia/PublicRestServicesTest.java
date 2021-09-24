@@ -34,11 +34,10 @@ public class PublicRestServicesTest {
     }
 
     @Test
-    void testCountryService() {
-        given().when()
-                .get("https://restcountries.eu/rest/v2/alpha/es")
-                .then().assertThat().statusCode(200)
-                .body("name", equalTo("Spain"));
+    void testHttpBin() {
+        String url = "https://httpbin.org/get";
+        given().when().get(url).then().assertThat().statusCode(200).body("url",
+                equalTo(url));
     }
 
 }
