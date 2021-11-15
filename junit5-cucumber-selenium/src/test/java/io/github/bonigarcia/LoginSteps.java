@@ -37,7 +37,7 @@ public class LoginSteps {
     }
 
     @And("I login with the username {string} and password {string}")
-    public void iType(String username, String password) {
+    public void iLogin(String username, String password) {
         driver.findElement(By.id("username")).sendKeys(username);
         driver.findElement(By.id("password")).sendKeys(password);
 
@@ -49,7 +49,7 @@ public class LoginSteps {
     }
 
     @Then("I should be see the message {string}")
-    public void iShouldBeShownResultsIncluding(String result) {
+    public void iShouldSee(String result) {
         try {
             driver.findElement(
                     By.xpath("//*[contains(text(), '" + result + "')]"));
