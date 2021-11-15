@@ -46,13 +46,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
-                <configuration>
-                    <properties>
-                        <configurationParameters>
-                            junit.jupiter.extensions.autodetection.enabled=true
-                        </configurationParameters>
-                    </properties>
-                </configuration>
             </plugin>
         </plugins>
     </build>

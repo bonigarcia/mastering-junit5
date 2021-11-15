@@ -26,8 +26,6 @@ test {
     }
     
     testLogging.showStandardStreams = true
-    
-    systemProperty 'junit.jupiter.extensions.autodetection.enabled', 'true'
 }
 
 compileTestJava {
