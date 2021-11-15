@@ -11,10 +11,12 @@
         <logback.version>1.2.7</logback.version>
 
         <junit-jupiter.version>5.8.1</junit-jupiter.version>
-        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+        <junit-platform-suite.version>1.8.1</junit-platform-suite.version>
         <cucumber.version>7.0.0</cucumber.version>
         <selenium-java.version>4.0.0</selenium-java.version>
         <webdrivermanager.version>5.0.3</webdrivermanager.version>
+
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
 
         <java.version>1.8</java.version>
         <maven.compiler.target>${java.version}</maven.compiler.target>
@@ -41,6 +43,12 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite</artifactId>
+            <version>${junit-platform-suite.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>

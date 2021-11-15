@@ -7,6 +7,7 @@ ext {
     logbackVersion  = '1.2.7'
 
     junitJupiterVersion = '5.8.1'
+    junitPlatformSuiteVersion = '1.8.1'
     cucumberVersion = '7.0.0'
     seleniumJavaVersion = '4.0.0'
     webdrivermanagerVersion  = '5.0.3'
@@ -41,6 +42,7 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:${logbackVersion}")
 
     testImplementation("org.junit.jupiter:junit-jupiter:${junitJupiterVersion}")
+    testImplementation("org.junit.platform:junit-platform-suite:${junitPlatformSuiteVersion}")
     testImplementation("io.cucumber:cucumber-java:${cucumberVersion}")
     testImplementation("io.cucumber:cucumber-junit-platform-engine:${cucumberVersion}")
     testImplementation("org.seleniumhq.selenium:selenium-java:${seleniumJavaVersion}")

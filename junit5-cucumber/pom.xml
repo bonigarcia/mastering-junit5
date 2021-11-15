@@ -9,9 +9,11 @@
     <properties>
         <slf4j.version>1.7.32</slf4j.version>
         <logback.version>1.2.7</logback.version>
+
         <junit-jupiter.version>5.8.1</junit-jupiter.version>
         <junit-platform-suite.version>1.8.1</junit-platform-suite.version>
         <cucumber.version>7.0.0</cucumber.version>
+
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
 
         <java.version>1.8</java.version>
@@ -34,6 +36,7 @@
             <artifactId>logback-classic</artifactId>
             <version>${logback.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
