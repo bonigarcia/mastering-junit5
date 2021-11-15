@@ -7,9 +7,12 @@
     <version>1.0.0</version>
 
     <properties>
+        <slf4j.version>1.7.32</slf4j.version>
+        <logback.version>1.2.7</logback.version>
         <junit-jupiter.version>5.8.1</junit-jupiter.version>
-        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+        <junit-platform-suite.version>1.8.1</junit-platform-suite.version>
         <cucumber.version>7.0.0</cucumber.version>
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
 
         <java.version>1.8</java.version>
         <maven.compiler.target>${java.version}</maven.compiler.target>
@@ -22,9 +25,25 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite</artifactId>
+            <version>${junit-platform-suite.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -39,7 +58,6 @@
             <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
     <build>

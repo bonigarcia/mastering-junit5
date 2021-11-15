@@ -3,7 +3,10 @@ repositories {
 }
 
 ext {
+    slf4jVersion  = '1.7.32'
+    logbackVersion  = '1.2.7'
     junitJupiterVersion = '5.8.1'
+    junitPlatformSuiteVersion = '1.8.1'
     cucumberVersion = '7.0.0'
 }
 
@@ -32,7 +35,10 @@ compileTestJava {
 }
 
 dependencies {
+    implementation("org.slf4j:slf4j-api:${slf4jVersion}")
+    implementation("ch.qos.logback:logback-classic:${logbackVersion}")
     testImplementation("org.junit.jupiter:junit-jupiter:${junitJupiterVersion}")
+    testImplementation("org.junit.platform:junit-platform-suite:${junitPlatformSuiteVersion}")
     testImplementation("io.cucumber:cucumber-java:${cucumberVersion}")
     testImplementation("io.cucumber:cucumber-junit-platform-engine:${cucumberVersion}")
 }
