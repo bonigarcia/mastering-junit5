@@ -1,5 +1,5 @@
 Feature: Login in practice site
- 
+
   Scenario: Successful login
     When I navigate to "https://bonigarcia.dev/selenium-webdriver-java/login-form.html"
     And I login with the username "user" and password "user"
