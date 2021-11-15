@@ -19,46 +19,45 @@ package io.github.bonigarcia;
 import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class SearchSteps {
+public class LoginSteps {
 
-    private WebDriver webDriver;
+    private WebDriver driver;
 
     @When("I navigate to {string}")
     public void iNavigateTo(String url) {
-        WebDriverManager.chromedriver().setup();
-        webDriver = new ChromeDriver();
-        webDriver.get(url);
+        driver = WebDriverManager.chromedriver().create();
+        driver.get(url);
     }
 
-    @And("I type {string}")
-    public void iType(String searchQuery) {
-        webDriver.findElement(By.name("q")).sendKeys(searchQuery);
+    @And("I login with the username {string} and password {string}")
+    public void iType(String username, String password) {
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
+
     }
 
-    @And("I press Enter")
+    @And("I click Submit")
     public void iPressEnter() {
-        webDriver.findElement(By.name("q")).sendKeys(Keys.ENTER);
+        driver.findElement(By.cssSelector("button")).click();
     }
 
-    @Then("I should be shown results including {string}")
+    @Then("I should be see the message {string}")
     public void iShouldBeShownResultsIncluding(String result) {
         try {
-            webDriver.findElement(
+            driver.findElement(
                     By.xpath("//*[contains(text(), '" + result + "')]"));
         } catch (NoSuchElementException e) {
             throw new AssertionError(
                     "\"" + result + "\" not available in results");
         } finally {
-            webDriver.quit();
+            driver.quit();
         }
     }
 
