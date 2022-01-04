@@ -5,7 +5,11 @@
 [![Support badge](https://img.shields.io/badge/stackoverflow-junit5-green.svg?logo=stackoverflow)](https://stackoverflow.com/questions/tagged/junit5)
 [![Twitter Follow](https://img.shields.io/twitter/follow/boni_gg.svg?style=social)](https://twitter.com/boni_gg)
 
-This repository contains code examples of [JUnit 5] for the book [Mastering Software Testing with JUnit 5], authored by [Boni Garcia], edited by [Packt]. These examples cover the main features of JUnit 5, such as:
+This repository contains the code examples of [JUnit 5] for the book [Mastering Software Testing with JUnit 5], authored by [Boni García] and published by [Packt].
+
+[![][Cover]][Packt]
+
+These examples cover the main features of JUnit 5, such as:
 
 * JUnit 5 tests lifecycle.
 * Assertions.
@@ -21,13 +25,13 @@ This repository contains code examples of [JUnit 5] for the book [Mastering Soft
 * Parallel execution.
 * Ordered tests.
 
-Moreover, the integration with third-party frameworks and technologies is also illustrated with examples, concretely:
+Moreover, the integration with third-party technologies is also illustrated with examples, concretely:
 
 * Mockito (popular mock framework).
 * Spring (Java framework aimed to created enterprise applications based on dependency injection).
 * Docker (container platform technology).
-* Selenium WebDriver (test framework for web applications).
-* Appium (driver for mobile devices).
+* Selenium WebDriver (test automation library for web applications).
+* Appium (test automation library for mobile devices).
 * Android (open source mobile operating system based on Linux).
 * REST services (using REST Assured, Retrofit2, or WireMock).
 
@@ -51,13 +55,14 @@ with a complete set of JUnit 5 tests (unit with Mockito, integration with Spring
 
 # About
 
-This is a project made by [Boni Garcia], Visiting Professor at [Universidad Carlos III de Madrid], Spain. Copyright &copy; 2017-2021.
+This is a project made by [Boni García], Visiting Professor at [Universidad Carlos III de Madrid], Spain. Copyright &copy; 2017-2021.
 
 [JUnit 5]: https://junit.org/junit5/
-[Boni Garcia]: https://bonigarcia.github.io/
+[Boni García]: https://bonigarcia.dev/
 [Universidad Carlos III de Madrid]: https://www.it.uc3m.es/bogarcia/index.html
 [Logo]: https://bonigarcia.github.io/img/mastering_junit5_logo.png
 [GitHub Repository]: https://github.com/bonigarcia/mastering-junit5
 [Mastering Software Testing with JUnit 5]: https://www.amazon.com/Mastering-Software-Testing-JUnit-Comprehensive-ebook/dp/B076ZQCK5Q
-[Packt]: https://www.packtpub.com/web-development/mastering-software-testing-junit-5
+[Packt]: https://www.packtpub.com/product/mastering-software-testing-with-junit-5/9781787285736
 [Rate my cat!]: https://github.com/bonigarcia/rate-my-cat
+[Cover]: https://bonigarcia.dev/img/mastering-software-testing-with-junit-5.png
