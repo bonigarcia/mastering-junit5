@@ -55,7 +55,7 @@ with a complete set of JUnit 5 tests (unit with Mockito, integration with Spring
 
 # About
 
-This is a project made by [Boni García], Visiting Professor at [Universidad Carlos III de Madrid], Spain. Copyright &copy; 2017-2021.
+This is a project made by [Boni García], Visiting Professor at [Universidad Carlos III de Madrid], Spain. Copyright &copy; 2017-2022.
 
 [JUnit 5]: https://junit.org/junit5/
 [Boni García]: https://bonigarcia.dev/
