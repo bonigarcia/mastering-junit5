@@ -8,7 +8,7 @@ ext {
 
     junitJupiterVersion = '5.8.2'
     junitPlatformSuiteVersion = '1.8.2'
-    cucumberVersion = '7.2.1'
+    cucumberVersion = '7.2.2'
 }
 
 apply plugin: 'java'
