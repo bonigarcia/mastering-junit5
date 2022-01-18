@@ -7,7 +7,7 @@ ext {
     logbackVersion  = '1.2.10'
     junitJupiterVersion = '5.8.2'
     junitDockerVersion = '1.0.0'
-    mysqlConnectorVersion = '8.0.27'
+    mysqlConnectorVersion = '8.0.28'
 }
 
 apply plugin: 'java'
