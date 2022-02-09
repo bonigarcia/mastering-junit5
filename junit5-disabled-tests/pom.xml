@@ -7,7 +7,7 @@
     <version>1.0.0</version>
 
     <properties>
-        <slf4j.version>1.7.35</slf4j.version>
+        <slf4j.version>1.7.36</slf4j.version>
         <logback.version>1.2.10</logback.version>
         <junit-jupiter.version>5.8.2</junit-jupiter.version>
 
