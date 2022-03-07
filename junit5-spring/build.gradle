@@ -4,7 +4,7 @@ repositories {
 
 ext {
     slf4jVersion  = '1.7.36'
-    logbackVersion  = '1.2.10'
+    logbackVersion  = '1.2.11'
     springVersion = '5.3.15'
 
     junitJupiterVersion = '5.8.2'
