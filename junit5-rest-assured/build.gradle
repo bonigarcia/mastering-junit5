@@ -4,7 +4,7 @@ repositories {
 
 ext {
     junitJupiterVersion = '5.8.2'
-    restAssuredVersion  = '5.1.0'
+    restAssuredVersion  = '5.1.1'
 }
 
 apply plugin: 'java'
