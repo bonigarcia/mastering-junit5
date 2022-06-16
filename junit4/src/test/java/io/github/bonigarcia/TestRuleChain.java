@@ -50,8 +50,18 @@ public class TestRuleChain {
     }
 
     @Test
-    public void test() {
-        log.debug("@Test");
+    public void test1() {
+        log.debug("@Test 1");
+    }
+
+    @Test
+    public void test2() {
+        log.debug("@Test 2");
+    }
+
+    @Test
+    public void test3() {
+        log.debug("@Test 3");
     }
 
     @AfterClass
