@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        allureGradleVersion = '2.9.6'
+        allureGradleVersion = '2.10.0'
     }
     repositories {
         maven {
