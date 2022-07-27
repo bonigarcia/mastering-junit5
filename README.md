@@ -47,6 +47,7 @@ This repository has different tags, one per minor version of JUnit 5. Currently,
 * `5.5`: Examples using JUnit 5.5.2.
 * `5.6`: Examples using JUnit 5.6.3.
 * `5.7`: Examples using JUnit 5.7.2.
+* `5.8`: Examples using JUnit 5.8.2.
 
 # Complete example
 
