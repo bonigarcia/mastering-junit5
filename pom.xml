@@ -15,7 +15,6 @@
         <module>junit4-mockito</module>
         <module>junit4-spring</module>
         <module>junit4-spring-boot</module>
-        <module>junit5-allure</module>
         <module>junit5-assertions</module>
         <module>junit5-basic-tests</module>
         <module>junit5-console-launcher</module>
