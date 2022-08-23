@@ -4,7 +4,7 @@ repositories {
 
 ext {
     slf4jVersion  = '2.0.0'
-    logbackVersion  = '1.2.11'
+    logbackVersion  = '1.3.0-beta0'
 
     junitJupiterVersion = '5.9.0'
     mockitoJupiterVersion = '4.7.0'
