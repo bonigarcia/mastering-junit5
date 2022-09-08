@@ -11,7 +11,7 @@
         <logback.version>1.4.0</logback.version>
 
         <junit-jupiter.version>5.9.0</junit-jupiter.version>
-        <mockito-junit-jupiter.version>4.7.0</mockito-junit-jupiter.version>
+        <mockito-junit-jupiter.version>4.8.0</mockito-junit-jupiter.version>
 
         <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
 
