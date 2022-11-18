@@ -8,7 +8,7 @@
 
     <properties>
         <junit-jupiter.version>5.9.1</junit-jupiter.version>
-        <slf4j.version>2.0.3</slf4j.version>
+        <slf4j.version>2.0.4</slf4j.version>
         <logback.version>1.4.4</logback.version>
 
         <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
