@@ -12,7 +12,7 @@
         <selenium-java.version>4.7.2</selenium-java.version>
         <selenium-jupiter.version>4.3.2</selenium-jupiter.version>
 
-        <java.version>11</java.version>
+        <java.version>17</java.version>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven.compiler.source>${java.version}</maven.compiler.source>
 

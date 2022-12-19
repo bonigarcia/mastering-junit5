@@ -15,7 +15,7 @@ jobs:
       matrix:
         build-tool: [ mvn, gradle ]
         os: [ ubuntu-latest ]
-        java: [ 11 ]
+        java: [ 17 ]
     runs-on: ${{ matrix.os }}
     steps:
     - name: Checkout GitHub repo
