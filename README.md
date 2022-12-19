@@ -71,3 +71,4 @@ If you like my work, please consider nominating me for the [GitHub Stars](https:
 [Packt]: https://www.packtpub.com/product/mastering-software-testing-with-junit-5/9781787285736
 [Rate my cat!]: https://github.com/bonigarcia/rate-my-cat
 [Cover]: https://bonigarcia.dev/img/mastering-software-testing-with-junit-5.png
+[Apache 2.0 License]: https://www.apache.org/licenses/LICENSE-2.0
