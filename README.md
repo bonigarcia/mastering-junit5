@@ -1,7 +1,7 @@
 # [![][Logo]][GitHub Repository]
 
 [![Build Status](https://github.com/bonigarcia/mastering-junit5/workflows/build/badge.svg)](https://github.com/bonigarcia/mastering-junit5/actions)
-[![badge-jdk](https://img.shields.io/badge/jdk-11-green.svg)](https://www.oracle.com/java/technologies/downloads/)
+[![badge-jdk](https://img.shields.io/badge/jdk-17-green.svg)](https://www.oracle.com/java/technologies/downloads/)
 [![License badge](https://img.shields.io/badge/license-Apache2-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Support badge](https://img.shields.io/badge/stackoverflow-junit5-green.svg?logo=stackoverflow)](https://stackoverflow.com/questions/tagged/junit5)
 [![Twitter Follow](https://img.shields.io/twitter/follow/boni_gg.svg?style=social)](https://twitter.com/boni_gg)
