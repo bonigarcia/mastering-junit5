@@ -11,7 +11,7 @@
         <logback.version>1.4.5</logback.version>
 
         <junit-jupiter.version>5.9.2</junit-jupiter.version>
-        <junit-platform.version>1.9.1</junit-platform.version>
+        <junit-platform.version>1.9.2</junit-platform.version>
 
         <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
 
