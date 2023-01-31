@@ -12,7 +12,7 @@
 
         <junit-jupiter.version>5.9.2</junit-jupiter.version>
         <junit-platform-suite.version>1.9.2</junit-platform-suite.version>
-        <cucumber.version>7.11.0</cucumber.version>
+        <cucumber.version>7.11.1</cucumber.version>
 
         <maven-surefire-plugin.version>3.0.0-M8</maven-surefire-plugin.version>
 
