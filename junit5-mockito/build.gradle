@@ -7,7 +7,7 @@ ext {
     logbackVersion  = '1.4.7'
 
     junitJupiterVersion = '5.9.2'
-    mockitoJupiterVersion = '5.3.0'
+    mockitoJupiterVersion = '5.3.1'
 }
 
 apply plugin: 'java'
