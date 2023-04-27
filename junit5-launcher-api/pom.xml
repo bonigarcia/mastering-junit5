@@ -7,7 +7,7 @@
     <version>1.0.0</version>
 
     <properties>
-        <junit-jupiter.version>5.9.2</junit-jupiter.version>
+        <junit-jupiter.version>5.9.3</junit-jupiter.version>
         <junit-platform.version>1.9.3</junit-platform.version>
         <maven-surefire-plugin.version>3.0.0</maven-surefire-plugin.version>
 
