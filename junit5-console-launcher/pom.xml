@@ -12,7 +12,7 @@
         <junit-jupiter.version>5.9.3</junit-jupiter.version>
         <junit-platform.version>1.9.3</junit-platform.version>
 
-        <maven-surefire-plugin.version>3.1.0</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
 
         <java.version>17</java.version>
         <maven.compiler.target>${java.version}</maven.compiler.target>
