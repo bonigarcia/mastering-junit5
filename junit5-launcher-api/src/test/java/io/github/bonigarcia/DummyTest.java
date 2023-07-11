@@ -16,12 +16,36 @@
  */
 package io.github.bonigarcia;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
+
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-public class DummyTest {
+class DummyTest {
 
     @Test
-    public void test() {
+    void successTest() {
+        System.out.println("This is a sucess test");
+        assertTrue(true);
+    }
+
+    @Test
+    void failTest1() {
+        System.out.println("This is a failed test [1]");
+        fail();
+    }
+
+    @Test
+    void failTest2() {
+        System.out.println("This is a failed test [2]");
+        fail();
+    }
+
+    @Disabled
+    @Test
+    void ignoredTest() {
+        // Nothing
     }
 
 }

@@ -20,6 +20,8 @@ import static org.junit.platform.engine.discovery.ClassNameFilter.includeClassNa
 import static org.junit.platform.engine.discovery.DiscoverySelectors.selectClass;
 import static org.junit.platform.engine.discovery.DiscoverySelectors.selectPackage;
 
+import java.util.List;
+
 import org.junit.platform.launcher.Launcher;
 import org.junit.platform.launcher.LauncherDiscoveryRequest;
 import org.junit.platform.launcher.TestExecutionListener;
@@ -27,6 +29,8 @@ import org.junit.platform.launcher.TestPlan;
 import org.junit.platform.launcher.core.LauncherDiscoveryRequestBuilder;
 import org.junit.platform.launcher.core.LauncherFactory;
 import org.junit.platform.launcher.listeners.SummaryGeneratingListener;
+import org.junit.platform.launcher.listeners.TestExecutionSummary;
+import org.junit.platform.launcher.listeners.TestExecutionSummary.Failure;
 
 public class LauncherApiExample {
 
@@ -44,9 +48,24 @@ public class LauncherApiExample {
 
         // Executing tests
         TestExecutionListener listener = new SummaryGeneratingListener();
-        launcher.registerTestExecutionListeners(listener);
-
         launcher.execute(request, listener);
+
+        // Results
+        TestExecutionSummary summary = ((SummaryGeneratingListener) listener)
+                .getSummary();
+
+        List<Failure> failures = summary.getFailures();
+        System.out.println("--> Failures test(s): " + failures.size());
+        for (Failure failure : failures) {
+            System.out.println("\t" + failure.getTestIdentifier());
+        }
+
+        System.out.println(
+                "--> Success test(s): " + summary.getTestsSucceededCount());
+
+        System.out.println(
+                "--> Skipped test(s): " + summary.getTestsSkippedCount());
+
     }
 
 }
