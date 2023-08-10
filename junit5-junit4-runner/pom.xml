@@ -8,7 +8,7 @@
 
     <properties>
         <slf4j.version>2.0.7</slf4j.version>
-        <logback.version>1.4.9</logback.version>
+        <logback.version>1.4.11</logback.version>
 
         <junit-jupiter.version>5.10.0</junit-jupiter.version>
         <junit-platform.version>1.9.3</junit-platform.version>
