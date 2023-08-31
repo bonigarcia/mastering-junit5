@@ -7,7 +7,7 @@ ext {
     logbackVersion  = '1.4.11'
     retrofitVersion  = '2.9.0'
     junitJupiterVersion = '5.10.0'
-    wireMockVersion  = '2.27.2'
+    wireMockVersion  = '3.0.0'
 }
 
 apply plugin: 'java'
