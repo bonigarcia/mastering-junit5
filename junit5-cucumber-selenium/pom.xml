@@ -13,7 +13,7 @@
         <junit-jupiter.version>5.10.0</junit-jupiter.version>
         <junit-platform-suite.version>1.10.0</junit-platform-suite.version>
         <cucumber.version>7.14.0</cucumber.version>
-        <selenium-java.version>4.14.0</selenium-java.version>
+        <selenium-java.version>4.14.1</selenium-java.version>
         <webdrivermanager.version>5.5.3</webdrivermanager.version>
 
         <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
