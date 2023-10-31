@@ -7,14 +7,14 @@
     <version>1.0.0</version>
 
     <properties>
-        <slf4j.version>2.0.7</slf4j.version>
+        <slf4j.version>2.0.9</slf4j.version>
         <logback.version>1.4.11</logback.version>
         <wiremock.version>2.27.2</wiremock.version>
         <retrofit.version>2.9.0</retrofit.version>
 
         <junit-jupiter.version>5.10.0</junit-jupiter.version>
 
-        <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>3.2.1</maven-surefire-plugin.version>
 
         <java.version>17</java.version>
         <maven.compiler.target>${java.version}</maven.compiler.target>
