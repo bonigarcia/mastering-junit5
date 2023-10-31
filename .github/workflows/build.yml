@@ -27,5 +27,5 @@ jobs:
         java-version: ${{ matrix.java }}
     - name: Start Xvfb
       run: Xvfb :99 &
-    - name: Run tests tests with ${{ matrix.build-tool }}
+    - name: Run tests with ${{ matrix.build-tool }}
       run: ${{ matrix.build-tool }} test
