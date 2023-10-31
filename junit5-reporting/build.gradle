@@ -23,8 +23,10 @@ test {
         showStandardStreams = true
     }
 
-    reports.junitXml.enabled = true
-    reports.html.enabled = true
+    reports {
+        junitXml.enabled = true
+        html.enabled = true
+    }
 }
 
 compileTestJava {
