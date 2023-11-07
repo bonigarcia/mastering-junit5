@@ -15,7 +15,7 @@
         <mysql-connector-java.version>8.0.30</mysql-connector-java.version>
         <slf4j.version>1.7.12</slf4j.version>
 
-        <maven-surefire-plugin.version>3.2.1</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>3.2.2</maven-surefire-plugin.version>
 
         <java.version>17</java.version>
         <maven.compiler.target>${java.version}</maven.compiler.target>
