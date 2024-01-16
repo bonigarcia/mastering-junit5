@@ -57,11 +57,7 @@ with a complete set of JUnit 5 tests (unit with Mockito, integration with Spring
 
 # About
 
-Mastering JUnit 5 (Copyright &copy; 2017-2023) is a project created and maintained by [Boni Garcia] and licensed under the terms of the [Apache 2.0 License].
-
-If you like my work, please consider nominating me for the [GitHub Stars](https://stars.github.com/nominate/) program.
-
-<p align="center"><a href="https://stars.github.com/nominate/"> <img src="https://avatars.githubusercontent.com/u/61242156?s=200&v=4" width="100"/></a></p>
+Mastering JUnit 5 (Copyright &copy; 2017-2024) is a project created and maintained by [Boni Garcia] and licensed under the terms of the [Apache 2.0 License].
 
 [JUnit 5]: https://junit.org/junit5/
 [Boni Garcia]: https://bonigarcia.dev/
