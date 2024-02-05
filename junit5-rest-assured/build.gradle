@@ -3,7 +3,7 @@ repositories {
 }
 
 ext {
-    junitJupiterVersion = '5.10.1'
+    junitJupiterVersion = '5.10.2'
     restAssuredVersion  = '5.4.0'
 }
 
