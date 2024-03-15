@@ -9,7 +9,7 @@
     <properties>
         <slf4j.version>2.0.12</slf4j.version>
         <logback.version>1.5.3</logback.version>
-        <spring.version>6.1.4</spring.version>
+        <spring.version>6.1.5</spring.version>
 
         <junit.version>4.13.2</junit.version>
 
