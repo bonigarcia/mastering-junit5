@@ -5,7 +5,7 @@ repositories {
 ext {
     junitJupiterVersion = '5.10.2'
     slf4jVersion = '2.0.13'
-    logbackVersion = '1.5.5'
+    logbackVersion = '1.5.6'
 }
 
 apply plugin: 'java'
