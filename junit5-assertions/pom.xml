@@ -12,7 +12,7 @@
 
         <junit-jupiter.version>5.10.2</junit-jupiter.version>
         <hamcrest.version>2.2</hamcrest.version>
-        <assertj.version>3.25.3</assertj.version>
+        <assertj.version>3.26.0</assertj.version>
         <truth.version>1.4.2</truth.version>
 
         <maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
