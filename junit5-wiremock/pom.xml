@@ -12,7 +12,7 @@
         <wiremock.version>2.27.2</wiremock.version>
         <retrofit.version>2.11.0</retrofit.version>
 
-        <junit-jupiter.version>5.10.2</junit-jupiter.version>
+        <junit-jupiter.version>5.10.3</junit-jupiter.version>
 
         <maven-surefire-plugin.version>3.3.0</maven-surefire-plugin.version>
 
