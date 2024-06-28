@@ -6,7 +6,7 @@ ext {
     slf4jVersion  = '2.0.13'
     logbackVersion  = '1.5.6'
 
-    junitJupiterVersion = '5.10.2'
+    junitJupiterVersion = '5.10.3'
     hamcrestVersion  = '2.2'
     assertjVersion  = '3.26.0'
     truth = '1.4.2'
