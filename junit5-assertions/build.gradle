@@ -7,7 +7,7 @@ ext {
     logbackVersion  = '1.5.6'
 
     junitJupiterVersion = '5.10.3'
-    hamcrestVersion  = '2.2'
+    hamcrestVersion  = '3.0'
     assertjVersion  = '3.26.3'
     truth = '1.4.4'
 }
