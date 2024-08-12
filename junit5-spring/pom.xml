@@ -7,7 +7,7 @@
     <version>1.0.0</version>
 
     <properties>
-        <slf4j.version>2.0.15</slf4j.version>
+        <slf4j.version>2.0.16</slf4j.version>
         <logback.version>1.5.6</logback.version>
         <spring.version>6.1.11</spring.version>
 
