@@ -10,7 +10,7 @@
         <slf4j.version>2.0.16</slf4j.version>
         <logback.version>1.5.6</logback.version>
 
-        <junit-jupiter.version>5.10.3</junit-jupiter.version>
+        <junit-jupiter.version>5.11.0</junit-jupiter.version>
         <junit-platform-suite.version>1.10.3</junit-platform-suite.version>
         <cucumber.version>7.18.1</cucumber.version>
         <selenium-java.version>4.23.0</selenium-java.version>
