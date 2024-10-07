@@ -14,7 +14,7 @@
         <junit-platform-suite.version>1.11.2</junit-platform-suite.version>
         <cucumber.version>7.20.0</cucumber.version>
 
-        <maven-surefire-plugin.version>3.5.0</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>3.5.1</maven-surefire-plugin.version>
 
         <java.version>17</java.version>
         <maven.compiler.target>${java.version}</maven.compiler.target>
