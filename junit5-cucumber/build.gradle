@@ -7,7 +7,7 @@ ext {
     logbackVersion  = '1.5.8'
 
     junitJupiterVersion = '5.11.2'
-    junitPlatformSuiteVersion = '1.11.1'
+    junitPlatformSuiteVersion = '1.11.2'
     cucumberVersion = '7.20.0'
 }
 
