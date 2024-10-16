@@ -11,7 +11,7 @@
         <logback.version>1.5.11</logback.version>
 
         <junit.version>4.13.2</junit.version>
-        <mockito-core.version>5.14.1</mockito-core.version>
+        <mockito-core.version>5.14.2</mockito-core.version>
 
         <java.version>17</java.version>
         <maven.compiler.target>${java.version}</maven.compiler.target>
