@@ -3,7 +3,7 @@ repositories {
 }
 
 ext {
-	junitPlatformVersion = '1.11.2'
+	junitPlatformVersion = '1.11.3'
 }
 
 apply plugin: 'java'
