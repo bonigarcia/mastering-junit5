@@ -6,7 +6,7 @@ ext {
     slf4jVersion  = '2.0.16'
     logbackVersion  = '1.5.16'
 
-    junitJupiterVersion = '5.11.4'
+    junitJupiterVersion = '5.12.0'
 }
 
 apply plugin: 'java'
