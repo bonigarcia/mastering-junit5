@@ -11,7 +11,7 @@
         <logback.version>1.5.16</logback.version>
 
         <junit-jupiter.version>5.12.0</junit-jupiter.version>
-        <junit-platform-suite.version>1.11.4</junit-platform-suite.version>
+        <junit-platform-suite.version>1.12.0</junit-platform-suite.version>
         <cucumber.version>7.21.1</cucumber.version>
         <selenium-java.version>4.29.0</selenium-java.version>
         <webdrivermanager.version>5.9.3</webdrivermanager.version>
