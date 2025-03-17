@@ -6,7 +6,7 @@
 [![Support badge](https://img.shields.io/badge/stackoverflow-junit5-green.svg?logo=stackoverflow)](https://stackoverflow.com/questions/tagged/junit5)
 [![Twitter Follow](https://img.shields.io/twitter/follow/boni_gg.svg?style=social)](https://twitter.com/boni_gg)
 
-This repository contains the code examples of [JUnit 5] for the book [Mastering Software Testing with JUnit 5], authored by [Boni García] and published by [Packt].
+This repository contains the code examples of [JUnit 5] for the book [Mastering Software Testing with JUnit 5: Comprehensive guide to develop high quality Java applications], authored by [Boni García] and published by [Packt].
 
 [![][Cover]][Packt]
 
@@ -61,13 +61,13 @@ with a complete set of JUnit 5 tests (unit with Mockito, integration with Spring
 
 # About
 
-Mastering JUnit 5 (Copyright &copy; 2017-2025) is a project created and maintained by [Boni Garcia] and licensed under the terms of the [Apache 2.0 License].
+Mastering JUnit 5 (Copyright &copy; 2017-2025) is a project created and maintained by [Boni García] and licensed under the terms of the [Apache 2.0 License].
 
 [JUnit 5]: https://junit.org/junit5/
-[Boni Garcia]: https://bonigarcia.dev/
+[Boni García]: https://bonigarcia.dev/
 [Logo]: https://bonigarcia.github.io/img/mastering_junit5_logo.png
 [GitHub Repository]: https://github.com/bonigarcia/mastering-junit5
-[Mastering Software Testing with JUnit 5]: https://www.amazon.com/Mastering-Software-Testing-JUnit-Comprehensive-ebook/dp/B076ZQCK5Q
+[Mastering Software Testing with JUnit 5: Comprehensive guide to develop high quality Java applications]: https://www.amazon.com/Mastering-Software-Testing-JUnit-Comprehensive-ebook/dp/B076ZQCK5Q
 [Packt]: https://www.packtpub.com/product/mastering-software-testing-with-junit-5/9781787285736
 [Rate my cat!]: https://github.com/bonigarcia/rate-my-cat
 [Cover]: https://bonigarcia.dev/img/mastering-software-testing-with-junit-5.png

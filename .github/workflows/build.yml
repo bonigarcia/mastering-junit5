@@ -13,7 +13,7 @@ jobs:
   tests:
     strategy:
       matrix:
-        build-tool: [ mvn, gradle ]
+        build-tool: [ mvn ]
         os: [ ubuntu-latest ]
         java: [ 17 ]
     runs-on: ${{ matrix.os }}
