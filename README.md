@@ -50,6 +50,9 @@ This repository has different tags, one per minor version of JUnit 5. Currently,
 * `5.7`: Examples using JUnit 5.7.2.
 * `5.8`: Examples using JUnit 5.8.2.
 * `5.9`: Examples using JUnit 5.9.3.
+* `5.10`: Examples using JUnit 5.10.0.
+* `5.11`: Examples using JUnit 5.11.0.
+* `5.12`: Examples using JUnit 5.12.0.
 
 # Complete example
 
@@ -58,7 +61,7 @@ with a complete set of JUnit 5 tests (unit with Mockito, integration with Spring
 
 # About
 
-Mastering JUnit 5 (Copyright &copy; 2017-2024) is a project created and maintained by [Boni Garcia] and licensed under the terms of the [Apache 2.0 License].
+Mastering JUnit 5 (Copyright &copy; 2017-2025) is a project created and maintained by [Boni Garcia] and licensed under the terms of the [Apache 2.0 License].
 
 [JUnit 5]: https://junit.org/junit5/
 [Boni Garcia]: https://bonigarcia.dev/
