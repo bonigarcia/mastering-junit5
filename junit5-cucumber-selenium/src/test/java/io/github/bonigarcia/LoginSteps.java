@@ -16,10 +16,13 @@
  */
 package io.github.bonigarcia;
 
+import java.time.Duration;
 import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -51,8 +54,10 @@ public class LoginSteps {
     @Then("I should be see the message {string}")
     public void iShouldSee(String result) {
         try {
-            driver.findElement(
-                    By.xpath("//*[contains(text(), '" + result + "')]"));
+            WebDriverWait wait = new WebDriverWait(driver,
+                    Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.textToBePresentInElementLocated(
+                    By.tagName("body"), result));
         } catch (NoSuchElementException e) {
             throw new AssertionError(
                     "\"" + result + "\" not available in results");
