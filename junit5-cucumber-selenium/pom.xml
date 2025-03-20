@@ -14,7 +14,7 @@
         <junit-platform-suite.version>1.12.1</junit-platform-suite.version>
         <cucumber.version>7.21.1</cucumber.version>
         <selenium-java.version>4.29.0</selenium-java.version>
-        <webdrivermanager.version>5.9.3</webdrivermanager.version>
+        <webdrivermanager.version>6.0.0</webdrivermanager.version>
 
         <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
 
