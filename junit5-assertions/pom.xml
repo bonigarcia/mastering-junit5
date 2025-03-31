@@ -15,7 +15,7 @@
         <assertj.version>3.27.3</assertj.version>
         <truth.version>1.4.4</truth.version>
 
-        <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
 
         <java.version>17</java.version>
         <maven.compiler.target>${java.version}</maven.compiler.target>
