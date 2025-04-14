@@ -7,7 +7,7 @@
     <version>1.0.0</version>
 
     <properties>
-        <junit-platform.version>1.12.1</junit-platform.version>
+        <junit-platform.version>1.12.2</junit-platform.version>
 
         <java.version>17</java.version>
         <maven.compiler.target>${java.version}</maven.compiler.target>
