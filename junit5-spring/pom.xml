@@ -9,7 +9,7 @@
     <properties>
         <slf4j.version>2.0.17</slf4j.version>
         <logback.version>1.5.18</logback.version>
-        <spring.version>6.2.6</spring.version>
+        <spring.version>6.2.7</spring.version>
 
         <junit-jupiter.version>5.12.2</junit-jupiter.version>
 
