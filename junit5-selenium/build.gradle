@@ -3,7 +3,7 @@ repositories {
 }
 
 ext {
-    junitJupiterVersion = '5.13.2'
+    junitJupiterVersion = '5.13.3'
     seleniumVersion = '4.34.0'
     seleniumJupiterVersion  = '6.1.1'
 }
