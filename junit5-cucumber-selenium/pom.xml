@@ -12,7 +12,7 @@
 
         <junit-jupiter.version>5.13.3</junit-jupiter.version>
         <junit-platform-suite.version>1.13.3</junit-platform-suite.version>
-        <cucumber.version>7.24.0</cucumber.version>
+        <cucumber.version>7.25.0</cucumber.version>
         <selenium-java.version>4.34.0</selenium-java.version>
         <webdrivermanager.version>6.1.0</webdrivermanager.version>
 
