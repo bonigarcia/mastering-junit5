@@ -11,7 +11,7 @@
         <logback.version>1.5.18</logback.version>
         <spring.version>6.2.9</spring.version>
 
-        <junit-jupiter.version>5.13.3</junit-jupiter.version>
+        <junit-jupiter.version>5.13.4</junit-jupiter.version>
 
         <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
 
