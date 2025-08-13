@@ -9,7 +9,7 @@
     <properties>
         <junit-jupiter.version>5.13.4</junit-jupiter.version>
         <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
-        <selenium-java.version>4.34.0</selenium-java.version>
+        <selenium-java.version>4.35.0</selenium-java.version>
         <selenium-jupiter.version>6.2.0</selenium-jupiter.version>
 
         <java.version>17</java.version>
