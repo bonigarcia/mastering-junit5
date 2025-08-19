@@ -16,25 +16,15 @@
  */
 package io.github.bonigarcia.junit;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.testng.annotations.Test;
 
 class HelloWorldJUnitTest {
 
-    @BeforeEach
-    void setup() {
-        // TODO
-    }
-
     @Test
     void test() {
-        // TODO
-    }
-
-    @AfterEach
-    void teardown() {
-        // TODO
+        assertThat(1 + 1).isEqualTo(2);
     }
 
 }

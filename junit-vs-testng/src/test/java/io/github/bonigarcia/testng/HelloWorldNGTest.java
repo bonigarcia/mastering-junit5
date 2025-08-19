@@ -16,25 +16,15 @@
  */
 package io.github.bonigarcia.testng;
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.testng.annotations.Test;
 
 public class HelloWorldNGTest {
 
-    @BeforeMethod
-    public void setup() {
-        // TODO
-    }
-
     @Test
     public void test() {
-        // TODO
-    }
-
-    @AfterMethod
-    public void teardown() {
-        // TODO
+        assertThat(1 + 1).isEqualTo(2);
     }
 
 }
