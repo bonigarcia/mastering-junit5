@@ -50,6 +50,7 @@
         <module>junit5-test-templates</module>
         <module>junit5-vintage</module>
         <module>junit5-wiremock</module>
+        <module>junit-vs-testng</module>
     </modules>
 
 </project>

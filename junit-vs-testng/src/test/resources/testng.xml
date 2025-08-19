@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="parallel-suite" parallel="classes" thread-count="2">
+    <test name="parallel-tests">
+        <classes>
+            <class
+                name="io.github.bonigarcia.webdriver.testng.ch08.parallel.Parallel1NGTest" />
+            <class
+                name="io.github.bonigarcia.webdriver.testng.ch08.parallel.Parallel2NGTest" />
+        </classes>
+    </test>
+</suite>
