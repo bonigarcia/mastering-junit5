@@ -14,7 +14,6 @@
  * limitations under the License.
  *
  */
-package io.github.bonigarcia.junit;
 package io.github.bonigarcia.junit.basic;
 
 import static org.assertj.core.api.Assertions.assertThat;
