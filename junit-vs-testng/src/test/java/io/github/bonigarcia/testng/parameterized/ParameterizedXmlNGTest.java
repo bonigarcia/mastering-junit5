@@ -14,17 +14,17 @@
  * limitations under the License.
  *
  */
-package io.github.bonigarcia.junit;
+package io.github.bonigarcia.testng.parameterized;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-class HelloWorldJUnitTest {
+public class ParameterizedXmlNGTest {
 
     @Test
-    void test() {
-        assertThat(1 + 1).isEqualTo(2);
+    @Parameters({ "username", "password" })
+    public void test(String username, String password) {
+        System.out.println("Logging in with " + username + ":" + password);
     }
 
 }

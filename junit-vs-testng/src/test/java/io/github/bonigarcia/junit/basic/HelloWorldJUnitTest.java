@@ -14,16 +14,17 @@
  * limitations under the License.
  *
  */
-package io.github.bonigarcia.testng;
+package io.github.bonigarcia.junit;
+package io.github.bonigarcia.junit.basic;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
 
-public class HelloWorldNGTest {
+class HelloWorldJUnitTest {
 
     @Test
-    public void test() {
+    void test() {
         assertThat(1 + 1).isEqualTo(2);
     }
 

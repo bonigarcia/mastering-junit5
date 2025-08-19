@@ -1,11 +1,26 @@
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="parallel-suite" parallel="classes" thread-count="2">
-    <test name="parallel-tests">
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestSuite" verbose="1" parallel="false">
+    <test name="RegularTests">
+        <packages>
+            <package name="io.github.bonigarcia.testng.basic" />
+            <package name="io.github.bonigarcia.testng.parameterized">
+                <classes>
+                    <class
+                        name="io.github.bonigarcia.testng.parameterized.ParameterizedXmlNGTest">
+                        <methods>
+                            <exclude name=".*" />
+                        </methods>
+                    </class>
+                </classes>
+            </package>
+        </packages>
+    </test>
+    <test name="ParameterizedTests">
+        <parameter name="username" value="admin" />
+        <parameter name="password" value="secret" />
         <classes>
             <class
-                name="io.github.bonigarcia.webdriver.testng.ch08.parallel.Parallel1NGTest" />
-            <class
-                name="io.github.bonigarcia.webdriver.testng.ch08.parallel.Parallel2NGTest" />
+                name="io.github.bonigarcia.testng.parameterized.ParameterizedXmlNGTest" />
         </classes>
     </test>
 </suite>

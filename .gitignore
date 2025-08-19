@@ -11,3 +11,4 @@ target
 build
 allure-results
 bin
+test-output
