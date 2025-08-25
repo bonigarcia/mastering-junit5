@@ -30,9 +30,9 @@ public class ParameterizedDataProviderNGTest {
     @Test(dataProvider = "loginData")
     public void testParameterized(String username, String password,
             String expectedText) {
-        System.out
-                .println(String.format("Logging in with %s:%s (expecting '%s')",
-                        username, password, expectedText));
+        System.out.println(String.format(
+                "[Data from Java] Logging in with %s:%s (expecting '%s')",
+                username, password, expectedText));
     }
 
 }

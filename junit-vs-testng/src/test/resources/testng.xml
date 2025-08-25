@@ -15,9 +15,19 @@
             </package>
         </packages>
     </test>
-    <test name="ParameterizedTests">
-        <parameter name="username" value="admin" />
-        <parameter name="password" value="secret" />
+    <test name="ParameterizedTest-1">
+        <parameter name="username" value="user" />
+        <parameter name="password" value="user" />
+        <parameter name="expectedText" value="Login successful" />
+        <classes>
+            <class
+                name="io.github.bonigarcia.testng.parameterized.ParameterizedXmlNGTest" />
+        </classes>
+    </test>
+    <test name="ParameterizedTest-2">
+        <parameter name="username" value="bad" />
+        <parameter name="password" value="bad" />
+        <parameter name="expectedText" value="Invalid credentials" />
         <classes>
             <class
                 name="io.github.bonigarcia.testng.parameterized.ParameterizedXmlNGTest" />
