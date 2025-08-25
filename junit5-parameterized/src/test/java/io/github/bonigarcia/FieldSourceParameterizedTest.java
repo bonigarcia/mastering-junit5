@@ -1,5 +1,5 @@
 /*
- * (C) Copyright 2017 Boni Garcia (https://bonigarcia.github.io/)
+ * (C) Copyright 2025 Boni Garcia (https://bonigarcia.github.io/)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,20 +16,22 @@
  */
 package io.github.bonigarcia;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
-import java.util.concurrent.TimeUnit;
+import java.util.List;
 
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.EnumSource;
+import org.junit.jupiter.params.provider.FieldSource;
 
-class EnumSourceParameterizedTest {
+class FieldSourceParameterizedTest {
+
+    static List<String> cities = List.of("Madrid", "Rome", "Paris", "London");
 
     @ParameterizedTest
-    @EnumSource(TimeUnit.class)
-    void testWithEnum(TimeUnit param) {
-        System.out.println("TimeUnit parameter: " + param);
-        assertNotNull(param);
+    @FieldSource("cities")
+    void testCities(String city) {
+        System.out.println("Testing city: " + city);
+        assertFalse(city.isBlank());
     }
 
 }

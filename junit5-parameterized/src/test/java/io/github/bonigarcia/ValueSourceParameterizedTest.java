@@ -1,5 +1,5 @@
 /*
- * (C) Copyright 2017 Boni Garcia (https://bonigarcia.github.io/)
+ * (C) Copyright 2025 Boni Garcia (https://bonigarcia.github.io/)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,17 +18,29 @@ package io.github.bonigarcia;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import java.util.concurrent.TimeUnit;
-
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.EnumSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
-class EnumSourceParameterizedTest {
+class ValueSourceParameterizedTest {
 
     @ParameterizedTest
-    @EnumSource(TimeUnit.class)
-    void testWithEnum(TimeUnit param) {
-        System.out.println("TimeUnit parameter: " + param);
+    @ValueSource(strings = { "Hello", "World" })
+    void testWithStrings(String param) {
+        System.out.println("String parameter: " + param);
+        assertNotNull(param);
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = { 0, 1 })
+    void testWithInts(int param) {
+        System.out.println("int parameter: " + param);
+        assertNotNull(param);
+    }
+
+    @ParameterizedTest
+    @ValueSource(booleans = { true, false })
+    void testWithBooleans(boolean param) {
+        System.out.println("boolean parameter: " + param);
         assertNotNull(param);
     }
 
