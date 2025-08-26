@@ -22,11 +22,9 @@ import org.testng.annotations.Test;
 public class ParameterizedXmlNGTest {
 
     @Test
-    @Parameters({ "username", "password", "expectedText" })
-    public void test(String username, String password, String expectedText) {
-        System.out.println(String.format(
-                "[Data from XML] Logging in with %s:%s (expecting '%s')",
-                username, password, expectedText));
+    @Parameters({ "label", "amount" })
+    public void test(String label, int amount) {
+        System.out.println("[XML] Label: " + label + " -- Amount: " + amount);
     }
 
 }

@@ -21,18 +21,15 @@ import org.testng.annotations.Test;
 
 public class ParameterizedDataProviderNGTest {
 
-    @DataProvider(name = "loginData")
+    @DataProvider(name = "myData")
     public static Object[][] data() {
-        return new Object[][] { { "user", "user", "Login successful" },
-                { "bad-user", "bad-passwd", "Invalid credentials" } };
+        return new Object[][] { { "hello", 10 }, { "world", 20 } };
     }
 
-    @Test(dataProvider = "loginData")
-    public void testParameterized(String username, String password,
-            String expectedText) {
-        System.out.println(String.format(
-                "[Data from Java] Logging in with %s:%s (expecting '%s')",
-                username, password, expectedText));
+    @Test(dataProvider = "myData")
+    public void testParameterized(String label, int amount) {
+        System.out.println(
+                "[DataProvider] Label: " + label + " -- Amount: " + amount);
     }
 
 }
