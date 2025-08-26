@@ -35,4 +35,5 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.13.4")
     testImplementation("org.testng:testng:7.11.0")
     testImplementation("org.assertj:assertj-core:3.27.4")
+    testImplementation("org.seleniumhq.selenium:selenium-java:4.35.0")
 }
