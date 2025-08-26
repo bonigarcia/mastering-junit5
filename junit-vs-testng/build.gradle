@@ -14,13 +14,64 @@ compileTestJava {
 }
 
 test {
-    useJUnitPlatform()
+    useJUnitPlatform() {
+        if (project.hasProperty("groups")) {
+            includeTags "$groups"
+        }
+        if (project.hasProperty("excludedGroups")) {
+            excludeTags "$excludedGroups"
+        }
+    }
 
-    useTestNG()
+    useTestNG() {
+        if (project.hasProperty("groups")) {
+            includeGroups "$groups"
+        }
+        if (project.hasProperty("excludedGroups")) {
+            excludeGroups "$excludedGroups"
+        }
+    }
+
+    scanForTestClasses = false
 
     testLogging {
         events "passed", "skipped", "failed"
         showStandardStreams = true
+    }
+
+    systemProperties System.properties
+
+    if (project.hasProperty("parallel")) {
+        maxParallelForks = Runtime.runtime.availableProcessors()
+    }
+
+    if (project.hasProperty("suite")) {
+        suites "$suite"
+    }
+
+    if (project.hasProperty("excludeTests")) {
+        "$excludeTests".split(",").each { excludeTests ->
+            exclude excludeTests
+        }
+    }
+
+    ext.failedTests = []
+
+    tasks.withType(Test) {
+        afterTest { TestDescriptor descriptor, TestResult result ->
+            if(result.resultType == org.gradle.api.tasks.testing.TestResult.ResultType.FAILURE) {
+                failedTests << ["${descriptor.className}::${descriptor.name}"]
+            }
+        }
+    }
+
+    gradle.buildFinished {
+        if(!failedTests.empty){
+            println "Failed test(s) for ${project.name}:"
+            failedTests.each { failedTest ->
+                println failedTest
+            }
+        }
     }
 }
 
