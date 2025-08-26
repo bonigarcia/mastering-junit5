@@ -18,24 +18,9 @@ package io.github.bonigarcia.junit.selenium;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.Parameter;
-import org.junit.jupiter.params.ParameterizedClass;
-import org.junit.jupiter.params.provider.ArgumentsSource;
-import org.openqa.selenium.WebDriver;
 
-@ParameterizedClass
-@ArgumentsSource(CrossBrowserProvider.class)
-class CrossBrowserJUnitTest {
-
-    @Parameter
-    WebDriver driver;
-
-    @AfterEach
-    void teardown() {
-        driver.quit();
-    }
+class CrossBrowserJUnitTest extends CrossBrowserParent {
 
     @Test
     void test() {

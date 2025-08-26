@@ -19,16 +19,29 @@ package io.github.bonigarcia.testng.selenium;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class CrossBrowserNGTest extends CrossBrowserParent {
+public class HelloWorldSeleniumNGTest {
 
-    @Test(dataProvider = "browserProvider")
-    public void test(WebDriver driver) {
-        this.driver = driver;
+    WebDriver driver;
 
+    @BeforeMethod
+    public void setup() {
+        driver = new ChromeDriver();
+    }
+
+    @Test
+    public void test() {
         driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
         assertThat(driver.getTitle()).contains("Selenium WebDriver");
+    }
+
+    @AfterMethod
+    void teardown() {
+        driver.quit();
     }
 
 }

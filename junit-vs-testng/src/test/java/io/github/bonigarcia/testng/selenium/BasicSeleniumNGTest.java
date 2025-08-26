@@ -18,15 +18,12 @@ package io.github.bonigarcia.testng.selenium;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
-public class CrossBrowserNGTest extends CrossBrowserParent {
+public class BasicSeleniumNGTest extends BrowserParent {
 
-    @Test(dataProvider = "browserProvider")
-    public void test(WebDriver driver) {
-        this.driver = driver;
-
+    @Test
+    public void test() {
         driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
         assertThat(driver.getTitle()).contains("Selenium WebDriver");
     }

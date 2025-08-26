@@ -24,7 +24,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-class BasicJUnitTest {
+class HelloWorldSeleniumJUnitTest {
 
     WebDriver driver;
 

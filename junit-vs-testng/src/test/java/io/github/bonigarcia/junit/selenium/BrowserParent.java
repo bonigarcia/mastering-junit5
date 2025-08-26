@@ -14,21 +14,25 @@
  * limitations under the License.
  *
  */
-package io.github.bonigarcia.testng.selenium;
+package io.github.bonigarcia.junit.selenium;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.Test;
+import org.openqa.selenium.chrome.ChromeDriver;
 
-public class CrossBrowserNGTest extends CrossBrowserParent {
+class BrowserParent {
 
-    @Test(dataProvider = "browserProvider")
-    public void test(WebDriver driver) {
-        this.driver = driver;
+    WebDriver driver;
 
-        driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
-        assertThat(driver.getTitle()).contains("Selenium WebDriver");
+    @BeforeEach
+    void setup() {
+        driver = new ChromeDriver();
+    }
+
+    @AfterEach
+    void teardown() {
+        driver.quit();
     }
 
 }

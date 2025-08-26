@@ -19,28 +19,12 @@ package io.github.bonigarcia.testng.selenium;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class LoginNGTest {
-
-    WebDriver driver;
-
-    @BeforeMethod
-    public void setup() {
-        driver = new ChromeDriver();
-    }
-
-    @AfterMethod
-    public void teardown() {
-        driver.quit();
-    }
+public class LoginNGTest extends BrowserParent {
 
     @DataProvider(name = "loginData")
     public static Object[][] data() {
