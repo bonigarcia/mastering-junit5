@@ -56,7 +56,7 @@ public class Reporter implements ITestListener {
         ITestListener.super.onTestSuccess(result);
         Object testInstance = result.getInstance();
 
-        String screenshot = takeScreenShot(testInstance);
+        String screenshot = getScreenshotAsBase64(testInstance);
         test.addScreenCaptureFromBase64String(screenshot);
     }
 
@@ -67,7 +67,7 @@ public class Reporter implements ITestListener {
         report.flush();
     }
 
-    private String takeScreenShot(Object testInstance) {
+    private String getScreenshotAsBase64(Object testInstance) {
         try {
             Class<?> clazz = testInstance.getClass();
             Field field = null;

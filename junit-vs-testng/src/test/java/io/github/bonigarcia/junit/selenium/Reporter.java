@@ -64,12 +64,12 @@ public class Reporter implements BeforeAllCallback, BeforeEachCallback,
     @Override
     public void afterTestExecution(ExtensionContext context) throws Exception {
         context.getTestInstance().ifPresent(instance -> {
-            String screenshot = takeScreenShot(instance);
+            String screenshot = getScreenshotAsBase64(instance);
             test.addScreenCaptureFromBase64String(screenshot);
         });
     }
 
-    private String takeScreenShot(Object testInstance) {
+    private String getScreenshotAsBase64(Object testInstance) {
         try {
             Class<?> clazz = testInstance.getClass();
             Field field = null;

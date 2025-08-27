@@ -13,3 +13,4 @@ allure-results
 bin
 test-output
 *.html
+*.png
