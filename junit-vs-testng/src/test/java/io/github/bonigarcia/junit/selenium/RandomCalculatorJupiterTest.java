@@ -25,8 +25,11 @@ import org.openqa.selenium.By;
 @ExtendWith(RetryExtension.class)
 class RandomCalculatorJupiterTest extends BrowserParent {
 
+    // To change the default number of retries, use this
+    // @RegisterExtension
+    // Extension failureWatcher = new RetryExtension(5);
+
     @Test
-    @Retry(4)
     void testRandomCalculator() {
         driver.get(
                 "https://bonigarcia.dev/selenium-webdriver-java/random-calculator.html");

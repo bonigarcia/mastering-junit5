@@ -26,6 +26,15 @@ public class RetryExtension implements TestExecutionExceptionHandler {
     static final int DEFAULT_MAX_RETRIES = 3;
 
     final AtomicInteger retryCount = new AtomicInteger(1);
+    final AtomicInteger maxRetries = new AtomicInteger(DEFAULT_MAX_RETRIES);
+
+    public RetryExtension() {
+        // Default constructor
+    }
+
+    public RetryExtension(int maxRetries) {
+        this.maxRetries.set(maxRetries);
+    }
 
     @Override
     public void handleTestExecutionException(ExtensionContext extensionContext,
@@ -33,24 +42,20 @@ public class RetryExtension implements TestExecutionExceptionHandler {
         logError(throwable);
 
         extensionContext.getTestMethod().ifPresent(method -> {
-            int maxRetries = method.getAnnotation(Retry.class) != null
-                    ? method.getAnnotation(Retry.class).value()
-                    : DEFAULT_MAX_RETRIES;
-
-            while (retryCount.incrementAndGet() <= maxRetries) {
+            while (retryCount.incrementAndGet() <= maxRetries.get()) {
                 try {
                     extensionContext.getExecutableInvoker().invoke(method,
                             extensionContext.getRequiredTestInstance());
                     return;
                 } catch (Throwable t) {
                     logError(t);
-
-                    if (retryCount.get() >= maxRetries) {
+                    if (retryCount.get() >= maxRetries.get()) {
                         throw t;
                     }
                 }
             }
         });
+        throw throwable;
     }
 
     private void logError(Throwable e) {
