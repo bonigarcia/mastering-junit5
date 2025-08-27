@@ -24,14 +24,14 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
+import io.github.bonigarcia.SeleniumUtils;
 
 class ExtentReportsJupiterTest {
 
@@ -56,7 +56,8 @@ class ExtentReportsJupiterTest {
 
     @AfterEach
     void teardown() {
-        test.addScreenCaptureFromBase64String(getScreenshotAsBase64());
+        String screenshot = SeleniumUtils.getScreenshotAsBase64(driver);
+        test.addScreenCaptureFromBase64String(screenshot);
 
         driver.quit();
     }
@@ -79,10 +80,6 @@ class ExtentReportsJupiterTest {
     void checkIndex(WebDriver driver) {
         driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
         assertThat(driver.getTitle()).contains("Selenium WebDriver");
-    }
-
-    String getScreenshotAsBase64() {
-        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
     }
 
 }

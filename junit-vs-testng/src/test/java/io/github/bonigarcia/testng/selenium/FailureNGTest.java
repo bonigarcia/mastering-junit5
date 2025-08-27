@@ -16,17 +16,8 @@
  */
 package io.github.bonigarcia.testng.selenium;
 
-import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 import static org.assertj.core.api.Assertions.fail;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
@@ -34,6 +25,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
+
+import io.github.bonigarcia.SeleniumUtils;
 
 @Ignore("Disabled to avoid breaking the build in CI")
 public class FailureNGTest {
@@ -48,7 +41,7 @@ public class FailureNGTest {
     @AfterMethod
     public void teardown(ITestResult result) {
         if (result.getStatus() == ITestResult.FAILURE) {
-            takePngScreenshot(result.getName());
+            SeleniumUtils.getScreenshotAsFile(driver, result.getName());
         }
 
         driver.quit();
@@ -58,17 +51,6 @@ public class FailureNGTest {
     public void testFailure() {
         driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
         fail("Forced error");
-    }
-
-    void takePngScreenshot(String filename) {
-        TakesScreenshot ts = (TakesScreenshot) driver;
-        File screenshot = ts.getScreenshotAs(OutputType.FILE);
-        Path destination = Paths.get(filename + ".png");
-        try {
-            Files.move(screenshot.toPath(), destination, REPLACE_EXISTING);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
 }

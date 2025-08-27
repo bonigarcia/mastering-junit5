@@ -20,8 +20,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.lang.reflect.Method;
 
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
@@ -33,6 +31,8 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
+import io.github.bonigarcia.SeleniumUtils;
 
 public class ExtentReportsNGTest {
 
@@ -57,7 +57,8 @@ public class ExtentReportsNGTest {
 
     @AfterMethod
     public void teardown() {
-        test.addScreenCaptureFromBase64String(getScreenshotAsBase64());
+        String screenshot = SeleniumUtils.getScreenshotAsBase64(driver);
+        test.addScreenCaptureFromBase64String(screenshot);
 
         driver.quit();
     }
@@ -80,10 +81,6 @@ public class ExtentReportsNGTest {
     void checkIndex(WebDriver driver) {
         driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
         assertThat(driver.getTitle()).contains("Selenium WebDriver");
-    }
-
-    String getScreenshotAsBase64() {
-        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
     }
 
 }

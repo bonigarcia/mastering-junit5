@@ -16,10 +16,6 @@
  */
 package io.github.bonigarcia.testng.selenium;
 
-import java.lang.reflect.Field;
-
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -28,6 +24,8 @@ import org.testng.ITestResult;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
+import io.github.bonigarcia.SeleniumUtils;
 
 public class Reporter implements ITestListener {
 
@@ -48,15 +46,18 @@ public class Reporter implements ITestListener {
     @Override
     public void onTestStart(ITestResult result) {
         ITestListener.super.onTestStart(result);
+
         test = report.createTest(result.getName());
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
         ITestListener.super.onTestSuccess(result);
-        Object testInstance = result.getInstance();
 
-        String screenshot = getScreenshotAsBase64(testInstance);
+        Object testInstance = result.getInstance();
+        WebDriver driver = SeleniumUtils.getDriverFromTestInstance(testInstance,
+                "driver");
+        String screenshot = SeleniumUtils.getScreenshotAsBase64(driver);
         test.addScreenCaptureFromBase64String(screenshot);
     }
 
@@ -65,33 +66,6 @@ public class Reporter implements ITestListener {
         ITestListener.super.onFinish(context);
 
         report.flush();
-    }
-
-    private String getScreenshotAsBase64(Object testInstance) {
-        try {
-            Class<?> clazz = testInstance.getClass();
-            Field field = null;
-            while (clazz != null) { // Seek driver in test class or parent
-                try {
-                    field = clazz.getDeclaredField("driver");
-                    break; // found it
-                } catch (NoSuchFieldException e) {
-                    clazz = clazz.getSuperclass(); // move up
-                }
-            }
-            if (field != null) {
-                field.setAccessible(true);
-                WebDriver driver = (WebDriver) field.get(testInstance);
-                String screenshot = ((TakesScreenshot) driver)
-                        .getScreenshotAs(OutputType.BASE64);
-                return screenshot;
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        throw new RuntimeException("Driver not found in test class");
     }
 
 }
