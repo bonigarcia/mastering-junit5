@@ -21,7 +21,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-@ExtendWith(ReportExtension.class)
+@ExtendWith(Reporter.class)
 class Report1JupiterTest extends BrowserParent {
 
     @Test

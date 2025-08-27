@@ -31,7 +31,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
-public class ReportExtension implements BeforeAllCallback, BeforeEachCallback,
+public class Reporter implements BeforeAllCallback, BeforeEachCallback,
         AfterTestExecutionCallback {
 
     static final String STORE_NAMESPACE = "report-store";
@@ -64,32 +64,36 @@ public class ReportExtension implements BeforeAllCallback, BeforeEachCallback,
     @Override
     public void afterTestExecution(ExtensionContext context) throws Exception {
         context.getTestInstance().ifPresent(instance -> {
-            try {
-                Class<?> clazz = instance.getClass();
-                Field field = null;
-                while (clazz != null) { // Seek driver in test class or parent
-                    try {
-                        field = clazz.getDeclaredField("driver");
-                        break; // found it
-                    } catch (NoSuchFieldException e) {
-                        clazz = clazz.getSuperclass(); // move up
-                    }
-                }
-                if (field != null) {
-                    field.setAccessible(true);
-                    WebDriver driver = (WebDriver) field.get(instance);
-                    String screenshot = ((TakesScreenshot) driver)
-                            .getScreenshotAs(OutputType.BASE64);
-                    test.addScreenCaptureFromBase64String(screenshot);
-
-                } else {
-                    throw new RuntimeException(
-                            "Driver not found in test class");
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            String screenshot = takeScreenShot(instance);
+            test.addScreenCaptureFromBase64String(screenshot);
         });
+    }
+
+    private String takeScreenShot(Object testInstance) {
+        try {
+            Class<?> clazz = testInstance.getClass();
+            Field field = null;
+            while (clazz != null) { // Seek driver in test class or parent
+                try {
+                    field = clazz.getDeclaredField("driver");
+                    break; // found it
+                } catch (NoSuchFieldException e) {
+                    clazz = clazz.getSuperclass(); // move up
+                }
+            }
+            if (field != null) {
+                field.setAccessible(true);
+                WebDriver driver = (WebDriver) field.get(testInstance);
+                String screenshot = ((TakesScreenshot) driver)
+                        .getScreenshotAs(OutputType.BASE64);
+                return screenshot;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        throw new RuntimeException("Driver not found in test class");
     }
 
 }

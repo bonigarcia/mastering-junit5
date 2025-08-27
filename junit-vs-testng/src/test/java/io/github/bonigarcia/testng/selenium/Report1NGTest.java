@@ -14,20 +14,19 @@
  * limitations under the License.
  *
  */
-package io.github.bonigarcia.junit.selenium;
+package io.github.bonigarcia.testng.selenium;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
 
-@ExtendWith(Reporter.class)
-class Report2JupiterTest extends BrowserParent {
+@Listeners(Reporter.class)
+public class Report1NGTest extends BrowserParent {
 
     @Test
-    void testReport2() {
-        driver.get(
-                "https://bonigarcia.dev/selenium-webdriver-java/web-form.html");
+    public void testReport1() {
+        driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
         assertThat(driver.getTitle()).contains("Selenium WebDriver");
     }
 
