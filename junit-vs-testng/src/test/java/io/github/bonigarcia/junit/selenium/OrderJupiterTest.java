@@ -32,7 +32,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 @TestInstance(Lifecycle.PER_CLASS)
 @TestMethodOrder(OrderAnnotation.class)
-class OrderJUnitTest {
+class OrderJupiterTest {
 
     WebDriver driver;
 

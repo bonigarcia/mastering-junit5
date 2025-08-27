@@ -18,14 +18,24 @@ package io.github.bonigarcia.junit.selenium;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-class BasicSeleniumJUnitTest extends BrowserParent {
+class CategoriesJupiterTest extends BrowserParent {
 
     @Test
-    void test() {
+    @Tag("WebForm")
+    void testCategoriesWebForm() {
+        driver.get(
+                "https://bonigarcia.dev/selenium-webdriver-java/web-form.html");
+        assertThat(driver.getCurrentUrl()).contains("web-form");
+    }
+
+    @Test
+    @Tag("HomePage")
+    void testCategoriesHomePage() {
         driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
-        assertThat(driver.getTitle()).contains("Selenium WebDriver");
+        assertThat(driver.getCurrentUrl()).doesNotContain("web-form");
     }
 
 }

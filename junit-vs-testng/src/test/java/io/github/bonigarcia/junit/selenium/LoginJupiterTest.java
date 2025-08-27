@@ -26,7 +26,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-class LoginJUnitTest extends BrowserParent {
+class LoginJupiterTest extends BrowserParent {
 
     static Stream<Arguments> loginData() {
         return Stream.of(Arguments.of("user", "user", "Login successful"),

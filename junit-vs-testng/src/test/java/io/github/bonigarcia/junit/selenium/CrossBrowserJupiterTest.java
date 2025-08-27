@@ -14,17 +14,18 @@
  * limitations under the License.
  *
  */
-package io.github.bonigarcia.junit.basic;
+package io.github.bonigarcia.junit.selenium;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
 
-class HelloWorldJUnitTest {
+class CrossBrowserJupiterTest extends CrossBrowserParent {
 
     @Test
     void test() {
-        assertThat(1 + 1).isEqualTo(2);
+        driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
+        assertThat(driver.getTitle()).contains("Selenium WebDriver");
     }
 
 }

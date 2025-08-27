@@ -18,24 +18,27 @@ package io.github.bonigarcia.junit.selenium;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.openqa.selenium.By;
 
-class CategoriesJUnitTest extends BrowserParent {
+@ExtendWith(RetryExtension.class)
+class RandomCalculatorJupiterTest extends BrowserParent {
 
     @Test
-    @Tag("WebForm")
-    void testCategoriesWebForm() {
+    @Retry(4)
+    void testRandomCalculator() {
         driver.get(
-                "https://bonigarcia.dev/selenium-webdriver-java/web-form.html");
-        assertThat(driver.getCurrentUrl()).contains("web-form");
-    }
+                "https://bonigarcia.dev/selenium-webdriver-java/random-calculator.html");
+        // 1 + 3
+        driver.findElement(By.xpath("//span[text()='1']")).click();
+        driver.findElement(By.xpath("//span[text()='+']")).click();
+        driver.findElement(By.xpath("//span[text()='3']")).click();
+        driver.findElement(By.xpath("//span[text()='=']")).click();
 
-    @Test
-    @Tag("HomePage")
-    void testCategoriesHomePage() {
-        driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
-        assertThat(driver.getCurrentUrl()).doesNotContain("web-form");
+        // ... should be 4
+        String result = driver.findElement(By.className("screen")).getText();
+        assertThat(result).isEqualTo("4");
     }
 
 }

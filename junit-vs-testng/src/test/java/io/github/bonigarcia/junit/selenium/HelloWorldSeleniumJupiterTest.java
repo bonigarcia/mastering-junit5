@@ -18,27 +18,30 @@ package io.github.bonigarcia.junit.selenium;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
-@ExtendWith(RetryExtension.class)
-class RandomCalculatorJUnitTest extends BrowserParent {
+class HelloWorldSeleniumJupiterTest {
+
+    WebDriver driver;
+
+    @BeforeEach
+    void setup() {
+        driver = new ChromeDriver();
+    }
 
     @Test
-    @Retry(4)
-    void testRandomCalculator() {
-        driver.get(
-                "https://bonigarcia.dev/selenium-webdriver-java/random-calculator.html");
-        // 1 + 3
-        driver.findElement(By.xpath("//span[text()='1']")).click();
-        driver.findElement(By.xpath("//span[text()='+']")).click();
-        driver.findElement(By.xpath("//span[text()='3']")).click();
-        driver.findElement(By.xpath("//span[text()='=']")).click();
+    void test() {
+        driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
+        assertThat(driver.getTitle()).contains("Selenium WebDriver");
+    }
 
-        // ... should be 4
-        String result = driver.findElement(By.className("screen")).getText();
-        assertThat(result).isEqualTo("4");
+    @AfterEach
+    void teardown() {
+        driver.quit();
     }
 
 }

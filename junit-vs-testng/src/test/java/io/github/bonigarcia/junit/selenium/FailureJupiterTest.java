@@ -16,32 +16,39 @@
  */
 package io.github.bonigarcia.junit.selenium;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.fail;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.Extension;
+import org.junit.jupiter.api.extension.RegisterExtension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-class HelloWorldSeleniumJUnitTest {
+@Disabled("Disabled to avoid breaking the build in CI")
+class FailureJupiterTest {
 
-    WebDriver driver;
+    static WebDriver driver;
 
-    @BeforeEach
-    void setup() {
+    @RegisterExtension
+    Extension failureWatcher = new FailureWatcher(driver);
+
+    @BeforeAll
+    static void setup() {
         driver = new ChromeDriver();
     }
 
-    @Test
-    void test() {
-        driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
-        assertThat(driver.getTitle()).contains("Selenium WebDriver");
+    @AfterAll
+    static void teardown() {
+        driver.quit();
     }
 
-    @AfterEach
-    void teardown() {
-        driver.quit();
+    @Test
+    void testFailure() {
+        driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
+        fail("Forced error");
     }
 
 }
