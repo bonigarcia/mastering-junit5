@@ -1,5 +1,5 @@
 /*
- * (C) Copyright 2021 Boni Garcia (https://bonigarcia.github.io/)
+ * (C) Copyright 2025 Boni Garcia (https://bonigarcia.github.io/)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,22 +14,17 @@
  * limitations under the License.
  *
  */
-package io.github.bonigarcia.testng.parameterized;
+package io.github.bonigarcia.testng;
 
-import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class ParameterizedDataProviderNGTest {
+public class ParameterizedXmlNGTest {
 
-    @DataProvider(name = "myData")
-    public static Object[][] data() {
-        return new Object[][] { { "hello", 10 }, { "world", 20 } };
-    }
-
-    @Test(dataProvider = "myData")
-    public void testParameterized(String label, int amount) {
-        System.out.println(
-                "[DataProvider] Label: " + label + " -- Amount: " + amount);
+    @Test
+    @Parameters({ "label", "amount" })
+    public void test(String label, int amount) {
+        System.out.println("[XML] Label: " + label + " -- Amount: " + amount);
     }
 
 }

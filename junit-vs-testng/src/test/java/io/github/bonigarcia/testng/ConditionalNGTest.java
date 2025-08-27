@@ -14,17 +14,19 @@
  * limitations under the License.
  *
  */
-package io.github.bonigarcia.junit.basic;
+package io.github.bonigarcia.testng;
 
-import org.junit.jupiter.api.Assumptions;
-import org.junit.jupiter.api.Test;
+import org.testng.SkipException;
+import org.testng.annotations.Test;
 
-class ConditionalJupiterTest {
+public class ConditionalNGTest {
 
     @Test
     public void testConditional() {
         boolean condition = false; // runtime condition
-        Assumptions.assumeTrue(condition);
+        if (!condition) {
+            throw new SkipException("Skipping test");
+        }
 
         // Test logic
     }

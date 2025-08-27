@@ -1,5 +1,5 @@
 /*
- * (C) Copyright 2025 Boni Garcia (https://bonigarcia.github.io/)
+ * (C) Copyright 2021 Boni Garcia (https://bonigarcia.github.io/)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,17 +14,22 @@
  * limitations under the License.
  *
  */
-package io.github.bonigarcia.junit.basic;
+package io.github.bonigarcia.testng;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
-import org.junit.jupiter.api.Test;
+public class ParameterizedDataProviderNGTest {
 
-class HelloWorldJupiterTest {
+    @DataProvider(name = "myData")
+    public static Object[][] data() {
+        return new Object[][] { { "hello", 10 }, { "world", 20 } };
+    }
 
-    @Test
-    void test() {
-        assertThat(1 + 1).isEqualTo(2);
+    @Test(dataProvider = "myData")
+    public void testParameterized(String label, int amount) {
+        System.out.println(
+                "[DataProvider] Label: " + label + " -- Amount: " + amount);
     }
 
 }

@@ -2,11 +2,11 @@
 <suite name="TestSuite" verbose="1" parallel="false">
     <test name="RegularTests">
         <packages>
-            <package name="io.github.bonigarcia.testng.basic" />
-            <package name="io.github.bonigarcia.testng.parameterized">
+            <package name="io.github.bonigarcia.testng" />
+            <package name="io.github.bonigarcia.testng">
                 <classes>
                     <class
-                        name="io.github.bonigarcia.testng.parameterized.ParameterizedXmlNGTest">
+                        name="io.github.bonigarcia.testng.ParameterizedXmlNGTest">
                         <methods>
                             <exclude name=".*" />
                         </methods>
@@ -20,7 +20,7 @@
         <parameter name="amount" value="10" />
         <classes>
             <class
-                name="io.github.bonigarcia.testng.parameterized.ParameterizedXmlNGTest" />
+                name="io.github.bonigarcia.testng.ParameterizedXmlNGTest" />
         </classes>
     </test>
     <test name="ParameterizedTest-2">
@@ -28,7 +28,7 @@
         <parameter name="amount" value="20" />
         <classes>
             <class
-                name="io.github.bonigarcia.testng.parameterized.ParameterizedXmlNGTest" />
+                name="io.github.bonigarcia.testng.ParameterizedXmlNGTest" />
         </classes>
     </test>
 </suite>

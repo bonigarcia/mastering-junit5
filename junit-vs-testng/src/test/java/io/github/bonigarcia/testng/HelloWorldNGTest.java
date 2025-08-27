@@ -14,21 +14,17 @@
  * limitations under the License.
  *
  */
-package io.github.bonigarcia.testng.basic;
+package io.github.bonigarcia.testng;
 
-import org.testng.SkipException;
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.testng.annotations.Test;
 
-public class ConditionalNGTest {
+public class HelloWorldNGTest {
 
     @Test
-    public void testConditional() {
-        boolean condition = false; // runtime condition
-        if (!condition) {
-            throw new SkipException("Skipping test");
-        }
-
-        // Test logic
+    public void test() {
+        assertThat(1 + 1).isEqualTo(2);
     }
 
 }

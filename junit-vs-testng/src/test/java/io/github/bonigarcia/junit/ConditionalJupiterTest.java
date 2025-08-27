@@ -14,17 +14,19 @@
  * limitations under the License.
  *
  */
-package io.github.bonigarcia.testng.parameterized;
+package io.github.bonigarcia.junit;
 
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Assumptions;
+import org.junit.jupiter.api.Test;
 
-public class ParameterizedXmlNGTest {
+class ConditionalJupiterTest {
 
     @Test
-    @Parameters({ "label", "amount" })
-    public void test(String label, int amount) {
-        System.out.println("[XML] Label: " + label + " -- Amount: " + amount);
+    public void testConditional() {
+        boolean condition = false; // runtime condition
+        Assumptions.assumeTrue(condition);
+
+        // Test logic
     }
 
 }

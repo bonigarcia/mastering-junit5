@@ -14,7 +14,7 @@
  * limitations under the License.
  *
  */
-package io.github.bonigarcia.testng.basic;
+package io.github.bonigarcia.testng;
 
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
