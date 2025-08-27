@@ -19,15 +19,16 @@ package io.github.bonigarcia.junit.selenium;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.api.extension.Extension;
+import org.junit.jupiter.api.extension.RegisterExtension;
 import org.openqa.selenium.By;
 
-@ExtendWith(RetryExtension.class)
+//To use the default number of retries, use this
+// @ExtendWith(RetryExtension.class)
 class RandomCalculatorJupiterTest extends BrowserParent {
 
-    // To change the default number of retries, use this
-    // @RegisterExtension
-    // Extension failureWatcher = new RetryExtension(5);
+    @RegisterExtension
+    Extension failureWatcher = new RetryExtension(5);
 
     @Test
     void testRandomCalculator() {
