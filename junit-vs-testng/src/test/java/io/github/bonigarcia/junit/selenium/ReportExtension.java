@@ -34,26 +34,25 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 public class ReportExtension implements BeforeAllCallback, BeforeEachCallback,
         AfterTestExecutionCallback {
 
+    static final String STORE_NAMESPACE = "report-store";
     static final String STORE_NAME = "reports";
-    static final ExtensionContext.Namespace REPORT_NAMESPACE = ExtensionContext.Namespace
-            .create("report-store");
+    static final String REPORT_NAME = "report-junit.html";
+
     ExtentReports report;
     ExtentTest test;
 
     @Override
     public void beforeAll(ExtensionContext context) throws Exception {
-        Store store = context.getRoot().getStore(REPORT_NAMESPACE);
+        Store store = context.getRoot()
+                .getStore(ExtensionContext.Namespace.create(STORE_NAMESPACE));
         report = store.get(STORE_NAME, ExtentReports.class);
-
         if (report == null) {
             report = new ExtentReports();
             store.put(STORE_NAME, report);
 
             Runtime.getRuntime().addShutdownHook(new Thread(report::flush));
         }
-
-        ExtentSparkReporter htmlReporter = new ExtentSparkReporter(
-                "report-junit.html");
+        ExtentSparkReporter htmlReporter = new ExtentSparkReporter(REPORT_NAME);
         report.attachReporter(htmlReporter);
     }
 
@@ -87,7 +86,6 @@ public class ReportExtension implements BeforeAllCallback, BeforeEachCallback,
                     throw new RuntimeException(
                             "Driver not found in test class");
                 }
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
