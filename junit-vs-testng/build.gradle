@@ -88,4 +88,5 @@ dependencies {
     testImplementation("org.assertj:assertj-core:3.27.4")
     testImplementation("org.seleniumhq.selenium:selenium-java:4.35.0")
     testImplementation("io.github.artsok:rerunner-jupiter:2.1.6")
+    testImplementation("com.aventstack:extentreports:5.1.2")
 }
