@@ -46,7 +46,7 @@ public class SeleniumUtils {
         }
     }
 
-    public static WebDriver getDriverFromTestInstance(Object testInstance,
+    public static Object getFieldFromTestInstance(Object testInstance,
             String fieldName) {
         try {
             Class<?> clazz = testInstance.getClass();
@@ -61,14 +61,14 @@ public class SeleniumUtils {
             }
             if (field != null) {
                 field.setAccessible(true);
-                return (WebDriver) field.get(testInstance);
+                return field.get(testInstance);
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        throw new RuntimeException("Driver not found in test class");
+        throw new RuntimeException(fieldName + " not found in " + testInstance);
     }
 
 }

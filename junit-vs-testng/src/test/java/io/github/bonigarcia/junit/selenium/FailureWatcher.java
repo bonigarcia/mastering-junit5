@@ -29,9 +29,8 @@ public class FailureWatcher implements TestExecutionExceptionHandler {
             Throwable throwable) throws Throwable {
 
         context.getTestInstance().ifPresent(testInstance -> {
-            WebDriver driver = SeleniumUtils
-                    .getDriverFromTestInstance(testInstance,
-                    "driver");
+            WebDriver driver = (WebDriver) SeleniumUtils
+                    .getFieldFromTestInstance(testInstance, "driver");
             SeleniumUtils.getScreenshotAsFile(driver, context.getDisplayName());
         });
 

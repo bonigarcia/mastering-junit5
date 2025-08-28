@@ -55,8 +55,8 @@ public class Reporter implements ITestListener {
         ITestListener.super.onTestSuccess(result);
 
         Object testInstance = result.getInstance();
-        WebDriver driver = SeleniumUtils.getDriverFromTestInstance(testInstance,
-                "driver");
+        WebDriver driver = (WebDriver) SeleniumUtils
+                .getFieldFromTestInstance(testInstance, "driver");
         String screenshot = SeleniumUtils.getScreenshotAsBase64(driver);
         test.addScreenCaptureFromBase64String(screenshot);
     }

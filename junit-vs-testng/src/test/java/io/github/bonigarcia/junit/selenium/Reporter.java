@@ -62,8 +62,8 @@ public class Reporter implements BeforeAllCallback, BeforeEachCallback,
     @Override
     public void afterTestExecution(ExtensionContext context) throws Exception {
         context.getTestInstance().ifPresent(testInstance -> {
-            WebDriver driver = SeleniumUtils.getDriverFromTestInstance(testInstance,
-                    "driver");
+            WebDriver driver = (WebDriver) SeleniumUtils
+                    .getFieldFromTestInstance(testInstance, "driver");
             String screenshot = SeleniumUtils.getScreenshotAsBase64(driver);
             test.addScreenCaptureFromBase64String(screenshot);
         });
