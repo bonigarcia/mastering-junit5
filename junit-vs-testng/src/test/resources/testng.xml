@@ -3,6 +3,7 @@
     <test name="RegularTests">
         <packages>
             <package name="io.github.bonigarcia.testng" />
+            <package name="io.github.bonigarcia.testng.selenium" />
             <package name="io.github.bonigarcia.testng">
                 <classes>
                     <class

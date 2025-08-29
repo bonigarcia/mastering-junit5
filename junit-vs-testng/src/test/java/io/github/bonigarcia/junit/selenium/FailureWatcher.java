@@ -18,7 +18,6 @@ package io.github.bonigarcia.junit.selenium;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.TestExecutionExceptionHandler;
-import org.openqa.selenium.WebDriver;
 
 import io.github.bonigarcia.SeleniumUtils;
 
@@ -29,9 +28,11 @@ public class FailureWatcher implements TestExecutionExceptionHandler {
             Throwable throwable) throws Throwable {
 
         context.getTestInstance().ifPresent(testInstance -> {
-            WebDriver driver = (WebDriver) SeleniumUtils
-                    .getFieldFromTestInstance(testInstance, "driver");
-            SeleniumUtils.getScreenshotAsFile(driver, context.getDisplayName());
+            SeleniumUtils.getDriverFromTestInstance(testInstance)
+                    .ifPresent(driver -> {
+                        SeleniumUtils.getScreenshotAsFile(driver,
+                                context.getDisplayName());
+                    });
         });
 
         throw throwable;

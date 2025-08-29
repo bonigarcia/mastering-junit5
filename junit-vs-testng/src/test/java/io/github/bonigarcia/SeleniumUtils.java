@@ -24,6 +24,8 @@ import java.lang.reflect.Field;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.Optional;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -46,29 +48,30 @@ public class SeleniumUtils {
         }
     }
 
-    public static Object getFieldFromTestInstance(Object testInstance,
-            String fieldName) {
+    public static Optional<WebDriver> getDriverFromTestInstance(
+            Object testInstance) {
         try {
             Class<?> clazz = testInstance.getClass();
-            Field field = null;
             while (clazz != null) { // Seek driver in test class or parent
-                try {
-                    field = clazz.getDeclaredField(fieldName);
-                    break; // found it
-                } catch (NoSuchFieldException e) {
+                Optional<Field> driver = Arrays
+                        .stream(clazz.getDeclaredFields())
+                        .filter(f -> WebDriver.class
+                                .isAssignableFrom(f.getType()))
+                        .findFirst();
+                if (driver.isPresent()) { // found it
+                    Field driverField = driver.get();
+                    driverField.setAccessible(true);
+                    return Optional
+                            .of((WebDriver) driverField.get(testInstance));
+                } else {
                     clazz = clazz.getSuperclass(); // move up
                 }
-            }
-            if (field != null) {
-                field.setAccessible(true);
-                return field.get(testInstance);
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        throw new RuntimeException(fieldName + " not found in " + testInstance);
+        return Optional.empty();
     }
 
 }

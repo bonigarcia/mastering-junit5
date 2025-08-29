@@ -16,7 +16,6 @@
  */
 package io.github.bonigarcia.testng.selenium;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -36,8 +35,6 @@ public class Reporter implements ITestListener {
 
     @Override
     public void onStart(ITestContext context) {
-        ITestListener.super.onStart(context);
-
         report = new ExtentReports();
         ExtentSparkReporter htmlReporter = new ExtentSparkReporter(REPORT_NAME);
         report.attachReporter(htmlReporter);
@@ -45,26 +42,22 @@ public class Reporter implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-        ITestListener.super.onTestStart(result);
-
-        test = report.createTest(result.getName());
+        test = report.createTest(result.getInstanceName());
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        ITestListener.super.onTestSuccess(result);
-
         Object testInstance = result.getInstance();
-        WebDriver driver = (WebDriver) SeleniumUtils
-                .getFieldFromTestInstance(testInstance, "driver");
-        String screenshot = SeleniumUtils.getScreenshotAsBase64(driver);
-        test.addScreenCaptureFromBase64String(screenshot);
+        SeleniumUtils.getDriverFromTestInstance(testInstance)
+                .ifPresent(driver -> {
+                    String screenshot = SeleniumUtils
+                            .getScreenshotAsBase64(driver);
+                    test.addScreenCaptureFromBase64String(screenshot);
+                });
     }
 
     @Override
     public void onFinish(ITestContext context) {
-        ITestListener.super.onFinish(context);
-
         report.flush();
     }
 

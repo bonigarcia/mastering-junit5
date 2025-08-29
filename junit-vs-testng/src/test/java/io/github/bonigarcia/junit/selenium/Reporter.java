@@ -21,7 +21,6 @@ import org.junit.jupiter.api.extension.BeforeAllCallback;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ExtensionContext.Store;
-import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -62,10 +61,12 @@ public class Reporter implements BeforeAllCallback, BeforeEachCallback,
     @Override
     public void afterTestExecution(ExtensionContext context) throws Exception {
         context.getTestInstance().ifPresent(testInstance -> {
-            WebDriver driver = (WebDriver) SeleniumUtils
-                    .getFieldFromTestInstance(testInstance, "driver");
-            String screenshot = SeleniumUtils.getScreenshotAsBase64(driver);
-            test.addScreenCaptureFromBase64String(screenshot);
+            SeleniumUtils.getDriverFromTestInstance(testInstance)
+                    .ifPresent(driver -> {
+                        String screenshot = SeleniumUtils
+                                .getScreenshotAsBase64(driver);
+                        test.addScreenCaptureFromBase64String(screenshot);
+                    });
         });
     }
 
