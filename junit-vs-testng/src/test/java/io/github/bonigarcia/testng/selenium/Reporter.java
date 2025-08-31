@@ -16,6 +16,8 @@
  */
 package io.github.bonigarcia.testng.selenium;
 
+import java.util.Arrays;
+
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -43,6 +45,8 @@ public class Reporter implements ITestListener {
     @Override
     public void onTestStart(ITestResult result) {
         test = report.createTest(result.getInstanceName());
+        Arrays.asList(result.getMethod().getGroups())
+                .forEach(test::assignCategory);
     }
 
     @Override
@@ -57,8 +61,17 @@ public class Reporter implements ITestListener {
     }
 
     @Override
+    public void onTestFailure(ITestResult result) {
+        test.fail(result.getThrowable());
+    }
+
+    @Override
+    public void onTestSkipped(ITestResult result) {
+        test.skip(result.getThrowable());
+    }
+
+    @Override
     public void onFinish(ITestContext context) {
         report.flush();
     }
-
 }

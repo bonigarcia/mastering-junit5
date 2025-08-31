@@ -16,11 +16,14 @@
  */
 package io.github.bonigarcia.junit.selenium;
 
+import java.util.Optional;
+
 import org.junit.jupiter.api.extension.AfterTestExecutionCallback;
 import org.junit.jupiter.api.extension.BeforeAllCallback;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ExtensionContext.Store;
+import org.junit.jupiter.api.extension.TestWatcher;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -29,7 +32,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import io.github.bonigarcia.SeleniumUtils;
 
 public class Reporter implements BeforeAllCallback, BeforeEachCallback,
-        AfterTestExecutionCallback {
+        AfterTestExecutionCallback, TestWatcher {
 
     static final String STORE_NAMESPACE = "report-store";
     static final String STORE_NAME = "reports";
@@ -56,6 +59,7 @@ public class Reporter implements BeforeAllCallback, BeforeEachCallback,
     @Override
     public void beforeEach(ExtensionContext context) throws Exception {
         test = report.createTest(context.getDisplayName());
+        context.getTags().forEach(test::assignCategory);
     }
 
     @Override
@@ -68,6 +72,23 @@ public class Reporter implements BeforeAllCallback, BeforeEachCallback,
                         test.addScreenCaptureFromBase64String(screenshot);
                     });
         });
+    }
+
+    @Override
+    public void testFailed(ExtensionContext context, Throwable cause) {
+        test.fail(cause);
+    }
+
+    @Override
+    public void testDisabled(ExtensionContext extensionContext,
+            Optional<String> reason) {
+        test.skip(reason.orElse("Disabled test"));
+    }
+
+    @Override
+    public void testAborted(ExtensionContext extensionContext,
+            Throwable cause) {
+        test.skip(cause);
     }
 
 }
