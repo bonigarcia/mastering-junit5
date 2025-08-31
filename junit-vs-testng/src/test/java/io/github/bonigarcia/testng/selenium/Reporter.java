@@ -17,6 +17,8 @@
 package io.github.bonigarcia.testng.selenium;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -33,20 +35,22 @@ public class Reporter implements ITestListener {
     static final String REPORT_NAME = "report-testng.html";
 
     ExtentReports report;
-    ExtentTest test;
+    Map<String, ExtentTest> tests;
 
     @Override
     public void onStart(ITestContext context) {
         report = new ExtentReports();
+        tests = new HashMap<>();
         ExtentSparkReporter htmlReporter = new ExtentSparkReporter(REPORT_NAME);
         report.attachReporter(htmlReporter);
     }
 
     @Override
     public void onTestStart(ITestResult result) {
-        test = report.createTest(result.getInstanceName());
+        ExtentTest test = report.createTest(result.getInstanceName());
         Arrays.asList(result.getMethod().getGroups())
                 .forEach(test::assignCategory);
+        tests.put(result.id(), test);
     }
 
     @Override
@@ -56,18 +60,19 @@ public class Reporter implements ITestListener {
                 .ifPresent(driver -> {
                     String screenshot = SeleniumUtils
                             .getScreenshotAsBase64(driver);
-                    test.addScreenCaptureFromBase64String(screenshot);
+                    tests.get(result.id())
+                            .addScreenCaptureFromBase64String(screenshot);
                 });
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        test.fail(result.getThrowable());
+        tests.get(result.id()).fail(result.getThrowable());
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        test.skip(result.getThrowable());
+        tests.get(result.id()).skip(result.getThrowable());
     }
 
     @Override

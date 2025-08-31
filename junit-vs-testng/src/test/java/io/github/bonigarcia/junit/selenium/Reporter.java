@@ -16,6 +16,8 @@
  */
 package io.github.bonigarcia.junit.selenium;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 import org.junit.jupiter.api.extension.AfterTestExecutionCallback;
@@ -39,7 +41,7 @@ public class Reporter implements BeforeAllCallback, BeforeEachCallback,
     static final String REPORT_NAME = "report-junit.html";
 
     ExtentReports report;
-    ExtentTest test;
+    Map<String, ExtentTest> tests;
 
     @Override
     public void beforeAll(ExtensionContext context) throws Exception {
@@ -48,6 +50,7 @@ public class Reporter implements BeforeAllCallback, BeforeEachCallback,
         report = store.get(STORE_NAME, ExtentReports.class);
         if (report == null) {
             report = new ExtentReports();
+            tests = new HashMap<>();
             store.put(STORE_NAME, report);
 
             Runtime.getRuntime().addShutdownHook(new Thread(report::flush));
@@ -58,8 +61,9 @@ public class Reporter implements BeforeAllCallback, BeforeEachCallback,
 
     @Override
     public void beforeEach(ExtensionContext context) throws Exception {
-        test = report.createTest(context.getDisplayName());
+        ExtentTest test = report.createTest(context.getDisplayName());
         context.getTags().forEach(test::assignCategory);
+        tests.put(context.getUniqueId(), test);
     }
 
     @Override
@@ -69,26 +73,26 @@ public class Reporter implements BeforeAllCallback, BeforeEachCallback,
                     .ifPresent(driver -> {
                         String screenshot = SeleniumUtils
                                 .getScreenshotAsBase64(driver);
-                        test.addScreenCaptureFromBase64String(screenshot);
+                        tests.get(context.getUniqueId())
+                                .addScreenCaptureFromBase64String(screenshot);
                     });
         });
     }
 
     @Override
     public void testFailed(ExtensionContext context, Throwable cause) {
-        test.fail(cause);
+        tests.get(context.getUniqueId()).fail(cause);
     }
 
     @Override
-    public void testDisabled(ExtensionContext extensionContext,
+    public void testDisabled(ExtensionContext context,
             Optional<String> reason) {
-        test.skip(reason.orElse("Disabled test"));
+        tests.get(context.getUniqueId()).skip(reason.orElse("Disabled test"));
     }
 
     @Override
-    public void testAborted(ExtensionContext extensionContext,
-            Throwable cause) {
-        test.skip(cause);
+    public void testAborted(ExtensionContext context, Throwable cause) {
+        tests.get(context.getUniqueId()).skip(cause);
     }
 
 }
