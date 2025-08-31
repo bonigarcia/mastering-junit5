@@ -26,6 +26,10 @@ import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ExtensionContext.Store;
 import org.junit.jupiter.api.extension.TestWatcher;
+import org.junit.platform.engine.support.store.Namespace;
+import org.junit.platform.engine.support.store.NamespacedHierarchicalStore;
+import org.junit.platform.launcher.LauncherSession;
+import org.junit.platform.launcher.LauncherSessionListener;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -33,8 +37,8 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 import io.github.bonigarcia.SeleniumUtils;
 
-public class Reporter implements BeforeAllCallback, BeforeEachCallback,
-        AfterTestExecutionCallback, TestWatcher {
+public class Reporter implements LauncherSessionListener, BeforeAllCallback,
+        BeforeEachCallback, AfterTestExecutionCallback, TestWatcher {
 
     static final String STORE_NAMESPACE = "report-store";
     static final String STORE_NAME = "reports";
@@ -44,19 +48,25 @@ public class Reporter implements BeforeAllCallback, BeforeEachCallback,
     Map<String, ExtentTest> tests;
 
     @Override
+    public void launcherSessionOpened(LauncherSession session) {
+        NamespacedHierarchicalStore<Namespace> store = session.getStore();
+        Namespace namespace = Namespace.create(STORE_NAMESPACE);
+        report = (ExtentReports) store.get(namespace, ExtentReports.class);
+        if (report == null) {
+            report = new ExtentReports();
+            tests = new HashMap<>();
+            ExtentSparkReporter htmlReporter = new ExtentSparkReporter(
+                    REPORT_NAME);
+            report.attachReporter(htmlReporter);
+            store.put(namespace, STORE_NAME, report);
+        }
+    }
+
+    @Override
     public void beforeAll(ExtensionContext context) throws Exception {
         Store store = context.getRoot()
                 .getStore(ExtensionContext.Namespace.create(STORE_NAMESPACE));
         report = store.get(STORE_NAME, ExtentReports.class);
-        if (report == null) {
-            report = new ExtentReports();
-            tests = new HashMap<>();
-            store.put(STORE_NAME, report);
-
-            Runtime.getRuntime().addShutdownHook(new Thread(report::flush));
-        }
-        ExtentSparkReporter htmlReporter = new ExtentSparkReporter(REPORT_NAME);
-        report.attachReporter(htmlReporter);
     }
 
     @Override
@@ -93,6 +103,11 @@ public class Reporter implements BeforeAllCallback, BeforeEachCallback,
     @Override
     public void testAborted(ExtensionContext context, Throwable cause) {
         tests.get(context.getUniqueId()).skip(cause);
+    }
+
+    @Override
+    public void launcherSessionClosed(LauncherSession session) {
+        report.flush();
     }
 
 }
