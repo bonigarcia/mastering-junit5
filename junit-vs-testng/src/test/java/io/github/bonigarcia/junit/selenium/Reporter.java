@@ -54,7 +54,6 @@ public class Reporter implements LauncherSessionListener, BeforeAllCallback,
         report = (ExtentReports) store.get(namespace, ExtentReports.class);
         if (report == null) {
             report = new ExtentReports();
-            tests = new HashMap<>();
             ExtentSparkReporter htmlReporter = new ExtentSparkReporter(
                     REPORT_NAME);
             report.attachReporter(htmlReporter);
@@ -67,6 +66,7 @@ public class Reporter implements LauncherSessionListener, BeforeAllCallback,
         Store store = context.getRoot()
                 .getStore(ExtensionContext.Namespace.create(STORE_NAMESPACE));
         report = store.get(STORE_NAME, ExtentReports.class);
+        tests = new HashMap<>();
     }
 
     @Override
