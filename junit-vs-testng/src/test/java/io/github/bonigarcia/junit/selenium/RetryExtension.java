@@ -16,7 +16,7 @@
  */
 package io.github.bonigarcia.junit.selenium;
 
-import java.util.concurrent.atomic.AtomicInteger;
+import java.lang.reflect.Method;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.TestExecutionExceptionHandler;
@@ -25,43 +25,42 @@ public class RetryExtension implements TestExecutionExceptionHandler {
 
     static final int DEFAULT_MAX_RETRIES = 3;
 
-    final AtomicInteger retryCount = new AtomicInteger(1);
-    final AtomicInteger maxRetries = new AtomicInteger(DEFAULT_MAX_RETRIES);
+    private final int maxRetries;
 
     public RetryExtension() {
-        // Default constructor
+        this.maxRetries = DEFAULT_MAX_RETRIES;
     }
 
     public RetryExtension(int maxRetries) {
-        this.maxRetries.set(maxRetries);
+        this.maxRetries = maxRetries;
     }
 
     @Override
-    public void handleTestExecutionException(ExtensionContext extensionContext,
-            Throwable throwable) throws Throwable {
-        logError(throwable);
+    public void handleTestExecutionException(ExtensionContext context,
+            Throwable firstFailure) throws Throwable {
+        logError(firstFailure, 1); // attempt #1 already failed
 
-        extensionContext.getTestMethod().ifPresent(method -> {
-            while (retryCount.incrementAndGet() <= maxRetries.get()) {
-                try {
-                    extensionContext.getExecutableInvoker().invoke(method,
-                            extensionContext.getRequiredTestInstance());
-                    return;
-                } catch (Throwable t) {
-                    logError(t);
-                    if (retryCount.get() >= maxRetries.get()) {
-                        throw t;
-                    }
+        Method method = context.getRequiredTestMethod();
+        Object instance = context.getRequiredTestInstance();
+        int attempt = 1;
+        while (attempt < maxRetries) {
+            attempt++;
+            try {
+                // Re-run test method (no @BeforeEach/@AfterEach)
+                context.getExecutableInvoker().invoke(method, instance);
+                return; // Success: swallow the original exception
+            } catch (Throwable t) {
+                logError(t, attempt);
+                if (attempt >= maxRetries) {
+                    throw t; // failure after last retry
                 }
             }
-        });
-        throw throwable;
+        }
+        throw firstFailure; // throw original failure as a fallback
     }
 
-    private void logError(Throwable e) {
-        System.err.println("Attempt test execution #" + retryCount.get()
-                + " failed (" + e.getClass().getName() + "thrown):  "
-                + e.getMessage());
+    private void logError(Throwable e, int attempt) {
+        System.err.println("Attempt #" + attempt + " failed ("
+                + e.getClass().getName() + " thrown): " + e.getMessage());
     }
-
 }

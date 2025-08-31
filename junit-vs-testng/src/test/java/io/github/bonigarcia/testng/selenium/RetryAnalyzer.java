@@ -17,7 +17,6 @@
 package io.github.bonigarcia.testng.selenium;
 
 import java.lang.reflect.Method;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
@@ -26,7 +25,7 @@ public class RetryAnalyzer implements IRetryAnalyzer {
 
     static final int DEFAULT_MAX_RETRIES = 3;
 
-    final AtomicInteger retryCount = new AtomicInteger(1);
+    private int retryCount = 1;
 
     @Override
     public boolean retry(ITestResult result) {
@@ -36,18 +35,17 @@ public class RetryAnalyzer implements IRetryAnalyzer {
             Retry retry = method.getAnnotation(Retry.class);
             maxRetries = retry.value();
         }
-        if (retryCount.get() <= maxRetries) {
+        if (retryCount <= maxRetries) {
             logError(result.getThrowable());
-            retryCount.incrementAndGet();
+            retryCount++;
             return true;
         }
         return false;
     }
 
     private void logError(Throwable e) {
-        System.err.println("Attempt test execution #" + retryCount.get()
-                + " failed (" + e.getClass().getName() + "thrown):  "
-                + e.getMessage());
+        System.err.println("Attempt test execution #" + retryCount + " failed ("
+                + e.getClass().getName() + "thrown):  " + e.getMessage());
     }
 
 }
