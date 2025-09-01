@@ -40,13 +40,13 @@ public class RetryExtension implements TestExecutionExceptionHandler {
             Throwable firstFailure) throws Throwable {
         logError(firstFailure, 1); // attempt #1 already failed
 
-        Method method = context.getRequiredTestMethod();
-        Object instance = context.getRequiredTestInstance();
         int attempt = 1;
         while (attempt < maxRetries) {
             attempt++;
             try {
                 // Re-run test method (no @BeforeEach/@AfterEach)
+                Method method = context.getRequiredTestMethod();
+                Object instance = context.getRequiredTestInstance();
                 context.getExecutableInvoker().invoke(method, instance);
                 return; // Success: swallow the original exception
             } catch (Throwable t) {
