@@ -13,7 +13,6 @@ jobs:
   tests:
     strategy:
       matrix:
-        build-tool: [ mvn ]
         os: [ ubuntu-latest ]
         java: [ 17 ]
     runs-on: ${{ matrix.os }}
@@ -28,4 +27,4 @@ jobs:
     - name: Start Xvfb
       run: Xvfb :99 &
     - name: Run tests with ${{ matrix.build-tool }}
-      run: ${{ matrix.build-tool }} test
+      run: mvn -B test
