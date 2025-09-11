@@ -9,7 +9,7 @@ ext {
     junitJupiterVersion = '5.13.4'
     hamcrestVersion  = '3.0'
     assertjVersion  = '3.27.4'
-    truth = '1.4.4'
+    truth = '1.4.5'
 }
 
 apply plugin: 'java'
