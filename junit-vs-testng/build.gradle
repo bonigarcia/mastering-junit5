@@ -88,7 +88,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.13.4")
     testImplementation("org.junit.platform:junit-platform-launcher:1.13.4")
     testImplementation("org.testng:testng:7.11.0")
-    testImplementation("org.assertj:assertj-core:3.27.5")
+    testImplementation("org.assertj:assertj-core:3.27.6")
     testImplementation("org.seleniumhq.selenium:selenium-java:4.35.0")
     testImplementation("io.github.artsok:rerunner-jupiter:2.1.6")
     testImplementation("com.aventstack:extentreports:5.1.2")
