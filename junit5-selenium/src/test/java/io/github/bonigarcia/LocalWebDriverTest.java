@@ -36,7 +36,7 @@ public class LocalWebDriverTest {
 
     @Test
     public void testWithFirefox(FirefoxDriver driver) {
-        driver.get("http://www.seleniumhq.org/");
+        driver.get("http://www.selenium.dev/");
         assertTrue(driver.getTitle().startsWith("Selenium"));
     }
 
