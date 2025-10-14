@@ -17,10 +17,10 @@
 package io.github.bonigarcia;
 
 import static java.lang.invoke.MethodHandles.lookup;
-import static org.junit.jupiter.api.condition.JRE.JAVA_8;
-import static org.junit.jupiter.api.condition.JRE.JAVA_9;
-import static org.junit.jupiter.api.condition.JRE.JAVA_10;
-import static org.junit.jupiter.api.condition.JRE.JAVA_11;
+import static org.junit.jupiter.api.condition.JRE.JAVA_17;
+import static org.junit.jupiter.api.condition.JRE.JAVA_18;
+import static org.junit.jupiter.api.condition.JRE.JAVA_19;
+import static org.junit.jupiter.api.condition.JRE.JAVA_25;
 import static org.slf4j.LoggerFactory.getLogger;
 
 import org.junit.jupiter.api.Test;
@@ -35,57 +35,57 @@ class DisabledOnJreRangeTest {
     static final Logger log = getLogger(lookup().lookupClass());
 
     @Test
-    @EnabledOnJre(JAVA_8)
-    void onlyOnJava8() {
-        log.debug("This test is executed only for JRE 8");
+    @EnabledOnJre(JAVA_17)
+    void onlyOnJava17() {
+        log.debug("This test is executed only for JRE 17");
     }
 
     @Test
-    @EnabledOnJre({ JAVA_9, JAVA_10 })
-    void onJava9Or10() {
-        log.debug("This test is executed only for JRE 9 or 10 ");
+    @EnabledOnJre({ JAVA_18, JAVA_19 })
+    void onJava18Or19() {
+        log.debug("This test is executed only for JRE 18 or 19 ");
     }
 
     @Test
-    @EnabledForJreRange(min = JAVA_9, max = JAVA_11)
-    void fromJava9to11() {
-        log.debug("This test is executed only for JRE 9 to 11");
+    @EnabledForJreRange(min = JAVA_19, max = JAVA_25)
+    void fromJava19to25() {
+        log.debug("This test is executed only for JRE 19 to 25");
     }
 
     @Test
-    @EnabledForJreRange(min = JAVA_9)
-    void fromJava9toCurrentJavaFeatureNumber() {
-        log.debug("This test is executed only for JRE 9+");
+    @EnabledForJreRange(min = JAVA_18)
+    void fromJava18toCurrentJavaFeatureNumber() {
+        log.debug("This test is executed only for JRE 18+");
     }
 
     @Test
-    @EnabledForJreRange(max = JAVA_11)
-    void fromJava8To11() {
-        log.debug("This test is executed only for JRE 8 to 11");
+    @EnabledForJreRange(max = JAVA_18)
+    void maxJava18() {
+        log.debug("This test is executed only up to JRE 18");
     }
 
     @Test
-    @DisabledOnJre(JAVA_9)
-    void notOnJava9() {
-        log.debug("This test is executed only for JRE != 9");
+    @DisabledOnJre(JAVA_17)
+    void notOnJava17() {
+        log.debug("This test is executed only for JRE != 17");
     }
 
     @Test
-    @DisabledForJreRange(min = JAVA_9, max = JAVA_11)
-    void notFromJava9to11() {
-        log.debug("This test is executed only for JRE != 9 to 11");
+    @DisabledForJreRange(min = JAVA_18, max = JAVA_19)
+    void notFromJava18to19() {
+        log.debug("This test is executed only for JRE != 18 to 19");
     }
 
     @Test
-    @DisabledForJreRange(min = JAVA_9)
-    void notFromJava9toCurrentJavaFeatureNumber() {
-        log.debug("This test is executed only for JRE < 9");
+    @DisabledForJreRange(min = JAVA_18)
+    void notFromJava18toCurrentJavaFeatureNumber() {
+        log.debug("This test is executed only for JRE < 18");
     }
 
     @Test
-    @DisabledForJreRange(max = JAVA_11)
-    void notFromJava8to11() {
-        log.debug("This test is executed only for JRE != 8 to 11");
+    @DisabledForJreRange(max = JAVA_25)
+    void notFromJava25() {
+        log.debug("This test is executed only for JRE < 25");
     }
 
 }
