@@ -6,7 +6,7 @@ ext {
     slf4jVersion  = '2.0.17'
     logbackVersion  = '1.5.20'
 
-    junitVintageVersion  = '6.0.0'
+    junitVintageVersion  = '6.0.1'
 
     junitLegacyVersion  = '4.13.2'
 }
