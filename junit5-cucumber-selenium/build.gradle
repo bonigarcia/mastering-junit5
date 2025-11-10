@@ -10,7 +10,7 @@ ext {
     junitPlatformSuiteVersion = '6.0.1'
     cucumberVersion = '7.31.0'
     seleniumJavaVersion = '4.38.0'
-    webdrivermanagerVersion  = '6.3.2'
+    webdrivermanagerVersion  = '6.3.3'
 }
 
 apply plugin: 'java'
