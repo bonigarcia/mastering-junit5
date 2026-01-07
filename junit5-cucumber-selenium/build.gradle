@@ -7,7 +7,7 @@ ext {
     logbackVersion  = '1.5.24'
 
     junitJupiterVersion = '6.0.1'
-    junitPlatformSuiteVersion = '6.0.1'
+    junitPlatformSuiteVersion = '6.0.2'
     cucumberVersion = '7.33.0'
     seleniumJavaVersion = '4.39.0'
     webdrivermanagerVersion  = '6.3.3'
