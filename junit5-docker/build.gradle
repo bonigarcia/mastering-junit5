@@ -5,7 +5,7 @@ repositories {
 ext {
     slf4jVersion  = '2.0.17'
     logbackVersion  = '1.5.24'
-    junitJupiterVersion = '6.0.1'
+    junitJupiterVersion = '6.0.2'
     junitDockerVersion = '1.0.0'
     mysqlConnectorVersion = '8.0.33'
 }
