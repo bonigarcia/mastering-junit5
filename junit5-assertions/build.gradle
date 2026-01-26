@@ -8,7 +8,7 @@ ext {
 
     junitJupiterVersion = '6.0.2'
     hamcrestVersion  = '3.0'
-    assertjVersion  = '3.27.6'
+    assertjVersion  = '3.27.7'
     truth = '1.4.5'
 }
 
