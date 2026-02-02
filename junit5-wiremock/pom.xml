@@ -8,7 +8,7 @@
 
     <properties>
         <slf4j.version>2.0.17</slf4j.version>
-        <logback.version>1.5.26</logback.version>
+        <logback.version>1.5.27</logback.version>
         <wiremock.version>2.27.2</wiremock.version>
         <retrofit.version>3.0.0</retrofit.version>
 
