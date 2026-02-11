@@ -1,6 +1,6 @@
 plugins {
     id "java"
-    id "io.qameta.allure" version "3.0.1"
+    id "io.qameta.allure" version "3.0.2"
 }
 
 jar {
