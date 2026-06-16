@@ -4,7 +4,7 @@ repositories {
 
 ext {
     junitJupiterVersion = '6.1.0'
-    seleniumVersion = '4.44.0'
+    seleniumVersion = '4.45.0'
     seleniumJupiterVersion  = '6.3.2'
 }
 
