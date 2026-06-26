@@ -83,7 +83,7 @@ repositories {
 
 dependencies {
     implementation("org.slf4j:slf4j-api:2.0.18")
-    implementation("ch.qos.logback:logback-classic:1.5.35")
+    implementation("ch.qos.logback:logback-classic:1.5.36")
 
     testImplementation("org.junit.jupiter:junit-jupiter:6.1.0")
     testImplementation("org.junit.platform:junit-platform-launcher:1.14.4")
