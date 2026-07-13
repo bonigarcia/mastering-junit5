@@ -33,6 +33,7 @@ public class PublicRestServicesTest {
                 .then().assertThat().statusCode(200).body(key, equalTo(value));
     }
 
+    @Disabled("Service temporarily unavailable")
     @Test
     void testHttpBin() {
         String url = "https://httpbin.org/get";
