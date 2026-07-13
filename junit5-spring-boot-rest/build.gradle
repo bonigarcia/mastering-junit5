@@ -1,12 +1,19 @@
-buildscript {
-    ext {
-        springBootVersion = '4.1.0'
-    }
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '4.1.0'
+    id 'io.spring.dependency-management' version '1.1.7'
+
+    // Optional IDE integration
+    id 'eclipse'
+    id 'idea'
+}
+
+group = 'io.github.bonigarcia'
+version = '1.0.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
     }
 }
 
@@ -14,36 +21,26 @@ repositories {
     mavenCentral()
 }
 
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'idea'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
 
-jar {
-    archiveBaseName = 'junit5-spring-boot-rest'
-    archiveVersion = '1.0.0'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.boot:spring-boot-resttestclient'
+    testImplementation 'org.springframework.boot:spring-boot-restclient'
+
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
-test {
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.compilerArgs.add('-parameters')
+}
+
+tasks.named('test') {
     useJUnitPlatform()
 
     testLogging {
-        events "passed", "skipped", "failed"
+        events 'passed', 'skipped', 'failed'
         showStandardStreams = true
     }
-}
-
-compileTestJava {
-    sourceCompatibility = 17
-    targetCompatibility = 17
-    options.compilerArgs += '-parameters'
-}
-
-dependencies {
-    implementation('org.springframework.boot:spring-boot-starter-web')
-    implementation('javax.annotation:javax.annotation-api:1.3.2')
-
-    testImplementation("org.junit.jupiter:junit-jupiter")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
