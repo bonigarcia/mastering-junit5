@@ -6,7 +6,7 @@ ext {
     slf4jVersion  = '2.0.18'
     logbackVersion  = '1.6.1'
 
-    junitJupiterVersion = '6.1.2'
+    junitJupiterVersion = '6.1.3'
     junitPlatformSuiteVersion = '6.1.3'
     cucumberVersion = '7.34.6'
 }
