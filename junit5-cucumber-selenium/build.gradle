@@ -8,7 +8,7 @@ ext {
 
     junitJupiterVersion = '6.1.3'
     junitPlatformSuiteVersion = '6.1.3'
-    cucumberVersion = '7.34.8'
+    cucumberVersion = '8.0.1'
     seleniumJavaVersion = '4.49.0'
     webdrivermanagerVersion  = '6.4.0'
 }
