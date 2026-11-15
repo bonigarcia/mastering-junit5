@@ -21,10 +21,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.slf4j.LoggerFactory.getLogger;
 
 import org.junit.jupiter.api.Test;
-import org.junit.platform.suite.api.Suite;
 import org.slf4j.Logger;
 
-@Suite
 public class JUnit5CompatibleTest {
 
     static final Logger log = getLogger(lookup().lookupClass());
