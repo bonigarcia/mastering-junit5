@@ -6,13 +6,13 @@
 [![Support badge](https://img.shields.io/badge/stackoverflow-junit5-green.svg?logo=stackoverflow)](https://stackoverflow.com/questions/tagged/junit5)
 [![Twitter Follow](https://img.shields.io/twitter/follow/boni_gg.svg?style=social)](https://twitter.com/boni_gg)
 
-This repository contains the code examples of [JUnit 5] / [JUnit 6] for the book [Mastering Software Testing with JUnit 5: Comprehensive guide to develop high quality Java applications], authored by [Boni García] and published by [Packt].
+This repository contains the code examples of [JUnit] for the book [Mastering Software Testing with JUnit 5: Comprehensive guide to develop high quality Java applications], authored by [Boni García] and published by [Packt].
 
 [![][Cover]][Packt]
 
-These examples cover the main features of JUnit 5 / JUnit 6, such as:
+These examples cover the main features of JUnit 5/6, such as:
 
-* JUnit 5 tests lifecycle.
+* JUnit tests lifecycle.
 * Assertions.
 * Tagging and filtering tests.
 * Conditional test execution.
@@ -60,14 +60,13 @@ This repository has different tags, one per minor version of JUnit 5 and JUnit 6
 # Complete example
 
 The project [Rate my cat!] contains a sample web application based on Spring Boot (Spring MVC, Thymeleaf, and Spring Data JPA)
-with a complete set of JUnit 5 / JUnit 6 tests (unit with Mockito, integration with Spring, and end-to-end tests with Selenium).  
+with a complete set of JUnit tests (unit with Mockito, integration with Spring, and end-to-end tests with Selenium).
 
 # About
 
-Mastering JUnit 5 (Copyright &copy; 2017-2026) is a project created and maintained by [Boni García] and licensed under the terms of the [Apache 2.0 License].
+Mastering JUnit (Copyright &copy; 2017-2026) is a project created and maintained by [Boni García] and licensed under the terms of the [Apache 2.0 License].
 
-[JUnit 5]: https://junit.org/junit5/
-[JUnit 6]: https://junit.org/junit5/
+[JUnit]: https://junit.org/
 [Boni García]: https://bonigarcia.dev/
 [Logo]: https://bonigarcia.github.io/img/mastering_junit5_logo.png
 [GitHub Repository]: https://github.com/bonigarcia/mastering-junit5
