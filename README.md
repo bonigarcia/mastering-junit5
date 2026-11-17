@@ -36,9 +36,9 @@ Moreover, the integration with third-party technologies is also illustrated with
 * Android (open source mobile operating system based on Linux).
 * REST services (using REST Assured, Retrofit2, or WireMock).
 
-# JUnit 5 versions
+# JUnit versions
 
-This repository has different tags, one per minor version of JUnit 5. Currently, the available tags are the following:
+This repository has different tags, one per minor version of JUnit 5 and JUnit 6. Currently, the available tags are the following:
 
 * `5.0`: Examples using JUnit 5.0.3. The examples of the book [Mastering Software Testing with JUnit 5] are based on this version.
 * `5.1`: Examples using JUnit 5.1.1.
@@ -53,6 +53,9 @@ This repository has different tags, one per minor version of JUnit 5. Currently,
 * `5.10`: Examples using JUnit 5.10.0.
 * `5.11`: Examples using JUnit 5.11.0.
 * `5.12`: Examples using JUnit 5.12.0.
+* `5.13`: Examples using JUnit 5.13.0.
+* `6.0`: Examples using JUnit 6.0.0.
+* `6.1`: Examples using JUnit 6.1.0.
 
 # Complete example
 
